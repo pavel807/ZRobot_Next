@@ -847,40 +847,32 @@ class YoloDetectorNode(Node):
             bbox = target_track.last_bbox
             center_x = bbox[0] + bbox[2] / 2
 
-            # normalized_center: -0.5 (left) to +0.5 (right)
             normalized_center = (center_x / frame_width) - 0.5
-
-            # Если объект слева - поворачиваем налево (отрицательный)
-            # Если объект справа - поворачиваем направо (положительный)
-            # center < 320 (слева) → negative → повернуть налево
-            # center > 320 (справа) → positive → повернуть направо
-            target_angular = normalized_center * self.turn_speed
 
             half_zone = self.center_zone_width / 2.0
 
             if abs(normalized_center) < half_zone:
-                # В центре - едем прямо
                 target_angular = 0.0
                 target_linear = self.max_linear_speed
+                self.filtered_angular_z = 0.0
             else:
-                # Слева от центра - поворачиваем налево (отрицательный)
-                # Справа от центра - поворачиваем направо (положительный)
+                # Инвертированный знак - ROS coordinate system может требовать инверсии
+                target_angular = -normalized_center * self.turn_speed
                 target_linear = self.max_linear_speed * 0.5
 
-            dt = time.time() - self.last_angular_update_time
-            if dt > 0.0 and dt < 1.0:
-                alpha = self.smoothing_factor
-                self.filtered_angular_z = self.filtered_angular_z + alpha * (
-                    target_angular - self.filtered_angular_z
-                )
-            else:
-                self.filtered_angular_z = target_angular
-            self.last_angular_update_time = time.time()
+                dt = time.time() - self.last_angular_update_time
+                if dt > 0.0 and dt < 1.0:
+                    alpha = self.smoothing_factor
+                    self.filtered_angular_z = self.filtered_angular_z + alpha * (
+                        target_angular - self.filtered_angular_z
+                    )
+                else:
+                    self.filtered_angular_z = target_angular
+                self.last_angular_update_time = time.time()
 
             twist.angular.z = self.filtered_angular_z
             twist.linear.x = target_linear
         else:
-            # Нет цели - крутимся в поиске
             twist.angular.z = self.turn_speed * 0.5
             twist.linear.x = 0.0
 
