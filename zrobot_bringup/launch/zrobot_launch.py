@@ -60,6 +60,7 @@ def generate_launch_description():
             DeclareLaunchArgument("parallel_inference", default_value="True"),
             DeclareLaunchArgument("enable_nv12", default_value="False"),
             DeclareLaunchArgument("web_port", default_value="8080"),
+            DeclareLaunchArgument("lidar_port", default_value="/dev/ttyUSB0"),
             Node(
                 package="zrobot_perception",
                 executable="yolo_detector_node",
