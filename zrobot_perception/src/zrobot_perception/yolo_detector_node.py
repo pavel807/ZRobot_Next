@@ -32,6 +32,7 @@ import json
 import threading
 import signal
 import sys
+from collections import deque
 
 COCO_CLASSES = {
     0: "person",
@@ -468,10 +469,8 @@ class YoloDetectorNode(Node):
             self.npu_processes = [p]
             self.get_logger().info("🧠 Sequential mode: single NPU worker")
 
-        self.frame_buffer = {}
-        self.frame_buffer_lock = threading.Lock()
+        self.frame_buffer = deque(maxlen=10)
         self.frame_id_counter = 0
-        self.max_buffer_size = 10
 
         self.current_detections = []
         self.current_frame_id = 0
@@ -486,7 +485,7 @@ class YoloDetectorNode(Node):
 
         self.fps_counter = {"count": 0, "start": time.time(), "fps": 0.0}
 
-        self.timer = self.create_timer(0.033, self.run_detection)
+        self.timer = self.create_timer(0.02, self.run_detection)
 
         self.get_logger().info("✅ Optimized YOLO Detector STARTED")
 
@@ -537,11 +536,7 @@ class YoloDetectorNode(Node):
 
         fid = self.frame_id_counter
         self.frame_id_counter += 1
-        with self.frame_buffer_lock:
-            self.frame_buffer[fid] = frame
-            if len(self.frame_buffer) > self.max_buffer_size:
-                oldest = min(self.frame_buffer.keys())
-                del self.frame_buffer[oldest]
+        self.frame_buffer.append((fid, frame))
 
         npu_input = np.expand_dims(rgb, axis=0)
 
@@ -557,12 +552,14 @@ class YoloDetectorNode(Node):
 
         detections = self._scale_detections(detections)
 
-        display_frame = None
-        with self.frame_buffer_lock:
-            if det_fid in self.frame_buffer:
-                display_frame = self.frame_buffer[det_fid]
-            elif self.frame_buffer:
-                display_frame = self.frame_buffer[max(self.frame_buffer.keys())]
+        display_frame = frame
+        for buffered_fid, buffered_frame in reversed(self.frame_buffer):
+            if buffered_fid == det_fid:
+                display_frame = buffered_frame
+                break
+        else:
+            if len(self.frame_buffer) > 0:
+                display_frame = self.frame_buffer[-1][1]
 
         if display_frame is None:
             display_frame = frame
