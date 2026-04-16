@@ -431,6 +431,7 @@ class YoloDetectorNode(Node):
 
         if self.parallel_inference:
             self.prep_queue = mp.Queue(maxsize=8)
+            self.result_queue = mp.Queue(maxsize=8)
             self.npu_processes = []
             num_cores = 3
             for i in range(num_cores):
@@ -448,7 +449,6 @@ class YoloDetectorNode(Node):
                 )
                 p.start()
                 self.npu_processes.append(p)
-            self.result_queue = mp.Queue(maxsize=8)
             self.get_logger().info(f"🧠 Parallel mode: {num_cores} NPU cores")
         else:
             self.prep_queue = mp.Queue(maxsize=4)
