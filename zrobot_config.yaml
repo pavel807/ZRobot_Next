@@ -15,6 +15,11 @@ zrobot_perception:
   enable_auto_follow: true
   max_linear_speed: 0.3
   turn_speed: 0.5
+  center_zone_width: 0.18
+  turn_response: 0.4
+  smoothing_factor: 0.15
+  min_turn_threshold: 0.05
+  kalman_latency_ms: 80
   # NMS parameters
   nms_sigma: 0.5
   iou_threshold: 0.45

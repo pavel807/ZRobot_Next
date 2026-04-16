@@ -13,7 +13,7 @@ Optimizations:
 
 import rclpy
 from rclpy.node import Node
-from sensor_msgs.msg import Image
+from sensor_msgs.msg import Image, LaserScan
 from vision_msgs.msg import (
     Detection2DArray,
     Detection2D,
@@ -32,7 +32,9 @@ import json
 import threading
 import signal
 import sys
+import math
 from collections import deque
+from .ca_kalman_filter import ConstantAccelerationKalmanFilter
 
 COCO_CLASSES = {
     0: "person",
@@ -380,6 +382,10 @@ class YoloDetectorNode(Node):
         self.declare_parameter("turn_speed", 0.5)
         self.declare_parameter("parallel_inference", True)
         self.declare_parameter("enable_nv12", False)
+        self.declare_parameter("center_zone_width", 0.18)
+        self.declare_parameter("turn_response", 0.4)
+        self.declare_parameter("smoothing_factor", 0.15)
+        self.declare_parameter("min_turn_threshold", 0.05)
 
         self.model_path = self.get_parameter("model_path").value
         self.camera_id = self.get_parameter("camera_id").value
@@ -391,6 +397,28 @@ class YoloDetectorNode(Node):
         self.turn_speed = self.get_parameter("turn_speed").value
         self.parallel_inference = self.get_parameter("parallel_inference").value
         self.enable_nv12 = self.get_parameter("enable_nv12").value
+        self.center_zone_width = self.get_parameter("center_zone_width").value
+        self.turn_response = self.get_parameter("turn_response").value
+        self.smoothing_factor = self.get_parameter("smoothing_factor").value
+        self.min_turn_threshold = self.get_parameter("min_turn_threshold").value
+
+        self.filtered_angular_z = 0.0
+        self.last_angular_update_time = time.time()
+
+        self.kalman_filter = ConstantAccelerationKalmanFilter(
+            dt=0.02,
+            process_noise_acc=100.0,
+            measurement_noise=3.0,
+            mahalanobis_threshold=5.0,
+            latency_ms=80.0,
+        )
+        self.kalman_initialized = False
+        self.last_kalman_update_time = None
+
+        self.current_scan_ranges = None
+        self.current_scan_angle_min = None
+        self.current_scan_angle_max = None
+        self.current_scan_angle_increment = None
 
         self.get_logger().info(
             f"📦 COCO: {len(COCO_CLASSES)} | Parallel: {self.parallel_inference}"
@@ -400,12 +428,16 @@ class YoloDetectorNode(Node):
         self.image_pub = self.create_publisher(Image, "processed_image", 10)
         self.status_pub = self.create_publisher(String, "detection_status", 10)
         self.cmd_vel_pub = self.create_publisher(Twist, "cmd_vel", 10)
+        self.tracked_objects_pub = self.create_publisher(String, "tracked_objects", 10)
 
         self.target_sub = self.create_subscription(
             String, "set_target", self.target_callback, 10
         )
         self.conf_sub = self.create_subscription(
             Float32, "set_confidence", self.confidence_callback, 10
+        )
+        self.scan_sub = self.create_subscription(
+            LaserScan, "scan", self.scan_callback, 10
         )
 
         self.cv_bridge = CvBridge()
@@ -508,6 +540,39 @@ class YoloDetectorNode(Node):
     def confidence_callback(self, msg: Float32):
         self.obj_thresh = msg.data
         self.get_logger().info(f"📊 Confidence: {msg.data:.2f}")
+
+    def scan_callback(self, msg: LaserScan):
+        self.current_scan_ranges = msg.ranges
+        self.current_scan_angle_min = msg.angle_min
+        self.current_scan_angle_max = msg.angle_max
+        self.current_scan_angle_increment = msg.angle_increment
+
+    def _get_distance_from_lidar(self, center_x: int, frame_width: int) -> float:
+        if self.current_scan_ranges is None:
+            return None
+
+        if (
+            self.current_scan_angle_increment is None
+            or self.current_scan_angle_min is None
+        ):
+            return None
+
+        normalized_x = center_x / frame_width
+        angle_rad = self.current_scan_angle_min + normalized_x * (
+            self.current_scan_angle_max - self.current_scan_angle_min
+        )
+
+        angle_idx = int(
+            (angle_rad - self.current_scan_angle_min)
+            / self.current_scan_angle_increment
+        )
+
+        if 0 <= angle_idx < len(self.current_scan_ranges):
+            r = self.current_scan_ranges[angle_idx]
+            if not math.isinf(r) and not math.isnan(r) and r > 0.1:
+                return float(r)
+
+        return None
 
     def _scale_detections(self, detections):
         scaled = []
@@ -661,24 +726,148 @@ class YoloDetectorNode(Node):
     def publish_cmd_vel(self, detections, frame_width):
         twist = Twist()
         target_found = False
+        target_center_x = None
+        target_bbox = None
 
         for x1, y1, w, h, score, cls_id in detections:
             if COCO_CLASSES.get(cls_id, "") == self.target_object:
                 target_found = True
-                center_x = x1 + w / 2
-                normalized_center = (center_x / frame_width) - 0.5
-                turn = normalized_center * self.turn_speed
-
-                if abs(normalized_center) < 0.08:
-                    twist.angular.z = 0.0
-                    twist.linear.x = self.max_linear_speed
-                else:
-                    twist.angular.z = -turn
-                    twist.linear.x = self.max_linear_speed * 0.5
+                target_center_x = x1 + w / 2
+                target_bbox = (x1, y1, w, h, score, cls_id)
                 break
 
-        if not target_found:
-            twist.angular.z = self.turn_speed * 0.5
+        current_timestamp = time.time()
+        target_distance = None
+
+        if target_found and target_center_x is not None:
+            distance_from_lidar = self._get_distance_from_lidar(
+                int(target_center_x), frame_width
+            )
+            if distance_from_lidar is not None:
+                target_distance = distance_from_lidar
+            else:
+                bbox_x1, bbox_y1, bbox_w, bbox_h, bbox_score, _ = target_bbox
+                if bbox_h > 50:
+                    known_person_height_m = 1.7
+                    focal_length_approx = (bbox_h / known_person_height_m) * 3.0
+                    if focal_length_approx > 0:
+                        target_distance = (
+                            known_person_height_m * focal_length_approx / bbox_h
+                        )
+
+            if not self.kalman_initialized:
+                self.kalman_filter.x[0, 0] = target_center_x
+                self.kalman_filter.x[1, 0] = frame_width / 2
+                self.kalman_initialized = True
+                self.last_kalman_update_time = current_timestamp
+                predicted_x = target_center_x
+                predicted_y = frame_width / 2
+            else:
+                self.kalman_filter.update(
+                    (target_center_x, frame_width / 2), current_timestamp
+                )
+                self.last_kalman_update_time = current_timestamp
+                predicted_x, predicted_y = (
+                    self.kalman_filter.get_extrapolated_position()
+                )
+        else:
+            if self.kalman_initialized and self.last_kalman_update_time is not None:
+                dt_since_update = current_timestamp - self.last_kalman_update_time
+                if dt_since_update < 0.5:
+                    predicted_x, predicted_y = self.kalman_filter.predict(
+                        current_timestamp
+                    )
+                    self.last_kalman_update_time = current_timestamp
+                else:
+                    self.kalman_initialized = False
+                    predicted_x = frame_width / 2
+                    predicted_y = frame_width / 2
+            else:
+                predicted_x = frame_width / 2
+                predicted_y = frame_width / 2
+
+        tracked_data = {
+            "target": self.target_object,
+            "found": target_found,
+            "center_x": float(target_center_x) if target_center_x is not None else None,
+            "predicted_x": float(predicted_x),
+            "distance": float(target_distance) if target_distance is not None else None,
+            "kalman_initialized": self.kalman_initialized,
+            "velocity_x": float(self.kalman_filter.get_velocity()[0]),
+            "velocity_y": float(self.kalman_filter.get_velocity()[1]),
+        }
+        tracked_msg = String()
+        tracked_msg.data = json.dumps(tracked_data)
+        self.tracked_objects_pub.publish(tracked_msg)
+
+        half_zone = self.center_zone_width / 2.0
+
+        if target_found and target_center_x is not None:
+            center_x = target_center_x
+            normalized_center = (center_x / frame_width) - 0.5
+
+            target_angular = -normalized_center * self.turn_response * self.turn_speed
+
+            if abs(normalized_center) < half_zone:
+                target_angular = 0.0
+                target_linear = self.max_linear_speed
+            else:
+                if normalized_center < 0:
+                    target_angular = max(target_angular, self.turn_speed * 0.3)
+                else:
+                    target_angular = min(target_angular, -self.turn_speed * 0.3)
+                target_linear = self.max_linear_speed * 0.6
+
+            if target_distance is not None:
+                if target_distance < 1.0:
+                    target_linear = min(target_linear, 0.1)
+                elif target_distance < 2.0:
+                    target_linear = min(target_linear, self.max_linear_speed * 0.5)
+                elif target_distance < 3.0:
+                    target_linear = min(target_linear, self.max_linear_speed * 0.8)
+
+            if abs(target_angular) < self.min_turn_threshold:
+                target_angular = 0.0
+            else:
+                sign = 1.0 if target_angular > 0 else -1.0
+                adjusted = (abs(target_angular) - self.min_turn_threshold) / (
+                    1.0 - self.min_turn_threshold
+                )
+                adjusted = max(0.0, min(1.0, adjusted))
+                target_angular = sign * adjusted * self.turn_speed
+
+            dt = time.time() - self.last_angular_update_time
+            if dt > 0.0 and dt < 1.0:
+                alpha = self.smoothing_factor
+                self.filtered_angular_z = self.filtered_angular_z + alpha * (
+                    target_angular - self.filtered_angular_z
+                )
+            else:
+                self.filtered_angular_z = target_angular
+            self.last_angular_update_time = time.time()
+
+            twist.angular.z = self.filtered_angular_z
+            twist.linear.x = target_linear
+        else:
+            if self.kalman_initialized:
+                normalized_predicted = (predicted_x / frame_width) - 0.5
+                target_angular = (
+                    -normalized_predicted * self.turn_response * self.turn_speed
+                )
+
+                if abs(target_angular) < self.min_turn_threshold:
+                    target_angular = 0.0
+
+                dt = time.time() - self.last_angular_update_time
+                if dt > 0.0 and dt < 1.0:
+                    alpha = self.smoothing_factor * 0.5
+                    self.filtered_angular_z = self.filtered_angular_z + alpha * (
+                        target_angular - self.filtered_angular_z
+                    )
+
+                twist.angular.z = self.filtered_angular_z
+            else:
+                twist.angular.z = self.turn_speed * 0.5
             twist.linear.x = 0.0
 
         self.cmd_vel_pub.publish(twist)
