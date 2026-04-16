@@ -45,7 +45,9 @@ def generate_launch_description():
             SetEnvironmentVariable("RMW_IMPLEMENTATION", "rmw_fastrtps_cpp"),
             UnsetEnvironmentVariable("FASTRTPS_DEFAULT_PROFILES_FILE"),
             DeclareLaunchArgument("config_file", default_value=config_file),
-            DeclareLaunchArgument("model_path", default_value="models/yolo26s-rk3588.rknn"),
+            DeclareLaunchArgument(
+                "model_path", default_value="models/yolo26s-rk3588.rknn"
+            ),
             DeclareLaunchArgument("camera_id", default_value="1"),
             DeclareLaunchArgument("conf_threshold", default_value="0.30"),
             DeclareLaunchArgument("target_object", default_value="person"),
@@ -55,9 +57,8 @@ def generate_launch_description():
             DeclareLaunchArgument("min_speed", default_value="165"),
             DeclareLaunchArgument("max_linear_speed", default_value="0.3"),
             DeclareLaunchArgument("turn_speed", default_value="0.5"),
-            DeclareLaunchArgument("lidar_port", default_value="/dev/ttyUSB0"),
-            DeclareLaunchArgument("min_safe_distance", default_value="0.3"),
-            DeclareLaunchArgument("web_port", default_value="8080"),
+            DeclareLaunchArgument("parallel_inference", default_value="True"),
+            DeclareLaunchArgument("enable_nv12", default_value="False"),
             Node(
                 package="zrobot_perception",
                 executable="yolo_detector_node",
@@ -80,6 +81,8 @@ def generate_launch_description():
                         "enable_auto_follow": True,
                         "max_linear_speed": LaunchConfiguration("max_linear_speed"),
                         "turn_speed": LaunchConfiguration("turn_speed"),
+                        "parallel_inference": LaunchConfiguration("parallel_inference"),
+                        "enable_nv12": LaunchConfiguration("enable_nv12"),
                     },
                 ],
             ),
