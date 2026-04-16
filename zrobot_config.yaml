@@ -28,8 +28,8 @@ zrobot_perception:
 zrobot_control:
   uart_port: "/dev/ttyACM0"
   baud_rate: 115200
-  max_speed: 245
-  min_speed: 165
+  max_speed: 255
+  min_speed: 190
   enabled: true
 
 zrobot_lidar:
