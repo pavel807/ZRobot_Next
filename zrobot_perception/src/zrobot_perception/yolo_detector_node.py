@@ -2,13 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Advanced YOLO Detector Node — optimized for Rock 5B NPU.
-Optimizations:
-  ✅ Numpy-based NMS (faster than OpenCV)
-  ✅ Async inference pipeline
-  ✅ Reduced memory copies
-  ✅ Zero-copy frame buffer
-  ✅ Configurable parallel/sequential mode
-  ✅ NV12 direct capture (if supported)
+Includes CA-Kalman filter for latency compensation and improved following.
 """
 
 import rclpy
@@ -34,8 +28,9 @@ import signal
 import sys
 import math
 from collections import deque
-from zrobot_perception.iou_tracker import IoUTracker
+from zrobot_perception.ca_kalman_filter import MultiTargetCAKF
 
+# COCO classes
 COCO_CLASSES = {
     0: "person",
     1: "bicycle",
@@ -46,7 +41,7 @@ COCO_CLASSES = {
     6: "train",
     7: "truck",
     8: "boat",
-    9: "tralight",
+    9: "traffic light",
     10: "fire hydrant",
     11: "stop sign",
     12: "parking meter",
@@ -124,7 +119,7 @@ QUEUE_TIMEOUT = 0.05
 
 
 def numpy_nms(boxes, scores, iou_threshold=0.45):
-    """Fast NMS using numpy - much faster than OpenCV for large batch."""
+    """Fast NMS using numpy."""
     if len(boxes) == 0:
         return np.array([], dtype=np.int32)
 
@@ -370,8 +365,9 @@ def npu_process_sequential(
 class YoloDetectorNode(Node):
     def __init__(self):
         super().__init__("yolo_detector")
-        self.get_logger().info("🔧 Initializing Optimized YOLO Detector...")
+        self.get_logger().info("🔧 Initializing Optimized YOLO Detector with CA-KF...")
 
+        # Parameters
         self.declare_parameter("model_path", "models/yolo26s-rk3588.rknn")
         self.declare_parameter("camera_id", 1)
         self.declare_parameter("obj_thresh", 0.25)
@@ -379,13 +375,14 @@ class YoloDetectorNode(Node):
         self.declare_parameter("target_object", "person")
         self.declare_parameter("enable_auto_follow", True)
         self.declare_parameter("max_linear_speed", 0.3)
-        self.declare_parameter("turn_speed", 0.5)
+        self.declare_parameter("turn_speed", 0.8)
         self.declare_parameter("parallel_inference", True)
         self.declare_parameter("enable_nv12", False)
-        self.declare_parameter("center_zone_width", 0.18)
-        self.declare_parameter("turn_response", 0.4)
-        self.declare_parameter("smoothing_factor", 0.15)
-        self.declare_parameter("min_turn_threshold", 0.05)
+        self.declare_parameter("center_zone_width", 0.12)
+        self.declare_parameter("turn_response", 0.6)
+        self.declare_parameter("smoothing_factor", 0.1)
+        self.declare_parameter("min_turn_threshold", 0.03)
+        self.declare_parameter("latency_compensation_ms", 80)
 
         self.model_path = self.get_parameter("model_path").value
         self.camera_id = self.get_parameter("camera_id").value
@@ -401,14 +398,27 @@ class YoloDetectorNode(Node):
         self.turn_response = self.get_parameter("turn_response").value
         self.smoothing_factor = self.get_parameter("smoothing_factor").value
         self.min_turn_threshold = self.get_parameter("min_turn_threshold").value
+        self.latency_compensation_ms = self.get_parameter("latency_compensation_ms").value
 
+        # PID state
         self.filtered_angular_z = 0.0
         self.last_angular_update_time = time.time()
+        self.integral_error = 0.0
+        self.last_error = 0.0
 
-        self.tracker = IoUTracker(
-            iou_threshold=0.3, max_consecutive_misses=15, confidence_decay=0.9
+        # CA-KF tracker
+        self.tracker = MultiTargetCAKF(
+            dt=0.02,
+            process_noise_acc=150.0,
+            measurement_noise=4.0,
+            mahalanobis_threshold=5.0,
+            latency_ms=self.latency_compensation_ms,
+            max_tracks=20,
+            track_timeout=0.5,
+            iou_threshold=0.3
         )
 
+        # LiDAR
         self.current_scan_ranges = None
         self.current_scan_angle_min = None
         self.current_scan_angle_max = None
@@ -426,12 +436,14 @@ class YoloDetectorNode(Node):
             f"📦 COCO: {len(COCO_CLASSES)} | Parallel: {self.parallel_inference}"
         )
 
+        # Publishers
         self.detections_pub = self.create_publisher(Detection2DArray, "detections", 10)
         self.image_pub = self.create_publisher(Image, "processed_image", 10)
         self.status_pub = self.create_publisher(String, "detection_status", 10)
         self.cmd_vel_pub = self.create_publisher(Twist, "cmd_vel", 10)
         self.tracked_objects_pub = self.create_publisher(String, "tracked_objects", 10)
 
+        # Subscribers
         self.target_sub = self.create_subscription(
             String, "set_target", self.target_callback, 10
         )
@@ -444,6 +456,7 @@ class YoloDetectorNode(Node):
 
         self.cv_bridge = CvBridge()
 
+        # Camera capture
         self.cap = cv2.VideoCapture(self.camera_id)
         self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
         self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
@@ -464,6 +477,7 @@ class YoloDetectorNode(Node):
 
         self.shutdown_event = mp.Event()
 
+        # NPU workers
         if self.parallel_inference:
             self.prep_queue = mp.Queue(maxsize=8)
             self.result_queue = mp.Queue(maxsize=8)
@@ -521,7 +535,7 @@ class YoloDetectorNode(Node):
 
         self.timer = self.create_timer(0.02, self.run_detection)
 
-        self.get_logger().info("✅ Optimized YOLO Detector STARTED")
+        self.get_logger().info("✅ Optimized YOLO Detector with CA-KF STARTED")
 
     def _collect_results(self):
         while self.collector_running and rclpy.ok():
@@ -552,28 +566,23 @@ class YoloDetectorNode(Node):
     def _get_distance_from_lidar(self, center_x: int, frame_width: int) -> float:
         if self.current_scan_ranges is None:
             return None
-
         if (
             self.current_scan_angle_increment is None
             or self.current_scan_angle_min is None
         ):
             return None
-
         normalized_x = center_x / frame_width
         angle_rad = self.current_scan_angle_min + normalized_x * (
             self.current_scan_angle_max - self.current_scan_angle_min
         )
-
         angle_idx = int(
             (angle_rad - self.current_scan_angle_min)
             / self.current_scan_angle_increment
         )
-
         if 0 <= angle_idx < len(self.current_scan_ranges):
             r = self.current_scan_ranges[angle_idx]
             if not math.isinf(r) and not math.isnan(r) and r > 0.1:
                 return float(r)
-
         return None
 
     def _scale_detections(self, detections):
@@ -593,17 +602,14 @@ class YoloDetectorNode(Node):
     def _filter_by_area(self, detections, frame_width, frame_height):
         frame_area = frame_width * frame_height
         filtered = []
-
         for x1, y1, w, h, score, cls_id in detections:
             area_ratio = (w * h) / frame_area
-            if area_ratio >= self.min_area_ratio and area_ratio <= self.max_area_ratio:
+            if self.min_area_ratio <= area_ratio <= self.max_area_ratio:
                 filtered.append((x1, y1, w, h, score, cls_id))
-
         return filtered
 
     def _apply_adaptive_threshold(self):
         target_fps = 25.0
-
         if self.current_fps < target_fps * 0.8:
             self.obj_thresh = min(0.8, self.obj_thresh + 0.02)
         elif self.current_fps > target_fps * 1.2:
@@ -646,32 +652,36 @@ class YoloDetectorNode(Node):
             detections = list(self.current_detections)
 
         detections = self._scale_detections(detections)
-
-        # Filter by area
         frame_w, frame_h = 640, 480
         detections = self._filter_by_area(detections, frame_w, frame_h)
 
-        # Update tracker
-        rects = []
-        labels = []
-        class_names = []
-        confidences = []
-
+        # Convert to tracker format
+        det_list = []
         for x1, y1, w, h, score, cls_id in detections:
-            rects.append((int(x1), int(y1), int(w), int(h)))
-            labels.append(cls_id)
-            class_names.append(COCO_CLASSES.get(cls_id, str(cls_id)))
-            confidences.append(float(score))
+            cx = x1 + w / 2
+            cy = y1 + h / 2
+            det_list.append({
+                'center': (cx, cy),
+                'bbox': (x1, y1, w, h),
+                'class_id': cls_id,
+                'confidence': score
+            })
 
-        tracked_objects = []
-        if rects:
-            tracked_objects = self.tracker.update(
-                rects, labels, class_names, confidences
-            )
+        timestamp = time.time()
+        tracked = self.tracker.update(det_list, timestamp)
 
-        # Update FPS
+        # Find target
+        target_track_id = None
+        target_data = None
+        for tid, data in tracked.items():
+            if COCO_CLASSES.get(data['class_id'], '') == self.target_object:
+                if target_data is None or data['confidence'] > target_data['confidence']:
+                    target_track_id = tid
+                    target_data = data
+
         self._update_fps()
 
+        # Display frame
         display_frame = frame
         for buffered_fid, buffered_frame in reversed(self.frame_buffer):
             if buffered_fid == det_fid:
@@ -684,40 +694,30 @@ class YoloDetectorNode(Node):
         if display_frame is None:
             display_frame = frame
 
-        # Draw tracked objects with trajectory
-        for track in tracked_objects:
-            if len(track.history) > 0:
-                bbox = track.last_bbox
-                x1, y1, w, h = bbox
+        # Draw tracked objects
+        for tid, data in tracked.items():
+            bbox = data.get('bbox')
+            if bbox is None:
+                cx, cy = data['center']
+                w = h = 50
+                x1, y1 = int(cx - w/2), int(cy - h/2)
+                bbox = (x1, y1, w, h)
+            else:
+                x1, y1, w, h = [int(v) for v in bbox]
 
-                # Color: red for target, else green
-                if track.class_name == self.target_object:
-                    color = (0, 0, 255)
-                else:
-                    color = (0, 255, 0)
+            class_name = COCO_CLASSES.get(data['class_id'], str(data['class_id']))
+            color = (0, 0, 255) if class_name == self.target_object else (0, 255, 0)
 
-                cv2.rectangle(display_frame, (x1, y1), (x1 + w, y1 + h), color, 2)
+            cv2.rectangle(display_frame, (x1, y1), (x1 + w, y1 + h), color, 2)
+            label = f"ID:{tid} {class_name} {data['confidence']:.0%}"
+            cv2.putText(display_frame, label, (x1, y1-10),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
 
-                avg_conf = track.get_average_confidence()
-                label = f"#{track.id} {track.class_name} {avg_conf:.0%}"
-                cv2.putText(
-                    display_frame,
-                    label,
-                    (x1, y1 - 10),
-                    cv2.FONT_HERSHEY_SIMPLEX,
-                    0.5,
-                    color,
-                    2,
-                )
-
-                # Draw trajectory
-                if len(track.history) > 2:
-                    for k in range(1, len(track.history)):
-                        prev = track.history[k - 1]
-                        curr = track.history[k]
-                        px1, py1 = prev[0] + prev[2] // 2, prev[1] + prev[3] // 2
-                        cx1, cy1 = curr[0] + curr[2] // 2, curr[1] + curr[3] // 2
-                        cv2.line(display_frame, (px1, py1), (cx1, cy1), color, 2)
+            if tid == target_track_id:
+                ext_cx, ext_cy = data['extrapolated_center']
+                cv2.circle(display_frame, (int(ext_cx), int(ext_cy)), 6, (0, 255, 255), -1)
+                cv2.putText(display_frame, "pred", (int(ext_cx)+5, int(ext_cy)-5),
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.4, (0, 255, 255), 1)
 
         self.fps_counter["count"] += 1
         elapsed = time.time() - self.fps_counter["start"]
@@ -726,36 +726,9 @@ class YoloDetectorNode(Node):
             self.fps_counter["count"] = 0
             self.fps_counter["start"] = time.time()
 
-        # Use tracked objects for following
-        target_track = None
-        for track in tracked_objects:
-            if track.class_name == self.target_object:
-                target_track = track
-                break
+        self.publish_results(display_frame, detections, tracked, target_track_id, target_data)
 
-        self.publish_results(display_frame, detections, tracked_objects, target_track)
-
-    def get_zone(self, detections):
-        for x1, y1, w, h, score, cls_id in detections:
-            if COCO_CLASSES.get(cls_id, "") == self.target_object:
-                center_x = x1 + w / 2
-                normalized = center_x / 640.0
-                if normalized < 0.35:
-                    return "LEFT"
-                elif normalized > 0.65:
-                    return "RIGHT"
-                else:
-                    return "CENTER"
-        return "NONE"
-
-    def publish_results(
-        self, frame, detections, tracked_objects=None, target_track=None
-    ):
-        if tracked_objects is None:
-            tracked_objects = []
-        if target_track is None:
-            target_track = None
-
+    def publish_results(self, frame, detections, tracked, target_track_id, target_data):
         if self.image_pub.get_subscription_count() > 0:
             img_msg = self.cv_bridge.cv2_to_imgmsg(frame, encoding="bgr8")
             img_msg.header.stamp = self.get_clock().now().to_msg()
@@ -766,7 +739,6 @@ class YoloDetectorNode(Node):
             det_array = Detection2DArray()
             det_array.header.stamp = self.get_clock().now().to_msg()
             det_array.header.frame_id = "camera"
-
             for x1, y1, w, h, score, cls_id in detections:
                 det = Detection2D()
                 det.header = det_array.header
@@ -781,114 +753,104 @@ class YoloDetectorNode(Node):
                 hyp_with_pose.hypothesis = hypothesis
                 det.results.append(hyp_with_pose)
                 det_array.detections.append(det)
-
             self.detections_pub.publish(det_array)
 
         if self.status_pub.get_subscription_count() > 0:
             inference_time = self.current_inference_time
-            target_found = target_track is not None
+            target_found = target_data is not None
             target_zone = "NONE"
-            if target_track and len(target_track.history) > 0:
-                bbox = target_track.last_bbox
-                cx = bbox[0] + bbox[2] / 2
-                norm = cx / 640.0
+            if target_data:
+                ext_cx = target_data['extrapolated_center'][0]
+                norm = ext_cx / 640.0
                 if norm < 0.35:
                     target_zone = "LEFT"
                 elif norm > 0.65:
                     target_zone = "RIGHT"
                 else:
                     target_zone = "CENTER"
-
-            detected_classes = []
-            for track in tracked_objects:
-                if track.class_name not in detected_classes:
-                    detected_classes.append(track.class_name)
-
+            detected_classes = list(set(COCO_CLASSES.get(d['class_id'], '') for d in tracked.values()))
             status = String()
-            status.data = json.dumps(
-                {
-                    "target": self.target_object,
-                    "found": target_found,
-                    "zone": target_zone,
-                    "count": len(tracked_objects),
-                    "classes": ", ".join(detected_classes),
-                    "fps": self.fps_counter["fps"],
-                    "inference_time": inference_time,
-                    "tracked": len(tracked_objects),
-                    "adaptive_conf": round(self.obj_thresh, 2),
-                }
-            )
+            status.data = json.dumps({
+                "target": self.target_object,
+                "found": target_found,
+                "zone": target_zone,
+                "count": len(tracked),
+                "classes": ", ".join(detected_classes),
+                "fps": self.fps_counter["fps"],
+                "inference_time": inference_time,
+                "tracked": len(tracked),
+                "adaptive_conf": round(self.obj_thresh, 2),
+            })
             self.status_pub.publish(status)
 
         if self.tracked_objects_pub.get_subscription_count() > 0:
             tracked_msg = String()
             tracked_data = []
-            for track in tracked_objects:
-                vx, vy = track.get_velocity()
-                tracked_data.append(
-                    {
-                        "id": track.id,
-                        "class": track.class_name,
-                        "conf": round(track.get_average_confidence(), 2),
-                        "vx": round(vx, 2),
-                        "vy": round(vy, 2),
-                    }
-                )
+            for tid, data in tracked.items():
+                vx, vy = data['velocity']
+                tracked_data.append({
+                    "id": tid,
+                    "class": COCO_CLASSES.get(data['class_id'], str(data['class_id'])),
+                    "conf": round(data['confidence'], 2),
+                    "vx": round(vx, 2),
+                    "vy": round(vy, 2),
+                })
             tracked_msg.data = json.dumps(tracked_data)
             self.tracked_objects_pub.publish(tracked_msg)
 
         if self.enable_auto_follow:
-            self.publish_cmd_vel(target_track, frame.shape[1])
+            self.publish_cmd_vel(target_data, frame.shape[1])
 
-    def publish_cmd_vel(self, target_track, frame_width):
+    def publish_cmd_vel(self, target_data, frame_width):
         twist = Twist()
-
-        if target_track is not None and len(target_track.history) > 0:
-            bbox = target_track.last_bbox
-            center_x = bbox[0] + bbox[2] / 2
-
-            normalized_center = (center_x / frame_width) - 0.5
-
+        if target_data is not None:
+            ext_cx = target_data['extrapolated_center'][0]
+            error = (ext_cx / frame_width) - 0.5
             half_zone = self.center_zone_width / 2.0
 
-            if abs(normalized_center) < half_zone:
+            if abs(error) < half_zone:
                 target_angular = 0.0
                 target_linear = self.max_linear_speed
-                self.filtered_angular_z = 0.0
+                self.integral_error = 0.0
             else:
-                # Инвертированный знак - ROS coordinate system может требовать инверсии
-                target_angular = -normalized_center * self.turn_speed
-                target_linear = self.max_linear_speed * 0.5
-
                 dt = time.time() - self.last_angular_update_time
                 if dt > 0.0 and dt < 1.0:
-                    alpha = self.smoothing_factor
-                    self.filtered_angular_z = self.filtered_angular_z + alpha * (
-                        target_angular - self.filtered_angular_z
-                    )
+                    self.integral_error += error * dt
+                    derivative = (error - self.last_error) / dt if dt > 0 else 0.0
                 else:
-                    self.filtered_angular_z = target_angular
+                    derivative = 0.0
+                Kp = self.turn_response * self.turn_speed
+                Ki = 0.01
+                Kd = 0.05
+                target_angular = Kp * error + Ki * self.integral_error + Kd * derivative
+                target_angular = max(-self.turn_speed, min(self.turn_speed, target_angular))
+                target_linear = self.max_linear_speed * 0.5
+
+                alpha = self.smoothing_factor
+                self.filtered_angular_z = alpha * target_angular + (1 - alpha) * self.filtered_angular_z
+
+                self.last_error = error
                 self.last_angular_update_time = time.time()
 
             twist.angular.z = self.filtered_angular_z
             twist.linear.x = target_linear
         else:
-            twist.angular.z = self.turn_speed * 0.5
+            twist.angular.z = self.turn_speed * 0.3
             twist.linear.x = 0.0
+            self.filtered_angular_z = twist.angular.z
+            self.integral_error = 0.0
 
         self.cmd_vel_pub.publish(twist)
 
     def _shutdown_npu_workers(self):
         self.get_logger().info("🛑 Stopping NPU workers...")
         self.shutdown_event.set()
-
         for _ in self.npu_processes:
             try:
                 self.prep_queue.put_nowait(None)
             except:
                 pass
-
-        for i, p in enumerate(self.npu_processes):
+        for p in self.npu_processes:
             if p.is_alive():
                 p.join(timeout=2.0)
                 if p.is_alive():
@@ -899,10 +861,8 @@ class YoloDetectorNode(Node):
         self.get_logger().info("🛑 Shutting down YOLO Detector...")
         self.collector_running = False
         self._shutdown_npu_workers()
-
         if hasattr(self, "cap") and self.cap.isOpened():
             self.cap.release()
-
         try:
             self.prep_queue.close()
             self.prep_queue.join_thread()
@@ -910,16 +870,13 @@ class YoloDetectorNode(Node):
             self.result_queue.join_thread()
         except:
             pass
-
         super().destroy_node()
 
 
 def main(args=None):
     mp.set_start_method("spawn", force=True)
-
     rclpy.init(args=args)
     node = YoloDetectorNode()
-
     try:
         rclpy.spin(node)
     except KeyboardInterrupt:
