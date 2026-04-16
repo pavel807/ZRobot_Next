@@ -846,45 +846,26 @@ class YoloDetectorNode(Node):
         if target_track is not None and len(target_track.history) > 0:
             bbox = target_track.last_bbox
             center_x = bbox[0] + bbox[2] / 2
-            avg_confidence = target_track.get_average_confidence()
-            vx, vy = target_track.get_velocity()
 
-            # Get distance from lidar
-            distance_from_lidar = self._get_distance_from_lidar(
-                int(center_x), frame_width
-            )
-            target_distance = None
-            if distance_from_lidar is not None and distance_from_lidar > 0.3:
-                target_distance = distance_from_lidar
+            # normalized_center: -0.5 (left) to +0.5 (right)
+            normalized_center = (center_x / frame_width) - 0.5
 
-            # Velocity-based prediction for smoother turning
-            predicted_center = center_x + vx * 3
+            # Если объект слева - поворачиваем налево (отрицательный)
+            # Если объект справа - поворачиваем направо (положительный)
+            # center < 320 (слева) → negative → повернуть налево
+            # center > 320 (справа) → positive → повернуть направо
+            target_angular = normalized_center * self.turn_speed
 
             half_zone = self.center_zone_width / 2.0
-            normalized_center = (predicted_center / frame_width) - 0.5
-
-            target_angular = -normalized_center * self.turn_response * self.turn_speed
 
             if abs(normalized_center) < half_zone:
+                # В центре - едем прямо
                 target_angular = 0.0
                 target_linear = self.max_linear_speed
             else:
-                if normalized_center < 0:
-                    target_angular = max(target_angular, -self.turn_speed * 0.3)
-                else:
-                    target_angular = min(target_angular, self.turn_speed * 0.3)
-                target_linear = self.max_linear_speed * 0.6
-
-            if target_distance is not None:
-                if target_distance < 1.0:
-                    target_linear = min(target_linear, 0.15)
-                elif target_distance < 2.0:
-                    target_linear = min(target_linear, self.max_linear_speed * 0.6)
-                elif target_distance < 3.0:
-                    target_linear = min(target_linear, self.max_linear_speed * 0.9)
-
-            if abs(target_angular) < self.min_turn_threshold:
-                target_angular = 0.0
+                # Слева от центра - поворачиваем налево (отрицательный)
+                # Справа от центра - поворачиваем направо (положительный)
+                target_linear = self.max_linear_speed * 0.5
 
             dt = time.time() - self.last_angular_update_time
             if dt > 0.0 and dt < 1.0:
@@ -899,6 +880,7 @@ class YoloDetectorNode(Node):
             twist.angular.z = self.filtered_angular_z
             twist.linear.x = target_linear
         else:
+            # Нет цели - крутимся в поиске
             twist.angular.z = self.turn_speed * 0.5
             twist.linear.x = 0.0
 
