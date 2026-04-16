@@ -34,7 +34,7 @@ import signal
 import sys
 import math
 from collections import deque
-from .ca_kalman_filter import ConstantAccelerationKalmanFilter
+from zrobot_perception.ca_kalman_filter import ConstantAccelerationKalmanFilter
 
 COCO_CLASSES = {
     0: "person",
