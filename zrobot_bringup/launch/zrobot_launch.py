@@ -59,6 +59,7 @@ def generate_launch_description():
             DeclareLaunchArgument("turn_speed", default_value="0.5"),
             DeclareLaunchArgument("parallel_inference", default_value="True"),
             DeclareLaunchArgument("enable_nv12", default_value="False"),
+            DeclareLaunchArgument("web_port", default_value="8080"),
             Node(
                 package="zrobot_perception",
                 executable="yolo_detector_node",
