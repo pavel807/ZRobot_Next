@@ -28,10 +28,20 @@ class ConstantAccelerationKalmanFilter:
         measurement_noise: float = 3.0,
         mahalanobis_threshold: float = 5.0,
         latency_ms: float = 80.0,
+        adaptive_enabled: bool = True,
+        adaptation_threshold: float = 2.0,
+        adaptation_factor: float = 1.5,
     ):
         self.dt = dt
         self.latency = latency_ms / 1000.0
         self.mahalanobis_threshold = mahalanobis_threshold
+        self.adaptive_enabled = adaptive_enabled
+        self.adaptation_threshold = adaptation_threshold
+        self.adaptation_factor = adaptation_factor
+
+        self.base_q = process_noise_acc
+        self.current_q = process_noise_acc
+        self.last_innovation_norm = 0.0
 
         self.state_dim = 6
         self.meas_dim = 2
@@ -171,10 +181,57 @@ class ConstantAccelerationKalmanFilter:
         self.x = self.x + K @ innovation
         self.P = (np.eye(self.state_dim) - K @ self.H) @ self.P
 
+        if self.adaptive_enabled:
+            self.last_innovation_norm = float(np.sqrt(mahalanobis_sq))
+            self._adapt_process_noise()
+
         if timestamp is not None:
             self.last_timestamp = timestamp
 
         return float(self.x[0, 0]), float(self.x[1, 0])
+
+    def _adapt_process_noise(self):
+        if self.last_innovation_norm > self.adaptation_threshold:
+            self.current_q = min(
+                self.current_q * self.adaptation_factor, self.base_q * 10.0
+            )
+        else:
+            self.current_q = max(self.current_q / self.adaptation_factor, self.base_q)
+
+        dt = self.dt
+        dt2 = dt * dt
+        dt3 = dt2 * dt
+        dt4 = dt3 * dt
+        dt5 = dt4 * dt
+        dt6 = dt5 * dt
+
+        q = self.current_q
+        self.Q[0, 0] = dt6 / 36 * q
+        self.Q[0, 2] = dt5 / 12 * q
+        self.Q[0, 4] = dt4 / 6 * q
+        self.Q[1, 1] = dt6 / 36 * q
+        self.Q[1, 3] = dt5 / 12 * q
+        self.Q[1, 5] = dt4 / 6 * q
+        self.Q[2, 0] = dt5 / 12 * q
+        self.Q[2, 2] = dt4 / 4 * q
+        self.Q[2, 4] = dt3 / 2 * q
+        self.Q[3, 1] = dt5 / 12 * q
+        self.Q[3, 3] = dt4 / 4 * q
+        self.Q[3, 5] = dt3 / 2 * q
+        self.Q[4, 0] = dt4 / 6 * q
+        self.Q[4, 2] = dt3 / 2 * q
+        self.Q[4, 4] = dt2 * q
+        self.Q[5, 1] = dt4 / 6 * q
+        self.Q[5, 3] = dt3 / 2 * q
+        self.Q[5, 5] = dt2 * q
+
+    def get_adaptive_info(self) -> dict:
+        return {
+            "current_q": self.current_q,
+            "base_q": self.base_q,
+            "innovation_norm": self.last_innovation_norm,
+            "adaptation_ratio": self.current_q / self.base_q,
+        }
 
     def _reset_to_measurement(self, measurement: Tuple[float, float]):
         self.x[0, 0] = measurement[0]

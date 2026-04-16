@@ -407,10 +407,13 @@ class YoloDetectorNode(Node):
 
         self.kalman_filter = ConstantAccelerationKalmanFilter(
             dt=0.02,
-            process_noise_acc=100.0,
+            process_noise_acc=50.0,
             measurement_noise=3.0,
             mahalanobis_threshold=5.0,
             latency_ms=80.0,
+            adaptive_enabled=True,
+            adaptation_threshold=2.0,
+            adaptation_factor=1.5,
         )
         self.kalman_initialized = False
         self.last_kalman_update_time = None
