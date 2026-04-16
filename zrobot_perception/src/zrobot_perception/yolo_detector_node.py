@@ -727,13 +727,11 @@ class YoloDetectorNode(Node):
         twist = Twist()
         target_found = False
         target_center_x = None
-        target_bbox = None
 
         for x1, y1, w, h, score, cls_id in detections:
             if COCO_CLASSES.get(cls_id, "") == self.target_object:
                 target_found = True
                 target_center_x = x1 + w / 2
-                target_bbox = (x1, y1, w, h, score, cls_id)
                 break
 
         current_timestamp = time.time()
@@ -743,48 +741,29 @@ class YoloDetectorNode(Node):
             distance_from_lidar = self._get_distance_from_lidar(
                 int(target_center_x), frame_width
             )
-            if distance_from_lidar is not None:
+            if distance_from_lidar is not None and distance_from_lidar > 0.3:
                 target_distance = distance_from_lidar
-            else:
-                bbox_x1, bbox_y1, bbox_w, bbox_h, bbox_score, _ = target_bbox
-                if bbox_h > 50:
-                    known_person_height_m = 1.7
-                    focal_length_approx = (bbox_h / known_person_height_m) * 3.0
-                    if focal_length_approx > 0:
-                        target_distance = (
-                            known_person_height_m * focal_length_approx / bbox_h
-                        )
 
             if not self.kalman_initialized:
                 self.kalman_filter.x[0, 0] = target_center_x
-                self.kalman_filter.x[1, 0] = frame_width / 2
+                self.kalman_filter.x[1, 0] = 0.0
+                self.kalman_filter.x[2, 0] = 0.0
+                self.kalman_filter.x[3, 0] = 0.0
+                self.kalman_filter.x[4, 0] = 0.0
+                self.kalman_filter.x[5, 0] = 0.0
                 self.kalman_initialized = True
                 self.last_kalman_update_time = current_timestamp
-                predicted_x = target_center_x
-                predicted_y = frame_width / 2
-            else:
-                self.kalman_filter.update(
-                    (target_center_x, frame_width / 2), current_timestamp
-                )
-                self.last_kalman_update_time = current_timestamp
-                predicted_x, predicted_y = (
-                    self.kalman_filter.get_extrapolated_position()
-                )
+
+            self.kalman_filter.update((target_center_x, 0.0), current_timestamp)
+            self.last_kalman_update_time = current_timestamp
+            predicted_x, _ = self.kalman_filter.get_extrapolated_position()
         else:
+            predicted_x = frame_width / 2
             if self.kalman_initialized and self.last_kalman_update_time is not None:
                 dt_since_update = current_timestamp - self.last_kalman_update_time
                 if dt_since_update < 0.5:
-                    predicted_x, predicted_y = self.kalman_filter.predict(
-                        current_timestamp
-                    )
+                    predicted_x, _ = self.kalman_filter.predict(current_timestamp)
                     self.last_kalman_update_time = current_timestamp
-                else:
-                    self.kalman_initialized = False
-                    predicted_x = frame_width / 2
-                    predicted_y = frame_width / 2
-            else:
-                predicted_x = frame_width / 2
-                predicted_y = frame_width / 2
 
         tracked_data = {
             "target": self.target_object,
@@ -793,8 +772,6 @@ class YoloDetectorNode(Node):
             "predicted_x": float(predicted_x),
             "distance": float(target_distance) if target_distance is not None else None,
             "kalman_initialized": self.kalman_initialized,
-            "velocity_x": float(self.kalman_filter.get_velocity()[0]),
-            "velocity_y": float(self.kalman_filter.get_velocity()[1]),
         }
         tracked_msg = String()
         tracked_msg.data = json.dumps(tracked_data)
@@ -813,28 +790,21 @@ class YoloDetectorNode(Node):
                 target_linear = self.max_linear_speed
             else:
                 if normalized_center < 0:
-                    target_angular = max(target_angular, self.turn_speed * 0.3)
+                    target_angular = max(target_angular, -self.turn_speed * 0.3)
                 else:
-                    target_angular = min(target_angular, -self.turn_speed * 0.3)
+                    target_angular = min(target_angular, self.turn_speed * 0.3)
                 target_linear = self.max_linear_speed * 0.6
 
             if target_distance is not None:
                 if target_distance < 1.0:
-                    target_linear = min(target_linear, 0.1)
+                    target_linear = min(target_linear, 0.15)
                 elif target_distance < 2.0:
-                    target_linear = min(target_linear, self.max_linear_speed * 0.5)
+                    target_linear = min(target_linear, self.max_linear_speed * 0.6)
                 elif target_distance < 3.0:
-                    target_linear = min(target_linear, self.max_linear_speed * 0.8)
+                    target_linear = min(target_linear, self.max_linear_speed * 0.9)
 
             if abs(target_angular) < self.min_turn_threshold:
                 target_angular = 0.0
-            else:
-                sign = 1.0 if target_angular > 0 else -1.0
-                adjusted = (abs(target_angular) - self.min_turn_threshold) / (
-                    1.0 - self.min_turn_threshold
-                )
-                adjusted = max(0.0, min(1.0, adjusted))
-                target_angular = sign * adjusted * self.turn_speed
 
             dt = time.time() - self.last_angular_update_time
             if dt > 0.0 and dt < 1.0:
@@ -849,23 +819,25 @@ class YoloDetectorNode(Node):
             twist.angular.z = self.filtered_angular_z
             twist.linear.x = target_linear
         else:
-            if self.kalman_initialized:
-                normalized_predicted = (predicted_x / frame_width) - 0.5
-                target_angular = (
-                    -normalized_predicted * self.turn_response * self.turn_speed
-                )
+            if self.kalman_initialized and self.last_kalman_update_time is not None:
+                dt_since = current_timestamp - self.last_kalman_update_time
+                if dt_since < 0.3:
+                    normalized_predicted = (predicted_x / frame_width) - 0.5
+                    target_angular = (
+                        -normalized_predicted * self.turn_response * self.turn_speed
+                    )
 
-                if abs(target_angular) < self.min_turn_threshold:
-                    target_angular = 0.0
+                    if abs(target_angular) < self.min_turn_threshold:
+                        target_angular = 0.0
 
-                dt = time.time() - self.last_angular_update_time
-                if dt > 0.0 and dt < 1.0:
-                    alpha = self.smoothing_factor * 0.5
+                    alpha = self.smoothing_factor * 0.3
                     self.filtered_angular_z = self.filtered_angular_z + alpha * (
                         target_angular - self.filtered_angular_z
                     )
-
-                twist.angular.z = self.filtered_angular_z
+                    twist.angular.z = self.filtered_angular_z
+                else:
+                    self.kalman_initialized = False
+                    twist.angular.z = self.turn_speed * 0.5
             else:
                 twist.angular.z = self.turn_speed * 0.5
             twist.linear.x = 0.0
