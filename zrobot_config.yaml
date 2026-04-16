@@ -13,7 +13,7 @@ zrobot_perception:
   adaptive_threshold: false
   show_category: true
   enable_auto_follow: true
-  max_linear_speed: 0.3
+  max_linear_speed: 0.5
   turn_speed: 0.5
   center_zone_width: 0.18
   turn_response: 0.4
@@ -45,8 +45,8 @@ zrobot_obstacle_avoidance:
   enabled: true
   min_safe_distance: 0.3
   slow_down_distance: 0.5
-  max_linear_speed: 0.3
-  turn_speed: 0.5
+  max_linear_speed: 0.5
+  turn_speed: 0.8
   scan_angle_range: 60.0
   scan_timeout_sec: 1.0
 
