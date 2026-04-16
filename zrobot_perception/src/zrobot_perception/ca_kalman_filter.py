@@ -23,10 +23,10 @@ class ConstantAccelerationKalmanFilter:
 
     def __init__(
         self,
-        dt: float = 0.04,
-        process_noise_acc: float = 50.0,
-        measurement_noise: float = 2.0,
-        mahalanobis_threshold: float = 3.0,
+        dt: float = 0.02,
+        process_noise_acc: float = 100.0,
+        measurement_noise: float = 3.0,
+        mahalanobis_threshold: float = 5.0,
         latency_ms: float = 80.0,
     ):
         self.dt = dt
@@ -219,13 +219,13 @@ class MultiTargetCAKF:
 
     def __init__(
         self,
-        dt: float = 0.04,
-        process_noise_acc: float = 50.0,
-        measurement_noise: float = 2.0,
-        mahalanobis_threshold: float = 3.0,
+        dt: float = 0.02,
+        process_noise_acc: float = 100.0,
+        measurement_noise: float = 3.0,
+        mahalanobis_threshold: float = 5.0,
         latency_ms: float = 80.0,
         max_tracks: int = 10,
-        track_timeout: float = 0.5,
+        track_timeout: float = 0.3,
     ):
         self.max_tracks = max_tracks
         self.track_timeout = track_timeout
