@@ -1,0 +1,36 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Found rclpy: 7.1.9 (/opt/ros/jazzy/share/rclpy/cmake)
+-- Configuring done (2.9s)
+-- Generating done (0.0s)
+-- Build files have been written to: /root/ws_ros2/ZRobot_Next/build/web_interface
+-- Install configuration: ""
+-- Installing: /root/ws_ros2/ZRobot_Next/install/web_interface/lib/web_interface/web_server
+-- Installing: /root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface
+-- Installing: /root/ws_ros2/ZRobot_Next/install/web_interface/share/ament_index/resource_index/package_run_dependencies/web_interface
+-- Installing: /root/ws_ros2/ZRobot_Next/install/web_interface/share/ament_index/resource_index/parent_prefix_path/web_interface
+-- Installing: /root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/environment/ament_prefix_path.sh
+-- Installing: /root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/environment/ament_prefix_path.dsv
+-- Installing: /root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/environment/path.sh
+-- Installing: /root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/environment/path.dsv
+-- Installing: /root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/local_setup.bash
+-- Installing: /root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/local_setup.sh
+-- Installing: /root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/local_setup.zsh
+-- Installing: /root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/local_setup.dsv
+-- Installing: /root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/package.dsv
+-- Installing: /root/ws_ros2/ZRobot_Next/install/web_interface/share/ament_index/resource_index/packages/web_interface
+-- Installing: /root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/cmake/web_interfaceConfig.cmake
+-- Installing: /root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/cmake/web_interfaceConfig-version.cmake
+-- Installing: /root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/package.xml

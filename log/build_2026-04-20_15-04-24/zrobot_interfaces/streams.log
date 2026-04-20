@@ -1,0 +1,232 @@
+[0.046s] Invoking command in '/root/ws_ros2/ZRobot_Next/build/zrobot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /root/ws_ros2/ZRobot_Next/build/zrobot_interfaces -- -j8 -l8
+[0.219s] [  1%] Built target zrobot_interfaces__rosidl_generator_type_description
+[0.259s] [  1%] Built target ament_cmake_python_copy_zrobot_interfaces
+[0.266s] [ 23%] Built target zrobot_interfaces__rosidl_generator_c
+[0.299s] [ 25%] Built target zrobot_interfaces__cpp
+[0.300s] [ 34%] Built target zrobot_interfaces__rosidl_typesupport_c
+[0.302s] [ 43%] Built target zrobot_interfaces__rosidl_typesupport_fastrtps_c
+[0.327s] [ 53%] Built target zrobot_interfaces__rosidl_typesupport_introspection_c
+[0.338s] [ 71%] Built target zrobot_interfaces__rosidl_typesupport_cpp
+[0.338s] [ 71%] Built target zrobot_interfaces__rosidl_typesupport_introspection_cpp
+[0.379s] [ 81%] Built target zrobot_interfaces__rosidl_typesupport_fastrtps_cpp
+[0.436s] [ 81%] Built target zrobot_interfaces
+[0.505s] [ 82%] Built target zrobot_interfaces__py
+[0.578s] [ 90%] Built target zrobot_interfaces__rosidl_generator_py
+[0.603s] running egg_info
+[0.627s] writing zrobot_interfaces.egg-info/PKG-INFO
+[0.628s] writing dependency_links to zrobot_interfaces.egg-info/dependency_links.txt
+[0.629s] writing top-level names to zrobot_interfaces.egg-info/top_level.txt
+[0.649s] [ 93%] Built target zrobot_interfaces_s__rosidl_typesupport_c
+[0.651s] [ 96%] Built target zrobot_interfaces_s__rosidl_typesupport_introspection_c
+[0.663s] [100%] Built target zrobot_interfaces_s__rosidl_typesupport_fastrtps_c
+[0.695s] reading manifest file 'zrobot_interfaces.egg-info/SOURCES.txt'
+[0.696s] writing manifest file 'zrobot_interfaces.egg-info/SOURCES.txt'
+[0.823s] [100%] Built target ament_cmake_python_build_zrobot_interfaces_egg
+[0.869s] Invoked command in '/root/ws_ros2/ZRobot_Next/build/zrobot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /root/ws_ros2/ZRobot_Next/build/zrobot_interfaces -- -j8 -l8
+[0.871s] Invoking command in '/root/ws_ros2/ZRobot_Next/build/zrobot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /root/ws_ros2/ZRobot_Next/build/zrobot_interfaces
+[0.887s] -- Install configuration: ""
+[0.888s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/ament_index/resource_index/rosidl_interfaces/zrobot_interfaces
+[0.889s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/msg/DetectionStatus.json
+[0.890s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/msg/MotorCommand.json
+[0.890s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/srv/SetTarget.json
+[0.891s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/srv/SetConfig.json
+[0.891s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces
+[0.892s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv
+[0.893s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail
+[0.894s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__struct.h
+[0.895s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__type_support.h
+[0.895s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__functions.h
+[0.896s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__description.c
+[0.897s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__functions.c
+[0.897s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__type_support.h
+[0.898s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__functions.h
+[0.898s] -- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__type_support.c
+[0.899s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__struct.h
+[0.899s] -- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__type_support.c
+[0.900s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__functions.c
+[0.900s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__description.c
+[0.900s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/set_config.h
+[0.901s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/set_target.h
+[0.901s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg
+[0.902s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail
+[0.902s] -- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__type_support.c
+[0.903s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__type_support.h
+[0.903s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__functions.c
+[0.903s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__type_support.h
+[0.904s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__functions.c
+[0.904s] -- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__type_support.c
+[0.905s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__struct.h
+[0.905s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__description.c
+[0.906s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__description.c
+[0.906s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__functions.h
+[0.907s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__functions.h
+[0.907s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__struct.h
+[0.908s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/rosidl_generator_c__visibility_control.h
+[0.908s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detection_status.h
+[0.909s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/motor_command.h
+[0.909s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/environment/library_path.sh
+[0.909s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/environment/library_path.dsv
+[0.910s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/libzrobot_interfaces__rosidl_generator_c.so
+[0.913s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces
+[0.913s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv
+[0.914s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail
+[0.915s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__rosidl_typesupport_fastrtps_c.h
+[0.915s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__rosidl_typesupport_fastrtps_c.h
+[0.916s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg
+[0.916s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail
+[0.917s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__rosidl_typesupport_fastrtps_c.h
+[0.917s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__rosidl_typesupport_fastrtps_c.h
+[0.918s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[0.919s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/libzrobot_interfaces__rosidl_typesupport_fastrtps_c.so
+[0.920s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces
+[0.920s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv
+[0.921s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail
+[0.921s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__rosidl_typesupport_introspection_c.h
+[0.922s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__rosidl_typesupport_introspection_c.h
+[0.922s] -- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__type_support.c
+[0.922s] -- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__type_support.c
+[0.923s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg
+[0.923s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail
+[0.924s] -- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__type_support.c
+[0.924s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__rosidl_typesupport_introspection_c.h
+[0.925s] -- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__type_support.c
+[0.925s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__rosidl_typesupport_introspection_c.h
+[0.925s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[0.926s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/libzrobot_interfaces__rosidl_typesupport_introspection_c.so
+[0.926s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/libzrobot_interfaces__rosidl_typesupport_c.so
+[0.927s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces
+[0.927s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv
+[0.928s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail
+[0.928s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__traits.hpp
+[0.928s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__struct.hpp
+[0.929s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__struct.hpp
+[0.929s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__builder.hpp
+[0.930s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__traits.hpp
+[0.930s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__type_support.hpp
+[0.931s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__builder.hpp
+[0.931s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__type_support.hpp
+[0.931s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/set_target.hpp
+[0.932s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/set_config.hpp
+[0.932s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg
+[0.933s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/motor_command.hpp
+[0.933s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detection_status.hpp
+[0.934s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail
+[0.934s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__struct.hpp
+[0.934s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__struct.hpp
+[0.935s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__traits.hpp
+[0.935s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__type_support.hpp
+[0.936s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__type_support.hpp
+[0.936s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__builder.hpp
+[0.936s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__traits.hpp
+[0.936s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__builder.hpp
+[0.936s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp
+[0.937s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces
+[0.937s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv
+[0.937s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail
+[0.937s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__rosidl_typesupport_fastrtps_cpp.hpp
+[0.937s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/dds_fastrtps
+[0.937s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__rosidl_typesupport_fastrtps_cpp.hpp
+[0.937s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg
+[0.937s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail
+[0.937s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__rosidl_typesupport_fastrtps_cpp.hpp
+[0.937s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/dds_fastrtps
+[0.937s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__rosidl_typesupport_fastrtps_cpp.hpp
+[0.938s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[0.938s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/libzrobot_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[0.938s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces
+[0.938s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv
+[0.938s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail
+[0.938s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__type_support.cpp
+[0.938s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__rosidl_typesupport_introspection_cpp.hpp
+[0.938s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__rosidl_typesupport_introspection_cpp.hpp
+[0.938s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__type_support.cpp
+[0.938s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg
+[0.938s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail
+[0.938s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__type_support.cpp
+[0.939s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__rosidl_typesupport_introspection_cpp.hpp
+[0.939s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__type_support.cpp
+[0.939s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__rosidl_typesupport_introspection_cpp.hpp
+[0.939s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/libzrobot_interfaces__rosidl_typesupport_introspection_cpp.so
+[0.939s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/libzrobot_interfaces__rosidl_typesupport_cpp.so
+[0.939s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/environment/pythonpath.sh
+[0.939s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/environment/pythonpath.dsv
+[0.939s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces-1.0.0-py3.12.egg-info
+[0.939s] -- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces-1.0.0-py3.12.egg-info/dependency_links.txt
+[0.939s] -- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces-1.0.0-py3.12.egg-info/PKG-INFO
+[0.939s] -- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces-1.0.0-py3.12.egg-info/top_level.txt
+[0.940s] -- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces-1.0.0-py3.12.egg-info/SOURCES.txt
+[0.940s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces
+[0.940s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/zrobot_interfaces_s__rosidl_typesupport_c.so
+[0.940s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/srv
+[0.940s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/srv/_set_target_s.c
+[0.940s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/srv/_set_config_s.c
+[0.940s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/srv/_set_config.py
+[0.940s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/srv/_set_target.py
+[0.940s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/srv/__init__.py
+[0.940s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/_zrobot_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[0.941s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/_zrobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[0.941s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/zrobot_interfaces_s__rosidl_typesupport_introspection_c.so
+[0.941s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/_zrobot_interfaces_s.ep.rosidl_typesupport_c.c
+[0.941s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/zrobot_interfaces_s__rosidl_typesupport_fastrtps_c.so
+[0.941s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/msg
+[0.941s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/msg/_motor_command.py
+[0.941s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/msg/_detection_status_s.c
+[0.941s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/msg/_detection_status.py
+[0.941s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/msg/__init__.py
+[0.941s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/msg/_motor_command_s.c
+[0.941s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/__init__.py
+[0.977s] Listing '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces'...
+[0.978s] Listing '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/msg'...
+[0.978s] Listing '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/srv'...
+[1.003s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/zrobot_interfaces_s__rosidl_typesupport_fastrtps_c.so
+[1.003s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/zrobot_interfaces_s__rosidl_typesupport_introspection_c.so
+[1.003s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/zrobot_interfaces_s__rosidl_typesupport_c.so
+[1.003s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/libzrobot_interfaces__rosidl_generator_py.so
+[1.004s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/msg/DetectionStatus.idl
+[1.004s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/msg/MotorCommand.idl
+[1.004s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/srv/SetTarget.idl
+[1.005s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/srv/SetConfig.idl
+[1.005s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/msg/DetectionStatus.msg
+[1.005s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/msg/MotorCommand.msg
+[1.005s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/srv/SetTarget.srv
+[1.006s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/srv/SetConfig.srv
+[1.006s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/ament_index/resource_index/package_run_dependencies/zrobot_interfaces
+[1.006s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/ament_index/resource_index/parent_prefix_path/zrobot_interfaces
+[1.006s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/environment/ament_prefix_path.sh
+[1.007s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/environment/ament_prefix_path.dsv
+[1.007s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/environment/path.sh
+[1.007s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/environment/path.dsv
+[1.007s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/local_setup.bash
+[1.007s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/local_setup.sh
+[1.007s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/local_setup.zsh
+[1.007s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/local_setup.dsv
+[1.007s] -- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/package.dsv
+[1.008s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/ament_index/resource_index/packages/zrobot_interfaces
+[1.008s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/export_zrobot_interfaces__rosidl_generator_cExport.cmake
+[1.008s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/export_zrobot_interfaces__rosidl_generator_cExport-noconfig.cmake
+[1.009s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/export_zrobot_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[1.009s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/export_zrobot_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[1.009s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/zrobot_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[1.009s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/zrobot_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[1.009s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/zrobot_interfaces__rosidl_typesupport_cExport.cmake
+[1.009s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/zrobot_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[1.009s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/export_zrobot_interfaces__rosidl_generator_cppExport.cmake
+[1.010s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/export_zrobot_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[1.010s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/export_zrobot_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[1.010s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/zrobot_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[1.010s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/zrobot_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[1.010s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/zrobot_interfaces__rosidl_typesupport_cppExport.cmake
+[1.011s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/zrobot_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[1.011s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/export_zrobot_interfaces__rosidl_generator_pyExport.cmake
+[1.012s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/export_zrobot_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[1.012s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/rosidl_cmake-extras.cmake
+[1.013s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[1.014s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[1.015s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[1.015s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[1.018s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[1.020s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[1.021s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/zrobot_interfacesConfig.cmake
+[1.022s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/zrobot_interfacesConfig-version.cmake
+[1.022s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/package.xml
+[1.023s] Invoked command in '/root/ws_ros2/ZRobot_Next/build/zrobot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /root/ws_ros2/ZRobot_Next/build/zrobot_interfaces

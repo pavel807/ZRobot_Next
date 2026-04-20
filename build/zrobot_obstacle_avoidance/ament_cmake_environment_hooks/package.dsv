@@ -1,0 +1,4 @@
+source;share/zrobot_obstacle_avoidance/local_setup.bash
+source;share/zrobot_obstacle_avoidance/local_setup.dsv
+source;share/zrobot_obstacle_avoidance/local_setup.sh
+source;share/zrobot_obstacle_avoidance/local_setup.zsh

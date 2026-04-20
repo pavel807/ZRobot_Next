@@ -1,0 +1,97 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-bbe0ac15caedc084e6ad.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "zrobot_perception",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_zrobot_perception_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_zrobot_perception_egg-84e123aee3eeba4bba05.json",
+					"name" : "ament_cmake_python_build_zrobot_perception_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_copy_zrobot_perception::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_copy_zrobot_perception-d464ff0e6b20c03035ab.json",
+					"name" : "ament_cmake_python_copy_zrobot_perception",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_copy_zrobot_perception_setup::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_copy_zrobot_perception_setup-ba9b9afc4f03fea52cfb.json",
+					"name" : "ament_cmake_python_copy_zrobot_perception_setup",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-dfef27487f5b69b3342c.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "zrobot_perception_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-zrobot_perception_uninstall-916d30453cf1787bbf09.json",
+					"name" : "zrobot_perception_uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/root/ws_ros2/ZRobot_Next/build/zrobot_perception",
+		"source" : "/root/ws_ros2/ZRobot_Next/zrobot_perception"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

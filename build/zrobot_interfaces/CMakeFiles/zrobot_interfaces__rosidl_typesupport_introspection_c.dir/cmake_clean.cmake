@@ -1,0 +1,25 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/zrobot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/zrobot_interfaces/msg/detail/detection_status__type_support.c.o"
+  "CMakeFiles/zrobot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/zrobot_interfaces/msg/detail/detection_status__type_support.c.o.d"
+  "CMakeFiles/zrobot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/zrobot_interfaces/msg/detail/motor_command__type_support.c.o"
+  "CMakeFiles/zrobot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/zrobot_interfaces/msg/detail/motor_command__type_support.c.o.d"
+  "CMakeFiles/zrobot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/zrobot_interfaces/srv/detail/set_config__type_support.c.o"
+  "CMakeFiles/zrobot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/zrobot_interfaces/srv/detail/set_config__type_support.c.o.d"
+  "CMakeFiles/zrobot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/zrobot_interfaces/srv/detail/set_target__type_support.c.o"
+  "CMakeFiles/zrobot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/zrobot_interfaces/srv/detail/set_target__type_support.c.o.d"
+  "libzrobot_interfaces__rosidl_typesupport_introspection_c.pdb"
+  "libzrobot_interfaces__rosidl_typesupport_introspection_c.so"
+  "rosidl_typesupport_introspection_c/zrobot_interfaces/msg/detail/detection_status__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/zrobot_interfaces/msg/detail/detection_status__type_support.c"
+  "rosidl_typesupport_introspection_c/zrobot_interfaces/msg/detail/motor_command__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/zrobot_interfaces/msg/detail/motor_command__type_support.c"
+  "rosidl_typesupport_introspection_c/zrobot_interfaces/srv/detail/set_config__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/zrobot_interfaces/srv/detail/set_config__type_support.c"
+  "rosidl_typesupport_introspection_c/zrobot_interfaces/srv/detail/set_target__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/zrobot_interfaces/srv/detail/set_target__type_support.c"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang C)
+  include(CMakeFiles/zrobot_interfaces__rosidl_typesupport_introspection_c.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

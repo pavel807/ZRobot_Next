@@ -26,6 +26,5 @@ zrobot_perception:
 
     # Auto-follow
     enable_auto_follow: true
-    search_delay_sec: 15
-    max_linear_speed: 0.15
-    turn_speed: 0.8
+    max_linear_speed: 0.3
+    turn_speed: 0.5

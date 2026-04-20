@@ -1,0 +1,8 @@
+msg/DetectionStatus.idl
+msg/DetectionStatus.msg
+msg/MotorCommand.idl
+msg/MotorCommand.msg
+srv/SetConfig.idl
+srv/SetConfig.srv
+srv/SetTarget.idl
+srv/SetTarget.srv

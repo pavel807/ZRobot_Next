@@ -1,0 +1,563 @@
+[0.169s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.169s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0xffffb52f3200>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffffb54d2e10>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffffb54d2e10>>, mixin_verb=('build',))
+[0.232s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.234s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/Gazebo.meta'
+[0.234s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/fastdds.meta'
+[0.235s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/fastrtps.meta'
+[0.235s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.235s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.235s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.235s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.235s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.235s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/root/ws_ros2/ZRobot_Next'
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.235s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.277s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.278s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(convert) by extensions ['ignore', 'ignore_ament_install']
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(convert) by extension 'ignore'
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(convert) by extension 'ignore_ament_install'
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(convert) by extensions ['colcon_pkg']
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(convert) by extension 'colcon_pkg'
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(convert) by extensions ['colcon_meta']
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(convert) by extension 'colcon_meta'
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(convert) by extensions ['ros']
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(convert) by extension 'ros'
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(convert) by extensions ['cmake', 'python']
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(convert) by extension 'cmake'
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(convert) by extension 'python'
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(convert) by extensions ['python_setup_py']
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(convert) by extension 'python_setup_py'
+[0.279s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(ldlidar_stl_ros2) by extensions ['ignore', 'ignore_ament_install']
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(ldlidar_stl_ros2) by extension 'ignore'
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(ldlidar_stl_ros2) by extension 'ignore_ament_install'
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(ldlidar_stl_ros2) by extensions ['colcon_pkg']
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(ldlidar_stl_ros2) by extension 'colcon_pkg'
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(ldlidar_stl_ros2) by extensions ['colcon_meta']
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(ldlidar_stl_ros2) by extension 'colcon_meta'
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(ldlidar_stl_ros2) by extensions ['ros']
+[0.280s] Level 1:colcon.colcon_core.package_identification:_identify(ldlidar_stl_ros2) by extension 'ros'
+[0.287s] DEBUG:colcon.colcon_core.package_identification:Package 'ldlidar_stl_ros2' with type 'ros.ament_cmake' and name 'ldlidar_stl_ros2'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(models) by extensions ['ignore', 'ignore_ament_install']
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(models) by extension 'ignore'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(models) by extension 'ignore_ament_install'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(models) by extensions ['colcon_pkg']
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(models) by extension 'colcon_pkg'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(models) by extensions ['colcon_meta']
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(models) by extension 'colcon_meta'
+[0.288s] Level 1:colcon.colcon_core.package_identification:_identify(models) by extensions ['ros']
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(models) by extension 'ros'
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(models) by extensions ['cmake', 'python']
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(models) by extension 'cmake'
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(models) by extension 'python'
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(models) by extensions ['python_setup_py']
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(models) by extension 'python_setup_py'
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(web_interface) by extensions ['ignore', 'ignore_ament_install']
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(web_interface) by extension 'ignore'
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(web_interface) by extension 'ignore_ament_install'
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(web_interface) by extensions ['colcon_pkg']
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(web_interface) by extension 'colcon_pkg'
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(web_interface) by extensions ['colcon_meta']
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(web_interface) by extension 'colcon_meta'
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(web_interface) by extensions ['ros']
+[0.289s] Level 1:colcon.colcon_core.package_identification:_identify(web_interface) by extension 'ros'
+[0.291s] DEBUG:colcon.colcon_core.package_identification:Package 'web_interface' with type 'ros.ament_cmake' and name 'web_interface'
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_bringup) by extension 'ignore'
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_bringup) by extension 'ignore_ament_install'
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_bringup) by extensions ['colcon_pkg']
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_bringup) by extension 'colcon_pkg'
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_bringup) by extensions ['colcon_meta']
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_bringup) by extension 'colcon_meta'
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_bringup) by extensions ['ros']
+[0.291s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_bringup) by extension 'ros'
+[0.292s] DEBUG:colcon.colcon_core.package_identification:Package 'zrobot_bringup' with type 'ros.ament_cmake' and name 'zrobot_bringup'
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_control) by extensions ['ignore', 'ignore_ament_install']
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_control) by extension 'ignore'
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_control) by extension 'ignore_ament_install'
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_control) by extensions ['colcon_pkg']
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_control) by extension 'colcon_pkg'
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_control) by extensions ['colcon_meta']
+[0.292s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_control) by extension 'colcon_meta'
+[0.293s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_control) by extensions ['ros']
+[0.293s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_control) by extension 'ros'
+[0.294s] DEBUG:colcon.colcon_core.package_identification:Package 'zrobot_control' with type 'ros.ament_cmake' and name 'zrobot_control'
+[0.294s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[0.294s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_interfaces) by extension 'ignore'
+[0.294s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_interfaces) by extension 'ignore_ament_install'
+[0.294s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_interfaces) by extensions ['colcon_pkg']
+[0.294s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_interfaces) by extension 'colcon_pkg'
+[0.294s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_interfaces) by extensions ['colcon_meta']
+[0.294s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_interfaces) by extension 'colcon_meta'
+[0.294s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_interfaces) by extensions ['ros']
+[0.294s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_interfaces) by extension 'ros'
+[0.295s] DEBUG:colcon.colcon_core.package_identification:Package 'zrobot_interfaces' with type 'ros.ament_cmake' and name 'zrobot_interfaces'
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_obstacle_avoidance) by extensions ['ignore', 'ignore_ament_install']
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_obstacle_avoidance) by extension 'ignore'
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_obstacle_avoidance) by extension 'ignore_ament_install'
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_obstacle_avoidance) by extensions ['colcon_pkg']
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_obstacle_avoidance) by extension 'colcon_pkg'
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_obstacle_avoidance) by extensions ['colcon_meta']
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_obstacle_avoidance) by extension 'colcon_meta'
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_obstacle_avoidance) by extensions ['ros']
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_obstacle_avoidance) by extension 'ros'
+[0.296s] DEBUG:colcon.colcon_core.package_identification:Package 'zrobot_obstacle_avoidance' with type 'ros.ament_cmake' and name 'zrobot_obstacle_avoidance'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_perception) by extensions ['ignore', 'ignore_ament_install']
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_perception) by extension 'ignore'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_perception) by extension 'ignore_ament_install'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_perception) by extensions ['colcon_pkg']
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_perception) by extension 'colcon_pkg'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_perception) by extensions ['colcon_meta']
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_perception) by extension 'colcon_meta'
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_perception) by extensions ['ros']
+[0.297s] Level 1:colcon.colcon_core.package_identification:_identify(zrobot_perception) by extension 'ros'
+[0.298s] DEBUG:colcon.colcon_core.package_identification:Package 'zrobot_perception' with type 'ros.ament_cmake' and name 'zrobot_perception'
+[0.298s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.298s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.299s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.299s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.299s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.328s] Level 5:colcon.colcon_core.verb:set package 'ldlidar_stl_ros2' build argument 'cmake_args' from command line to 'None'
+[0.329s] Level 5:colcon.colcon_core.verb:set package 'ldlidar_stl_ros2' build argument 'cmake_target' from command line to 'None'
+[0.329s] Level 5:colcon.colcon_core.verb:set package 'ldlidar_stl_ros2' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.329s] Level 5:colcon.colcon_core.verb:set package 'ldlidar_stl_ros2' build argument 'cmake_clean_cache' from command line to 'False'
+[0.329s] Level 5:colcon.colcon_core.verb:set package 'ldlidar_stl_ros2' build argument 'cmake_clean_first' from command line to 'False'
+[0.329s] Level 5:colcon.colcon_core.verb:set package 'ldlidar_stl_ros2' build argument 'cmake_force_configure' from command line to 'False'
+[0.329s] Level 5:colcon.colcon_core.verb:set package 'ldlidar_stl_ros2' build argument 'ament_cmake_args' from command line to 'None'
+[0.329s] Level 5:colcon.colcon_core.verb:set package 'ldlidar_stl_ros2' build argument 'catkin_cmake_args' from command line to 'None'
+[0.329s] Level 5:colcon.colcon_core.verb:set package 'ldlidar_stl_ros2' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.329s] DEBUG:colcon.colcon_core.verb:Building package 'ldlidar_stl_ros2' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/ws_ros2/ZRobot_Next/build/ldlidar_stl_ros2', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2', 'merge_install': False, 'path': '/root/ws_ros2/ZRobot_Next/ldlidar_stl_ros2', 'symlink_install': False, 'test_result_base': None}
+[0.329s] Level 5:colcon.colcon_core.verb:set package 'web_interface' build argument 'cmake_args' from command line to 'None'
+[0.329s] Level 5:colcon.colcon_core.verb:set package 'web_interface' build argument 'cmake_target' from command line to 'None'
+[0.329s] Level 5:colcon.colcon_core.verb:set package 'web_interface' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.329s] Level 5:colcon.colcon_core.verb:set package 'web_interface' build argument 'cmake_clean_cache' from command line to 'False'
+[0.329s] Level 5:colcon.colcon_core.verb:set package 'web_interface' build argument 'cmake_clean_first' from command line to 'False'
+[0.329s] Level 5:colcon.colcon_core.verb:set package 'web_interface' build argument 'cmake_force_configure' from command line to 'False'
+[0.329s] Level 5:colcon.colcon_core.verb:set package 'web_interface' build argument 'ament_cmake_args' from command line to 'None'
+[0.329s] Level 5:colcon.colcon_core.verb:set package 'web_interface' build argument 'catkin_cmake_args' from command line to 'None'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'web_interface' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.330s] DEBUG:colcon.colcon_core.verb:Building package 'web_interface' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/ws_ros2/ZRobot_Next/build/web_interface', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/ws_ros2/ZRobot_Next/install/web_interface', 'merge_install': False, 'path': '/root/ws_ros2/ZRobot_Next/web_interface', 'symlink_install': False, 'test_result_base': None}
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'zrobot_control' build argument 'cmake_args' from command line to 'None'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'zrobot_control' build argument 'cmake_target' from command line to 'None'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'zrobot_control' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'zrobot_control' build argument 'cmake_clean_cache' from command line to 'False'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'zrobot_control' build argument 'cmake_clean_first' from command line to 'False'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'zrobot_control' build argument 'cmake_force_configure' from command line to 'False'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'zrobot_control' build argument 'ament_cmake_args' from command line to 'None'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'zrobot_control' build argument 'catkin_cmake_args' from command line to 'None'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'zrobot_control' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.330s] DEBUG:colcon.colcon_core.verb:Building package 'zrobot_control' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/ws_ros2/ZRobot_Next/build/zrobot_control', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/ws_ros2/ZRobot_Next/install/zrobot_control', 'merge_install': False, 'path': '/root/ws_ros2/ZRobot_Next/zrobot_control', 'symlink_install': False, 'test_result_base': None}
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'zrobot_interfaces' build argument 'cmake_args' from command line to 'None'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'zrobot_interfaces' build argument 'cmake_target' from command line to 'None'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'zrobot_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'zrobot_interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'zrobot_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'zrobot_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'zrobot_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'zrobot_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'zrobot_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.331s] DEBUG:colcon.colcon_core.verb:Building package 'zrobot_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/ws_ros2/ZRobot_Next/build/zrobot_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces', 'merge_install': False, 'path': '/root/ws_ros2/ZRobot_Next/zrobot_interfaces', 'symlink_install': False, 'test_result_base': None}
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'zrobot_obstacle_avoidance' build argument 'cmake_args' from command line to 'None'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'zrobot_obstacle_avoidance' build argument 'cmake_target' from command line to 'None'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'zrobot_obstacle_avoidance' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'zrobot_obstacle_avoidance' build argument 'cmake_clean_cache' from command line to 'False'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'zrobot_obstacle_avoidance' build argument 'cmake_clean_first' from command line to 'False'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'zrobot_obstacle_avoidance' build argument 'cmake_force_configure' from command line to 'False'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'zrobot_obstacle_avoidance' build argument 'ament_cmake_args' from command line to 'None'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'zrobot_obstacle_avoidance' build argument 'catkin_cmake_args' from command line to 'None'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'zrobot_obstacle_avoidance' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.331s] DEBUG:colcon.colcon_core.verb:Building package 'zrobot_obstacle_avoidance' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance', 'merge_install': False, 'path': '/root/ws_ros2/ZRobot_Next/zrobot_obstacle_avoidance', 'symlink_install': False, 'test_result_base': None}
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'zrobot_perception' build argument 'cmake_args' from command line to 'None'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'zrobot_perception' build argument 'cmake_target' from command line to 'None'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'zrobot_perception' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'zrobot_perception' build argument 'cmake_clean_cache' from command line to 'False'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'zrobot_perception' build argument 'cmake_clean_first' from command line to 'False'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'zrobot_perception' build argument 'cmake_force_configure' from command line to 'False'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'zrobot_perception' build argument 'ament_cmake_args' from command line to 'None'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'zrobot_perception' build argument 'catkin_cmake_args' from command line to 'None'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'zrobot_perception' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.332s] DEBUG:colcon.colcon_core.verb:Building package 'zrobot_perception' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/ws_ros2/ZRobot_Next/build/zrobot_perception', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/ws_ros2/ZRobot_Next/install/zrobot_perception', 'merge_install': False, 'path': '/root/ws_ros2/ZRobot_Next/zrobot_perception', 'symlink_install': False, 'test_result_base': None}
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'zrobot_bringup' build argument 'cmake_args' from command line to 'None'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'zrobot_bringup' build argument 'cmake_target' from command line to 'None'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'zrobot_bringup' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'zrobot_bringup' build argument 'cmake_clean_cache' from command line to 'False'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'zrobot_bringup' build argument 'cmake_clean_first' from command line to 'False'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'zrobot_bringup' build argument 'cmake_force_configure' from command line to 'False'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'zrobot_bringup' build argument 'ament_cmake_args' from command line to 'None'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'zrobot_bringup' build argument 'catkin_cmake_args' from command line to 'None'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'zrobot_bringup' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.332s] DEBUG:colcon.colcon_core.verb:Building package 'zrobot_bringup' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/ws_ros2/ZRobot_Next/build/zrobot_bringup', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/ws_ros2/ZRobot_Next/install/zrobot_bringup', 'merge_install': False, 'path': '/root/ws_ros2/ZRobot_Next/zrobot_bringup', 'symlink_install': False, 'test_result_base': None}
+[0.332s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.335s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.335s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/root/ws_ros2/ZRobot_Next/zrobot_control' with build type 'ament_cmake'
+[0.335s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/root/ws_ros2/ZRobot_Next/zrobot_control'
+[0.339s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.339s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.339s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.345s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/root/ws_ros2/ZRobot_Next/zrobot_perception' with build type 'ament_cmake'
+[0.345s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/root/ws_ros2/ZRobot_Next/zrobot_perception'
+[0.345s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.345s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.349s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/root/ws_ros2/ZRobot_Next/ldlidar_stl_ros2' with build type 'ament_cmake'
+[0.349s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/root/ws_ros2/ZRobot_Next/ldlidar_stl_ros2'
+[0.349s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.349s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.352s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/root/ws_ros2/ZRobot_Next/web_interface' with build type 'ament_cmake'
+[0.352s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/root/ws_ros2/ZRobot_Next/web_interface'
+[0.352s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.353s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.356s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/root/ws_ros2/ZRobot_Next/zrobot_interfaces' with build type 'ament_cmake'
+[0.357s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/root/ws_ros2/ZRobot_Next/zrobot_interfaces'
+[0.357s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.357s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.360s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/root/ws_ros2/ZRobot_Next/zrobot_obstacle_avoidance' with build type 'ament_cmake'
+[0.361s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/root/ws_ros2/ZRobot_Next/zrobot_obstacle_avoidance'
+[0.361s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.361s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.371s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ws_ros2/ZRobot_Next/build/zrobot_control': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /root/ws_ros2/ZRobot_Next/build/zrobot_control -- -j8 -l8
+[0.376s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ws_ros2/ZRobot_Next/build/zrobot_perception': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /root/ws_ros2/ZRobot_Next/build/zrobot_perception -- -j8 -l8
+[0.378s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ws_ros2/ZRobot_Next/build/ldlidar_stl_ros2': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /root/ws_ros2/ZRobot_Next/build/ldlidar_stl_ros2 -- -j8 -l8
+[0.380s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ws_ros2/ZRobot_Next/build/web_interface': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /root/ws_ros2/ZRobot_Next/build/web_interface -- -j8 -l8
+[0.382s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ws_ros2/ZRobot_Next/build/zrobot_interfaces': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /root/ws_ros2/ZRobot_Next/build/zrobot_interfaces -- -j8 -l8
+[0.389s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance -- -j8 -l8
+[0.480s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance -- -j8 -l8
+[0.493s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance
+[0.495s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ws_ros2/ZRobot_Next/build/web_interface' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /root/ws_ros2/ZRobot_Next/build/web_interface -- -j8 -l8
+[0.495s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ws_ros2/ZRobot_Next/build/web_interface': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /root/ws_ros2/ZRobot_Next/build/web_interface
+[0.508s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(web_interface)
+[0.509s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ws_ros2/ZRobot_Next/build/web_interface' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /root/ws_ros2/ZRobot_Next/build/web_interface
+[0.512s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/web_interface' for CMake module files
+[0.512s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/web_interface' for CMake config files
+[0.513s] Level 1:colcon.colcon_core.shell:create_environment_hook('web_interface', 'cmake_prefix_path')
+[0.513s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/hook/cmake_prefix_path.ps1'
+[0.514s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/hook/cmake_prefix_path.dsv'
+[0.515s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/hook/cmake_prefix_path.sh'
+[0.516s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/web_interface/lib'
+[0.517s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/web_interface/bin'
+[0.517s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/web_interface/lib/pkgconfig/web_interface.pc'
+[0.519s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/web_interface/lib/python3.12/site-packages'
+[0.519s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/web_interface/bin'
+[0.520s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/package.ps1'
+[0.521s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/package.dsv'
+[0.522s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/package.sh'
+[0.523s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/package.bash'
+[0.523s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/package.zsh'
+[0.524s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ws_ros2/ZRobot_Next/install/web_interface/share/colcon-core/packages/web_interface)
+[0.525s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(web_interface)
+[0.525s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/web_interface' for CMake module files
+[0.526s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/web_interface' for CMake config files
+[0.526s] Level 1:colcon.colcon_core.shell:create_environment_hook('web_interface', 'cmake_prefix_path')
+[0.526s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/hook/cmake_prefix_path.ps1'
+[0.527s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/hook/cmake_prefix_path.dsv'
+[0.528s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/hook/cmake_prefix_path.sh'
+[0.528s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/web_interface/lib'
+[0.529s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/web_interface/bin'
+[0.529s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/web_interface/lib/pkgconfig/web_interface.pc'
+[0.529s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/web_interface/lib/python3.12/site-packages'
+[0.529s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/web_interface/bin'
+[0.530s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/package.ps1'
+[0.531s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/package.dsv'
+[0.531s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/package.sh'
+[0.532s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/package.bash'
+[0.532s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/package.zsh'
+[0.535s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ws_ros2/ZRobot_Next/install/web_interface/share/colcon-core/packages/web_interface)
+[0.539s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(zrobot_obstacle_avoidance)
+[0.541s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance' for CMake module files
+[0.544s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ws_ros2/ZRobot_Next/build/zrobot_control' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /root/ws_ros2/ZRobot_Next/build/zrobot_control -- -j8 -l8
+[0.544s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ws_ros2/ZRobot_Next/build/zrobot_control': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /root/ws_ros2/ZRobot_Next/build/zrobot_control
+[0.544s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance
+[0.545s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance' for CMake config files
+[0.545s] Level 1:colcon.colcon_core.shell:create_environment_hook('zrobot_obstacle_avoidance', 'cmake_prefix_path')
+[0.546s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/zrobot_obstacle_avoidance/hook/cmake_prefix_path.ps1'
+[0.547s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/zrobot_obstacle_avoidance/hook/cmake_prefix_path.dsv'
+[0.548s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/zrobot_obstacle_avoidance/hook/cmake_prefix_path.sh'
+[0.549s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/lib'
+[0.549s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/bin'
+[0.549s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/lib/pkgconfig/zrobot_obstacle_avoidance.pc'
+[0.549s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/lib/python3.12/site-packages'
+[0.550s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/bin'
+[0.550s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/zrobot_obstacle_avoidance/package.ps1'
+[0.551s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/zrobot_obstacle_avoidance/package.dsv'
+[0.552s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/zrobot_obstacle_avoidance/package.sh'
+[0.552s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/zrobot_obstacle_avoidance/package.bash'
+[0.553s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/zrobot_obstacle_avoidance/package.zsh'
+[0.553s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/colcon-core/packages/zrobot_obstacle_avoidance)
+[0.554s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(zrobot_obstacle_avoidance)
+[0.554s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance' for CMake module files
+[0.555s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance' for CMake config files
+[0.555s] Level 1:colcon.colcon_core.shell:create_environment_hook('zrobot_obstacle_avoidance', 'cmake_prefix_path')
+[0.555s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/zrobot_obstacle_avoidance/hook/cmake_prefix_path.ps1'
+[0.556s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/zrobot_obstacle_avoidance/hook/cmake_prefix_path.dsv'
+[0.556s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/zrobot_obstacle_avoidance/hook/cmake_prefix_path.sh'
+[0.558s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/lib'
+[0.559s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/bin'
+[0.559s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/lib/pkgconfig/zrobot_obstacle_avoidance.pc'
+[0.560s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/lib/python3.12/site-packages'
+[0.560s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/bin'
+[0.561s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/zrobot_obstacle_avoidance/package.ps1'
+[0.622s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/zrobot_obstacle_avoidance/package.dsv'
+[0.623s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/zrobot_obstacle_avoidance/package.sh'
+[0.624s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/zrobot_obstacle_avoidance/package.bash'
+[0.624s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/zrobot_obstacle_avoidance/package.zsh'
+[0.625s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/colcon-core/packages/zrobot_obstacle_avoidance)
+[0.631s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ws_ros2/ZRobot_Next/build/ldlidar_stl_ros2' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /root/ws_ros2/ZRobot_Next/build/ldlidar_stl_ros2 -- -j8 -l8
+[0.633s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ws_ros2/ZRobot_Next/build/ldlidar_stl_ros2': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /root/ws_ros2/ZRobot_Next/build/ldlidar_stl_ros2
+[0.634s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(zrobot_control)
+[0.634s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_control' for CMake module files
+[0.635s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_control' for CMake config files
+[0.635s] Level 1:colcon.colcon_core.shell:create_environment_hook('zrobot_control', 'cmake_prefix_path')
+[0.636s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/hook/cmake_prefix_path.ps1'
+[0.637s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ws_ros2/ZRobot_Next/build/zrobot_control' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /root/ws_ros2/ZRobot_Next/build/zrobot_control
+[0.637s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/hook/cmake_prefix_path.dsv'
+[0.638s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/hook/cmake_prefix_path.sh'
+[0.640s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_control/lib'
+[0.640s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_control/bin'
+[0.645s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_control/lib/pkgconfig/zrobot_control.pc'
+[0.646s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_control/lib/python3.12/site-packages'
+[0.647s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_control/bin'
+[0.647s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/package.ps1'
+[0.648s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/package.dsv'
+[0.649s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/package.sh'
+[0.650s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/package.bash'
+[0.658s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/package.zsh'
+[0.658s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ws_ros2/ZRobot_Next/install/zrobot_control/share/colcon-core/packages/zrobot_control)
+[0.660s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(zrobot_control)
+[0.660s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_control' for CMake module files
+[0.661s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_control' for CMake config files
+[0.661s] Level 1:colcon.colcon_core.shell:create_environment_hook('zrobot_control', 'cmake_prefix_path')
+[0.661s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/hook/cmake_prefix_path.ps1'
+[0.662s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/hook/cmake_prefix_path.dsv'
+[0.663s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/hook/cmake_prefix_path.sh'
+[0.664s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_control/lib'
+[0.664s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_control/bin'
+[0.664s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_control/lib/pkgconfig/zrobot_control.pc'
+[0.664s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_control/lib/python3.12/site-packages'
+[0.665s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_control/bin'
+[0.665s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/package.ps1'
+[0.666s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/package.dsv'
+[0.667s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/package.sh'
+[0.668s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/package.bash'
+[0.668s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/package.zsh'
+[0.669s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ws_ros2/ZRobot_Next/install/zrobot_control/share/colcon-core/packages/zrobot_control)
+[0.690s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ldlidar_stl_ros2)
+[0.690s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ws_ros2/ZRobot_Next/build/ldlidar_stl_ros2' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /root/ws_ros2/ZRobot_Next/build/ldlidar_stl_ros2
+[0.690s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2' for CMake module files
+[0.691s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2' for CMake config files
+[0.692s] Level 1:colcon.colcon_core.shell:create_environment_hook('ldlidar_stl_ros2', 'cmake_prefix_path')
+[0.692s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/hook/cmake_prefix_path.ps1'
+[0.697s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/hook/cmake_prefix_path.dsv'
+[0.698s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/hook/cmake_prefix_path.sh'
+[0.699s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/lib'
+[0.699s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/bin'
+[0.700s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/lib/pkgconfig/ldlidar_stl_ros2.pc'
+[0.700s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/lib/python3.12/site-packages'
+[0.700s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/bin'
+[0.701s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/package.ps1'
+[0.702s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/package.dsv'
+[0.702s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/package.sh'
+[0.703s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/package.bash'
+[0.704s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/package.zsh'
+[0.704s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/colcon-core/packages/ldlidar_stl_ros2)
+[0.705s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ldlidar_stl_ros2)
+[0.706s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2' for CMake module files
+[0.706s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2' for CMake config files
+[0.707s] Level 1:colcon.colcon_core.shell:create_environment_hook('ldlidar_stl_ros2', 'cmake_prefix_path')
+[0.707s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/hook/cmake_prefix_path.ps1'
+[0.708s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/hook/cmake_prefix_path.dsv'
+[0.709s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/hook/cmake_prefix_path.sh'
+[0.710s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/lib'
+[0.710s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/bin'
+[0.710s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/lib/pkgconfig/ldlidar_stl_ros2.pc'
+[0.711s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/lib/python3.12/site-packages'
+[0.711s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/bin'
+[0.712s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/package.ps1'
+[0.712s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/package.dsv'
+[0.713s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/package.sh'
+[0.714s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/package.bash'
+[0.715s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/package.zsh'
+[0.716s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/colcon-core/packages/ldlidar_stl_ros2)
+[1.032s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ws_ros2/ZRobot_Next/build/zrobot_perception' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /root/ws_ros2/ZRobot_Next/build/zrobot_perception -- -j8 -l8
+[1.035s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ws_ros2/ZRobot_Next/build/zrobot_perception': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /root/ws_ros2/ZRobot_Next/build/zrobot_perception
+[1.104s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ws_ros2/ZRobot_Next/build/zrobot_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /root/ws_ros2/ZRobot_Next/build/zrobot_interfaces -- -j8 -l8
+[1.106s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ws_ros2/ZRobot_Next/build/zrobot_interfaces': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /root/ws_ros2/ZRobot_Next/build/zrobot_interfaces
+[1.145s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(zrobot_perception)
+[1.145s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_perception' for CMake module files
+[1.147s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_perception' for CMake config files
+[1.149s] Level 1:colcon.colcon_core.shell:create_environment_hook('zrobot_perception', 'cmake_prefix_path')
+[1.150s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/hook/cmake_prefix_path.ps1'
+[1.151s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/hook/cmake_prefix_path.dsv'
+[1.152s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/hook/cmake_prefix_path.sh'
+[1.153s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib'
+[1.154s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/bin'
+[1.154s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/pkgconfig/zrobot_perception.pc'
+[1.154s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages'
+[1.154s] Level 1:colcon.colcon_core.shell:create_environment_hook('zrobot_perception', 'pythonpath')
+[1.155s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/hook/pythonpath.ps1'
+[1.156s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/hook/pythonpath.dsv'
+[1.156s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/hook/pythonpath.sh'
+[1.158s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/bin'
+[1.158s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/package.ps1'
+[1.160s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/package.dsv'
+[1.162s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/package.sh'
+[1.163s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/package.bash'
+[1.164s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/package.zsh'
+[1.165s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/colcon-core/packages/zrobot_perception)
+[1.166s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(zrobot_perception)
+[1.167s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_perception' for CMake module files
+[1.168s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_perception' for CMake config files
+[1.170s] Level 1:colcon.colcon_core.shell:create_environment_hook('zrobot_perception', 'cmake_prefix_path')
+[1.170s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/hook/cmake_prefix_path.ps1'
+[1.171s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/hook/cmake_prefix_path.dsv'
+[1.172s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/hook/cmake_prefix_path.sh'
+[1.174s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib'
+[1.174s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/bin'
+[1.174s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/pkgconfig/zrobot_perception.pc'
+[1.175s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages'
+[1.175s] Level 1:colcon.colcon_core.shell:create_environment_hook('zrobot_perception', 'pythonpath')
+[1.175s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/hook/pythonpath.ps1'
+[1.176s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/hook/pythonpath.dsv'
+[1.177s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/hook/pythonpath.sh'
+[1.179s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/bin'
+[1.179s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/package.ps1'
+[1.180s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/package.dsv'
+[1.181s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/package.sh'
+[1.182s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/package.bash'
+[1.183s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/package.zsh'
+[1.184s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ws_ros2/ZRobot_Next/build/zrobot_perception' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /root/ws_ros2/ZRobot_Next/build/zrobot_perception
+[1.184s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/colcon-core/packages/zrobot_perception)
+[1.185s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/root/ws_ros2/ZRobot_Next/zrobot_bringup' with build type 'ament_cmake'
+[1.185s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/root/ws_ros2/ZRobot_Next/zrobot_bringup'
+[1.185s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.186s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.203s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ws_ros2/ZRobot_Next/build/zrobot_bringup': AMENT_PREFIX_PATH=/root/ws_ros2/ZRobot_Next/install/zrobot_perception:/root/ws_ros2/ZRobot_Next/install/zrobot_control:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/ws_ros2/ZRobot_Next/install/zrobot_perception:/root/ws_ros2/ZRobot_Next/install/zrobot_control:/opt/ros/jazzy PYTHONPATH=/root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /root/ws_ros2/ZRobot_Next/build/zrobot_bringup -- -j8 -l8
+[1.238s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(zrobot_interfaces)
+[1.238s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces' for CMake module files
+[1.241s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces' for CMake config files
+[1.246s] Level 1:colcon.colcon_core.shell:create_environment_hook('zrobot_interfaces', 'cmake_prefix_path')
+[1.247s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/hook/cmake_prefix_path.ps1'
+[1.248s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/hook/cmake_prefix_path.dsv'
+[1.250s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/hook/cmake_prefix_path.sh'
+[1.251s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib'
+[1.251s] Level 1:colcon.colcon_core.shell:create_environment_hook('zrobot_interfaces', 'ld_library_path_lib')
+[1.252s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/hook/ld_library_path_lib.ps1'
+[1.253s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/hook/ld_library_path_lib.dsv'
+[1.254s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/hook/ld_library_path_lib.sh'
+[1.255s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ws_ros2/ZRobot_Next/build/zrobot_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /root/ws_ros2/ZRobot_Next/build/zrobot_interfaces
+[1.257s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/bin'
+[1.257s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/pkgconfig/zrobot_interfaces.pc'
+[1.258s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages'
+[1.258s] Level 1:colcon.colcon_core.shell:create_environment_hook('zrobot_interfaces', 'pythonpath')
+[1.258s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/hook/pythonpath.ps1'
+[1.259s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/hook/pythonpath.dsv'
+[1.259s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/hook/pythonpath.sh'
+[1.260s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/bin'
+[1.261s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/package.ps1'
+[1.261s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/package.dsv'
+[1.262s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/package.sh'
+[1.262s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/package.bash'
+[1.263s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/package.zsh'
+[1.263s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/colcon-core/packages/zrobot_interfaces)
+[1.264s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(zrobot_interfaces)
+[1.264s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces' for CMake module files
+[1.265s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces' for CMake config files
+[1.266s] Level 1:colcon.colcon_core.shell:create_environment_hook('zrobot_interfaces', 'cmake_prefix_path')
+[1.266s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/hook/cmake_prefix_path.ps1'
+[1.267s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/hook/cmake_prefix_path.dsv'
+[1.267s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/hook/cmake_prefix_path.sh'
+[1.268s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib'
+[1.268s] Level 1:colcon.colcon_core.shell:create_environment_hook('zrobot_interfaces', 'ld_library_path_lib')
+[1.268s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/hook/ld_library_path_lib.ps1'
+[1.269s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/hook/ld_library_path_lib.dsv'
+[1.269s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/hook/ld_library_path_lib.sh'
+[1.270s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/bin'
+[1.270s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/pkgconfig/zrobot_interfaces.pc'
+[1.270s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages'
+[1.270s] Level 1:colcon.colcon_core.shell:create_environment_hook('zrobot_interfaces', 'pythonpath')
+[1.270s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/hook/pythonpath.ps1'
+[1.305s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/hook/pythonpath.dsv'
+[1.306s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/hook/pythonpath.sh'
+[1.308s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/bin'
+[1.309s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/package.ps1'
+[1.310s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/package.dsv'
+[1.310s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/package.sh'
+[1.311s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/package.bash'
+[1.312s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/package.zsh'
+[1.312s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/colcon-core/packages/zrobot_interfaces)
+[1.346s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ws_ros2/ZRobot_Next/build/zrobot_bringup' returned '0': AMENT_PREFIX_PATH=/root/ws_ros2/ZRobot_Next/install/zrobot_perception:/root/ws_ros2/ZRobot_Next/install/zrobot_control:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/ws_ros2/ZRobot_Next/install/zrobot_perception:/root/ws_ros2/ZRobot_Next/install/zrobot_control:/opt/ros/jazzy PYTHONPATH=/root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /root/ws_ros2/ZRobot_Next/build/zrobot_bringup -- -j8 -l8
+[1.347s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ws_ros2/ZRobot_Next/build/zrobot_bringup': AMENT_PREFIX_PATH=/root/ws_ros2/ZRobot_Next/install/zrobot_perception:/root/ws_ros2/ZRobot_Next/install/zrobot_control:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/ws_ros2/ZRobot_Next/install/zrobot_perception:/root/ws_ros2/ZRobot_Next/install/zrobot_control:/opt/ros/jazzy PYTHONPATH=/root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /root/ws_ros2/ZRobot_Next/build/zrobot_bringup
+[1.378s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(zrobot_bringup)
+[1.379s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_bringup' for CMake module files
+[1.381s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_bringup' for CMake config files
+[1.384s] Level 1:colcon.colcon_core.shell:create_environment_hook('zrobot_bringup', 'cmake_prefix_path')
+[1.384s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup/hook/cmake_prefix_path.ps1'
+[1.386s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup/hook/cmake_prefix_path.dsv'
+[1.387s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup/hook/cmake_prefix_path.sh'
+[1.388s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ws_ros2/ZRobot_Next/build/zrobot_bringup' returned '0': AMENT_PREFIX_PATH=/root/ws_ros2/ZRobot_Next/install/zrobot_perception:/root/ws_ros2/ZRobot_Next/install/zrobot_control:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/ws_ros2/ZRobot_Next/install/zrobot_perception:/root/ws_ros2/ZRobot_Next/install/zrobot_control:/opt/ros/jazzy PYTHONPATH=/root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /root/ws_ros2/ZRobot_Next/build/zrobot_bringup
+[1.389s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_bringup/lib'
+[1.389s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_bringup/bin'
+[1.389s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_bringup/lib/pkgconfig/zrobot_bringup.pc'
+[1.390s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_bringup/lib/python3.12/site-packages'
+[1.390s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_bringup/bin'
+[1.391s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup/package.ps1'
+[1.391s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup/package.dsv'
+[1.392s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup/package.sh'
+[1.393s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup/package.bash'
+[1.393s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup/package.zsh'
+[1.394s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/colcon-core/packages/zrobot_bringup)
+[1.395s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(zrobot_bringup)
+[1.395s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_bringup' for CMake module files
+[1.396s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_bringup' for CMake config files
+[1.396s] Level 1:colcon.colcon_core.shell:create_environment_hook('zrobot_bringup', 'cmake_prefix_path')
+[1.396s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup/hook/cmake_prefix_path.ps1'
+[1.397s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup/hook/cmake_prefix_path.dsv'
+[1.397s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup/hook/cmake_prefix_path.sh'
+[1.398s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_bringup/lib'
+[1.398s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_bringup/bin'
+[1.398s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_bringup/lib/pkgconfig/zrobot_bringup.pc'
+[1.398s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_bringup/lib/python3.12/site-packages'
+[1.399s] Level 1:colcon.colcon_core.environment:checking '/root/ws_ros2/ZRobot_Next/install/zrobot_bringup/bin'
+[1.399s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup/package.ps1'
+[1.400s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup/package.dsv'
+[1.400s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup/package.sh'
+[1.401s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup/package.bash'
+[1.402s] INFO:colcon.colcon_core.shell:Creating package script '/root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup/package.zsh'
+[1.402s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/colcon-core/packages/zrobot_bringup)
+[1.403s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[1.403s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[1.404s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[1.404s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[1.416s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[1.416s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[1.416s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[1.416s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[1.416s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.NotSupported: Unable to autolaunch a dbus-daemon without a $DISPLAY for X11
+[1.417s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[1.417s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/ws_ros2/ZRobot_Next/install/local_setup.ps1'
+[1.418s] INFO:colcon.colcon_core.shell:Creating prefix util module '/root/ws_ros2/ZRobot_Next/install/_local_setup_util_ps1.py'
+[1.420s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/ws_ros2/ZRobot_Next/install/setup.ps1'
+[1.421s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/ws_ros2/ZRobot_Next/install/local_setup.sh'
+[1.422s] INFO:colcon.colcon_core.shell:Creating prefix util module '/root/ws_ros2/ZRobot_Next/install/_local_setup_util_sh.py'
+[1.423s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/ws_ros2/ZRobot_Next/install/setup.sh'
+[1.424s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/ws_ros2/ZRobot_Next/install/local_setup.bash'
+[1.424s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/ws_ros2/ZRobot_Next/install/setup.bash'
+[1.426s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/ws_ros2/ZRobot_Next/install/local_setup.zsh'
+[1.426s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/ws_ros2/ZRobot_Next/install/setup.zsh'

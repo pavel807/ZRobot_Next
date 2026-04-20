@@ -1,0 +1,4 @@
+Invoking command in '/root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance -- -j8 -l8
+Invoked command in '/root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance -- -j8 -l8
+Invoking command in '/root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance
+Invoked command in '/root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance

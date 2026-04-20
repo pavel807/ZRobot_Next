@@ -1,0 +1,47 @@
+[0.033s] Invoking command in '/root/ws_ros2/ZRobot_Next/build/zrobot_perception': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /root/ws_ros2/ZRobot_Next/build/zrobot_perception -- -j8 -l8
+[0.150s] Built target ament_cmake_python_copy_zrobot_perception
+[0.183s] Built target ament_cmake_python_copy_zrobot_perception_setup
+[0.454s] running egg_info
+[0.477s] writing zrobot_perception.egg-info/PKG-INFO
+[0.478s] writing dependency_links to zrobot_perception.egg-info/dependency_links.txt
+[0.478s] writing top-level names to zrobot_perception.egg-info/top_level.txt
+[0.540s] reading manifest file 'zrobot_perception.egg-info/SOURCES.txt'
+[0.541s] writing manifest file 'zrobot_perception.egg-info/SOURCES.txt'
+[0.653s] Built target ament_cmake_python_build_zrobot_perception_egg
+[0.668s] Invoked command in '/root/ws_ros2/ZRobot_Next/build/zrobot_perception' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /root/ws_ros2/ZRobot_Next/build/zrobot_perception -- -j8 -l8
+[0.672s] Invoking command in '/root/ws_ros2/ZRobot_Next/build/zrobot_perception': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /root/ws_ros2/ZRobot_Next/build/zrobot_perception
+[0.683s] -- Install configuration: ""
+[0.683s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/environment/pythonpath.sh
+[0.683s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/environment/pythonpath.dsv
+[0.683s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages/zrobot_perception-1.0.0-py3.12.egg-info
+[0.683s] -- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages/zrobot_perception-1.0.0-py3.12.egg-info/dependency_links.txt
+[0.685s] -- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages/zrobot_perception-1.0.0-py3.12.egg-info/PKG-INFO
+[0.685s] -- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages/zrobot_perception-1.0.0-py3.12.egg-info/top_level.txt
+[0.685s] -- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages/zrobot_perception-1.0.0-py3.12.egg-info/SOURCES.txt
+[0.685s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages/zrobot_perception
+[0.685s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages/zrobot_perception/yolo_detector_node.py
+[0.685s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages/zrobot_perception/__init__.py
+[0.762s] Listing '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages/zrobot_perception'...
+[0.776s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/zrobot_perception/yolo_detector_node
+[0.777s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/launch
+[0.778s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/launch/yolo_detector.launch.py
+[0.778s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/config
+[0.779s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/config/yolo_detector.yaml
+[0.779s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/resource
+[0.780s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/resource/zrobot_perception
+[0.780s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/ament_index/resource_index/package_run_dependencies/zrobot_perception
+[0.782s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/ament_index/resource_index/parent_prefix_path/zrobot_perception
+[0.782s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/environment/ament_prefix_path.sh
+[0.783s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/environment/ament_prefix_path.dsv
+[0.784s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/environment/path.sh
+[0.784s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/environment/path.dsv
+[0.785s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/local_setup.bash
+[0.785s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/local_setup.sh
+[0.785s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/local_setup.zsh
+[0.785s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/local_setup.dsv
+[0.786s] -- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/package.dsv
+[0.786s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/ament_index/resource_index/packages/zrobot_perception
+[0.786s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/cmake/zrobot_perceptionConfig.cmake
+[0.786s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/cmake/zrobot_perceptionConfig-version.cmake
+[0.787s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/package.xml
+[0.787s] Invoked command in '/root/ws_ros2/ZRobot_Next/build/zrobot_perception' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /root/ws_ros2/ZRobot_Next/build/zrobot_perception

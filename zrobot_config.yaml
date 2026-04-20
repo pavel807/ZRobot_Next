@@ -13,21 +13,24 @@ zrobot_perception:
   adaptive_threshold: false
   show_category: true
   enable_auto_follow: true
-  search_delay_sec: 15
-  max_linear_speed: 0.07
-  turn_speed: 1.0
+  max_linear_speed: 0.8
+  turn_speed: 0.8
+  center_zone_width: 0.18
+  turn_response: 0.4
+  smoothing_factor: 0.15
+  min_turn_threshold: 0.05
+  kalman_latency_ms: 80
   # NMS parameters
   nms_sigma: 0.5
   iou_threshold: 0.45
   multi_label_threshold: 0.15
 
 zrobot_control:
-   uart_port: "/dev/ttyACM0"
-   baud_rate: 115200
-   max_speed: 40
-   min_speed_left: 80
-   min_speed_right: 100
-   enabled: true
+  uart_port: "/dev/ttyACM0"
+  baud_rate: 115200
+  max_speed: 255
+  min_speed: 190
+  enabled: true
 
 zrobot_lidar:
   product_name: "LDLiDAR_LD19"
@@ -42,7 +45,7 @@ zrobot_obstacle_avoidance:
   enabled: true
   min_safe_distance: 0.3
   slow_down_distance: 0.5
-  max_linear_speed: 0.07
+  max_linear_speed: 0.8
   turn_speed: 1.0
   scan_angle_range: 60.0
   scan_timeout_sec: 1.0

@@ -1,0 +1,43 @@
+Built target ament_cmake_python_copy_zrobot_perception
+Built target ament_cmake_python_copy_zrobot_perception_setup
+running egg_info
+writing zrobot_perception.egg-info/PKG-INFO
+writing dependency_links to zrobot_perception.egg-info/dependency_links.txt
+writing top-level names to zrobot_perception.egg-info/top_level.txt
+reading manifest file 'zrobot_perception.egg-info/SOURCES.txt'
+writing manifest file 'zrobot_perception.egg-info/SOURCES.txt'
+Built target ament_cmake_python_build_zrobot_perception_egg
+-- Install configuration: ""
+-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/environment/pythonpath.sh
+-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/environment/pythonpath.dsv
+-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages/zrobot_perception-1.0.0-py3.12.egg-info
+-- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages/zrobot_perception-1.0.0-py3.12.egg-info/dependency_links.txt
+-- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages/zrobot_perception-1.0.0-py3.12.egg-info/PKG-INFO
+-- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages/zrobot_perception-1.0.0-py3.12.egg-info/top_level.txt
+-- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages/zrobot_perception-1.0.0-py3.12.egg-info/SOURCES.txt
+-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages/zrobot_perception
+-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages/zrobot_perception/yolo_detector_node.py
+-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages/zrobot_perception/__init__.py
+Listing '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages/zrobot_perception'...
+-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/zrobot_perception/yolo_detector_node
+-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/launch
+-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/launch/yolo_detector.launch.py
+-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/config
+-- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/config/yolo_detector.yaml
+-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/resource
+-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/resource/zrobot_perception
+-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/ament_index/resource_index/package_run_dependencies/zrobot_perception
+-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/ament_index/resource_index/parent_prefix_path/zrobot_perception
+-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/environment/ament_prefix_path.sh
+-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/environment/ament_prefix_path.dsv
+-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/environment/path.sh
+-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/environment/path.dsv
+-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/local_setup.bash
+-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/local_setup.sh
+-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/local_setup.zsh
+-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/local_setup.dsv
+-- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/package.dsv
+-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/ament_index/resource_index/packages/zrobot_perception
+-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/cmake/zrobot_perceptionConfig.cmake
+-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/cmake/zrobot_perceptionConfig-version.cmake
+-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/package.xml

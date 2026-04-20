@@ -24,6 +24,7 @@ def find_config_file():
 
     try:
         from ament_index_python.packages import get_package_share_directory
+
         pkg_dir = get_package_share_directory("zrobot_bringup")
         return os.path.join(pkg_dir, "config", "zrobot_config.yaml")
     except Exception:
@@ -35,45 +36,52 @@ def find_config_file():
 def generate_launch_description():
     config_file = find_config_file()
 
-    return LaunchDescription([
-        DeclareLaunchArgument("config_file", default_value=config_file),
-        DeclareLaunchArgument("model_path", default_value="models/yolo26s-rk3588.rknn"),
-        DeclareLaunchArgument("camera_id", default_value="1"),
-        DeclareLaunchArgument("width", default_value="640"),
-        DeclareLaunchArgument("height", default_value="640"),
-        DeclareLaunchArgument("fps", default_value="30"),
-        DeclareLaunchArgument("obj_thresh", default_value="0.25"),
-        DeclareLaunchArgument("nms_thresh", default_value="0.45"),
-        DeclareLaunchArgument("num_npu_cores", default_value="3"),
-        DeclareLaunchArgument("target_object", default_value="person"),
-        DeclareLaunchArgument("enable_tracking", default_value="True"),
-        DeclareLaunchArgument("enable_auto_follow", default_value="True"),
-        DeclareLaunchArgument("max_linear_speed", default_value="0.3"),
-        DeclareLaunchArgument("turn_speed", default_value="0.5"),
-
-        Node(
-            package="zrobot_perception",
-            executable="yolo_detector_node",
-            name="yolo_detector",
-            output="screen",
-            emulate_tty=True,
-            parameters=[
-                config_file,
-                {
-                    "model_path": LaunchConfiguration("model_path"),
-                    "camera_id": LaunchConfiguration("camera_id"),
-                    "width": LaunchConfiguration("width"),
-                    "height": LaunchConfiguration("height"),
-                    "fps": LaunchConfiguration("fps"),
-                    "obj_thresh": LaunchConfiguration("obj_thresh"),
-                    "nms_thresh": LaunchConfiguration("nms_thresh"),
-                    "num_npu_cores": LaunchConfiguration("num_npu_cores"),
-                    "target_object": LaunchConfiguration("target_object"),
-                    "enable_tracking": LaunchConfiguration("enable_tracking"),
-                    "enable_auto_follow": LaunchConfiguration("enable_auto_follow"),
-                    "max_linear_speed": LaunchConfiguration("max_linear_speed"),
-                    "turn_speed": LaunchConfiguration("turn_speed"),
-                },
-            ],
-        ),
-    ])
+    return LaunchDescription(
+        [
+            DeclareLaunchArgument("config_file", default_value=config_file),
+            DeclareLaunchArgument(
+                "model_path", default_value="models/yolo26s-rk3588.rknn"
+            ),
+            DeclareLaunchArgument("camera_id", default_value="1"),
+            DeclareLaunchArgument("width", default_value="640"),
+            DeclareLaunchArgument("height", default_value="640"),
+            DeclareLaunchArgument("fps", default_value="30"),
+            DeclareLaunchArgument("obj_thresh", default_value="0.25"),
+            DeclareLaunchArgument("nms_thresh", default_value="0.45"),
+            DeclareLaunchArgument("num_npu_cores", default_value="3"),
+            DeclareLaunchArgument("target_object", default_value="person"),
+            DeclareLaunchArgument("enable_tracking", default_value="True"),
+            DeclareLaunchArgument("enable_auto_follow", default_value="True"),
+            DeclareLaunchArgument("max_linear_speed", default_value="0.3"),
+            DeclareLaunchArgument("turn_speed", default_value="0.5"),
+            DeclareLaunchArgument("parallel_inference", default_value="True"),
+            DeclareLaunchArgument("enable_nv12", default_value="False"),
+            Node(
+                package="zrobot_perception",
+                executable="yolo_detector_node",
+                name="yolo_detector",
+                output="screen",
+                emulate_tty=True,
+                parameters=[
+                    config_file,
+                    {
+                        "model_path": LaunchConfiguration("model_path"),
+                        "camera_id": LaunchConfiguration("camera_id"),
+                        "width": LaunchConfiguration("width"),
+                        "height": LaunchConfiguration("height"),
+                        "fps": LaunchConfiguration("fps"),
+                        "obj_thresh": LaunchConfiguration("obj_thresh"),
+                        "nms_thresh": LaunchConfiguration("nms_thresh"),
+                        "num_npu_cores": LaunchConfiguration("num_npu_cores"),
+                        "target_object": LaunchConfiguration("target_object"),
+                        "enable_tracking": LaunchConfiguration("enable_tracking"),
+                        "enable_auto_follow": LaunchConfiguration("enable_auto_follow"),
+                        "max_linear_speed": LaunchConfiguration("max_linear_speed"),
+                        "turn_speed": LaunchConfiguration("turn_speed"),
+                        "parallel_inference": LaunchConfiguration("parallel_inference"),
+                        "enable_nv12": LaunchConfiguration("enable_nv12"),
+                    },
+                ],
+            ),
+        ]
+    )

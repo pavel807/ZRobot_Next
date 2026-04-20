@@ -1,0 +1,697 @@
+[0.000000] (-) TimerEvent: {}
+[0.000492] (ldlidar_stl_ros2) JobQueued: {'identifier': 'ldlidar_stl_ros2', 'dependencies': OrderedDict()}
+[0.001074] (web_interface) JobQueued: {'identifier': 'web_interface', 'dependencies': OrderedDict()}
+[0.001538] (zrobot_control) JobQueued: {'identifier': 'zrobot_control', 'dependencies': OrderedDict()}
+[0.001680] (zrobot_interfaces) JobQueued: {'identifier': 'zrobot_interfaces', 'dependencies': OrderedDict()}
+[0.001870] (zrobot_obstacle_avoidance) JobQueued: {'identifier': 'zrobot_obstacle_avoidance', 'dependencies': OrderedDict()}
+[0.001965] (zrobot_perception) JobQueued: {'identifier': 'zrobot_perception', 'dependencies': OrderedDict()}
+[0.002053] (zrobot_bringup) JobQueued: {'identifier': 'zrobot_bringup', 'dependencies': OrderedDict({'zrobot_control': '/root/ws_ros2/ZRobot_Next/install/zrobot_control', 'zrobot_perception': '/root/ws_ros2/ZRobot_Next/install/zrobot_perception'})}
+[0.002155] (zrobot_control) JobStarted: {'identifier': 'zrobot_control'}
+[0.028068] (zrobot_perception) JobStarted: {'identifier': 'zrobot_perception'}
+[0.033286] (ldlidar_stl_ros2) JobStarted: {'identifier': 'ldlidar_stl_ros2'}
+[0.038451] (web_interface) JobStarted: {'identifier': 'web_interface'}
+[0.043636] (zrobot_interfaces) JobStarted: {'identifier': 'zrobot_interfaces'}
+[0.048468] (zrobot_obstacle_avoidance) JobStarted: {'identifier': 'zrobot_obstacle_avoidance'}
+[0.056171] (zrobot_control) JobProgress: {'identifier': 'zrobot_control', 'progress': 'cmake'}
+[0.057353] (zrobot_control) JobProgress: {'identifier': 'zrobot_control', 'progress': 'build'}
+[0.058435] (zrobot_control) Command: {'cmd': ['/usr/bin/cmake', '--build', '/root/ws_ros2/ZRobot_Next/build/zrobot_control', '--', '-j8', '-l8'], 'cwd': '/root/ws_ros2/ZRobot_Next/build/zrobot_control', 'env': OrderedDict({'AGENT': '1', 'HOSTNAME': 'rock-5b', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/root/ws_ros2', 'NVM_BIN': '/root/.nvm/versions/node/v20.20.2/bin', 'NVM_INC': '/root/.nvm/versions/node/v20.20.2/include/node', 'ROS_PYTHON_VERSION': '3', 'NVM_DIR': '/root/.nvm', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'OPENCODE': '1', 'PATH': '/root/.nvm/versions/node/v20.20.2/bin:/root/.opencode/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'FASTRTPS_DEFAULT_PROFILES_FILE': '/opt/ros/jazzy/share/fastdds_profiles.xml', 'DISPLAY': '', 'OPENCODE_PID': '16894', 'LANG': 'C.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_fastrtps_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'DEBIAN_FRONTEND': 'noninteractive', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/root/ws_ros2/ZRobot_Next/build/zrobot_control', 'LC_ALL': 'C.UTF-8', 'NVM_CD_FLAGS': '', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy'}), 'shell': False}
+[0.062770] (zrobot_perception) JobProgress: {'identifier': 'zrobot_perception', 'progress': 'cmake'}
+[0.064010] (zrobot_perception) JobProgress: {'identifier': 'zrobot_perception', 'progress': 'build'}
+[0.064643] (zrobot_perception) Command: {'cmd': ['/usr/bin/cmake', '--build', '/root/ws_ros2/ZRobot_Next/build/zrobot_perception', '--', '-j8', '-l8'], 'cwd': '/root/ws_ros2/ZRobot_Next/build/zrobot_perception', 'env': OrderedDict({'AGENT': '1', 'HOSTNAME': 'rock-5b', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/root/ws_ros2', 'NVM_BIN': '/root/.nvm/versions/node/v20.20.2/bin', 'NVM_INC': '/root/.nvm/versions/node/v20.20.2/include/node', 'ROS_PYTHON_VERSION': '3', 'NVM_DIR': '/root/.nvm', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'OPENCODE': '1', 'PATH': '/root/.nvm/versions/node/v20.20.2/bin:/root/.opencode/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'FASTRTPS_DEFAULT_PROFILES_FILE': '/opt/ros/jazzy/share/fastdds_profiles.xml', 'DISPLAY': '', 'OPENCODE_PID': '16894', 'LANG': 'C.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_fastrtps_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'DEBIAN_FRONTEND': 'noninteractive', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/root/ws_ros2/ZRobot_Next/build/zrobot_perception', 'LC_ALL': 'C.UTF-8', 'NVM_CD_FLAGS': '', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy'}), 'shell': False}
+[0.068103] (ldlidar_stl_ros2) JobProgress: {'identifier': 'ldlidar_stl_ros2', 'progress': 'cmake'}
+[0.068506] (ldlidar_stl_ros2) JobProgress: {'identifier': 'ldlidar_stl_ros2', 'progress': 'build'}
+[0.069213] (ldlidar_stl_ros2) Command: {'cmd': ['/usr/bin/cmake', '--build', '/root/ws_ros2/ZRobot_Next/build/ldlidar_stl_ros2', '--', '-j8', '-l8'], 'cwd': '/root/ws_ros2/ZRobot_Next/build/ldlidar_stl_ros2', 'env': OrderedDict({'AGENT': '1', 'HOSTNAME': 'rock-5b', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/root/ws_ros2', 'NVM_BIN': '/root/.nvm/versions/node/v20.20.2/bin', 'NVM_INC': '/root/.nvm/versions/node/v20.20.2/include/node', 'ROS_PYTHON_VERSION': '3', 'NVM_DIR': '/root/.nvm', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'OPENCODE': '1', 'PATH': '/root/.nvm/versions/node/v20.20.2/bin:/root/.opencode/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'FASTRTPS_DEFAULT_PROFILES_FILE': '/opt/ros/jazzy/share/fastdds_profiles.xml', 'DISPLAY': '', 'OPENCODE_PID': '16894', 'LANG': 'C.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_fastrtps_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'DEBIAN_FRONTEND': 'noninteractive', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/root/ws_ros2/ZRobot_Next/build/ldlidar_stl_ros2', 'LC_ALL': 'C.UTF-8', 'NVM_CD_FLAGS': '', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy'}), 'shell': False}
+[0.071683] (web_interface) JobProgress: {'identifier': 'web_interface', 'progress': 'cmake'}
+[0.072812] (web_interface) JobProgress: {'identifier': 'web_interface', 'progress': 'build'}
+[0.073452] (web_interface) Command: {'cmd': ['/usr/bin/cmake', '--build', '/root/ws_ros2/ZRobot_Next/build/web_interface', '--', '-j8', '-l8'], 'cwd': '/root/ws_ros2/ZRobot_Next/build/web_interface', 'env': OrderedDict({'AGENT': '1', 'HOSTNAME': 'rock-5b', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/root/ws_ros2', 'NVM_BIN': '/root/.nvm/versions/node/v20.20.2/bin', 'NVM_INC': '/root/.nvm/versions/node/v20.20.2/include/node', 'ROS_PYTHON_VERSION': '3', 'NVM_DIR': '/root/.nvm', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'OPENCODE': '1', 'PATH': '/root/.nvm/versions/node/v20.20.2/bin:/root/.opencode/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'FASTRTPS_DEFAULT_PROFILES_FILE': '/opt/ros/jazzy/share/fastdds_profiles.xml', 'DISPLAY': '', 'OPENCODE_PID': '16894', 'LANG': 'C.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_fastrtps_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'DEBIAN_FRONTEND': 'noninteractive', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/root/ws_ros2/ZRobot_Next/build/web_interface', 'LC_ALL': 'C.UTF-8', 'NVM_CD_FLAGS': '', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy'}), 'shell': False}
+[0.077516] (zrobot_interfaces) JobProgress: {'identifier': 'zrobot_interfaces', 'progress': 'cmake'}
+[0.077657] (zrobot_interfaces) JobProgress: {'identifier': 'zrobot_interfaces', 'progress': 'build'}
+[0.078283] (zrobot_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--build', '/root/ws_ros2/ZRobot_Next/build/zrobot_interfaces', '--', '-j8', '-l8'], 'cwd': '/root/ws_ros2/ZRobot_Next/build/zrobot_interfaces', 'env': OrderedDict({'AGENT': '1', 'HOSTNAME': 'rock-5b', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/root/ws_ros2', 'NVM_BIN': '/root/.nvm/versions/node/v20.20.2/bin', 'NVM_INC': '/root/.nvm/versions/node/v20.20.2/include/node', 'ROS_PYTHON_VERSION': '3', 'NVM_DIR': '/root/.nvm', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'OPENCODE': '1', 'PATH': '/root/.nvm/versions/node/v20.20.2/bin:/root/.opencode/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'FASTRTPS_DEFAULT_PROFILES_FILE': '/opt/ros/jazzy/share/fastdds_profiles.xml', 'DISPLAY': '', 'OPENCODE_PID': '16894', 'LANG': 'C.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_fastrtps_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'DEBIAN_FRONTEND': 'noninteractive', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/root/ws_ros2/ZRobot_Next/build/zrobot_interfaces', 'LC_ALL': 'C.UTF-8', 'NVM_CD_FLAGS': '', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy'}), 'shell': False}
+[0.082929] (zrobot_obstacle_avoidance) JobProgress: {'identifier': 'zrobot_obstacle_avoidance', 'progress': 'cmake'}
+[0.083425] (zrobot_obstacle_avoidance) JobProgress: {'identifier': 'zrobot_obstacle_avoidance', 'progress': 'build'}
+[0.084170] (zrobot_obstacle_avoidance) Command: {'cmd': ['/usr/bin/cmake', '--build', '/root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance', '--', '-j8', '-l8'], 'cwd': '/root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance', 'env': OrderedDict({'AGENT': '1', 'HOSTNAME': 'rock-5b', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/root/ws_ros2', 'NVM_BIN': '/root/.nvm/versions/node/v20.20.2/bin', 'NVM_INC': '/root/.nvm/versions/node/v20.20.2/include/node', 'ROS_PYTHON_VERSION': '3', 'NVM_DIR': '/root/.nvm', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'OPENCODE': '1', 'PATH': '/root/.nvm/versions/node/v20.20.2/bin:/root/.opencode/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'FASTRTPS_DEFAULT_PROFILES_FILE': '/opt/ros/jazzy/share/fastdds_profiles.xml', 'DISPLAY': '', 'OPENCODE_PID': '16894', 'LANG': 'C.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_fastrtps_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'DEBIAN_FRONTEND': 'noninteractive', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance', 'LC_ALL': 'C.UTF-8', 'NVM_CD_FLAGS': '', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy'}), 'shell': False}
+[0.098875] (-) TimerEvent: {}
+[0.199366] (-) TimerEvent: {}
+[0.299688] (-) TimerEvent: {}
+[0.400019] (-) TimerEvent: {}
+[0.500385] (-) TimerEvent: {}
+[0.600517] (web_interface) CommandEnded: {'returncode': 0}
+[0.605160] (-) TimerEvent: {}
+[0.605373] (web_interface) JobProgress: {'identifier': 'web_interface', 'progress': 'install'}
+[0.644806] (web_interface) Command: {'cmd': ['/usr/bin/cmake', '--install', '/root/ws_ros2/ZRobot_Next/build/web_interface'], 'cwd': '/root/ws_ros2/ZRobot_Next/build/web_interface', 'env': OrderedDict({'AGENT': '1', 'HOSTNAME': 'rock-5b', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/root/ws_ros2', 'NVM_BIN': '/root/.nvm/versions/node/v20.20.2/bin', 'NVM_INC': '/root/.nvm/versions/node/v20.20.2/include/node', 'ROS_PYTHON_VERSION': '3', 'NVM_DIR': '/root/.nvm', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'OPENCODE': '1', 'PATH': '/root/.nvm/versions/node/v20.20.2/bin:/root/.opencode/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'FASTRTPS_DEFAULT_PROFILES_FILE': '/opt/ros/jazzy/share/fastdds_profiles.xml', 'DISPLAY': '', 'OPENCODE_PID': '16894', 'LANG': 'C.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_fastrtps_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'DEBIAN_FRONTEND': 'noninteractive', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/root/ws_ros2/ZRobot_Next/build/web_interface', 'LC_ALL': 'C.UTF-8', 'NVM_CD_FLAGS': '', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy'}), 'shell': False}
+[0.645930] (zrobot_interfaces) StdoutLine: {'line': b'[  1%] Built target zrobot_interfaces__rosidl_generator_type_description\n'}
+[0.646458] (zrobot_perception) StdoutLine: {'line': b'Built target ament_cmake_python_copy_zrobot_perception\n'}
+[0.647245] (zrobot_obstacle_avoidance) CommandEnded: {'returncode': 0}
+[0.647644] (zrobot_obstacle_avoidance) JobProgress: {'identifier': 'zrobot_obstacle_avoidance', 'progress': 'install'}
+[0.647750] (zrobot_obstacle_avoidance) Command: {'cmd': ['/usr/bin/cmake', '--install', '/root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance'], 'cwd': '/root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance', 'env': OrderedDict({'AGENT': '1', 'HOSTNAME': 'rock-5b', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/root/ws_ros2', 'NVM_BIN': '/root/.nvm/versions/node/v20.20.2/bin', 'NVM_INC': '/root/.nvm/versions/node/v20.20.2/include/node', 'ROS_PYTHON_VERSION': '3', 'NVM_DIR': '/root/.nvm', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'OPENCODE': '1', 'PATH': '/root/.nvm/versions/node/v20.20.2/bin:/root/.opencode/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'FASTRTPS_DEFAULT_PROFILES_FILE': '/opt/ros/jazzy/share/fastdds_profiles.xml', 'DISPLAY': '', 'OPENCODE_PID': '16894', 'LANG': 'C.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_fastrtps_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'DEBIAN_FRONTEND': 'noninteractive', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance', 'LC_ALL': 'C.UTF-8', 'NVM_CD_FLAGS': '', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy'}), 'shell': False}
+[0.657419] (zrobot_obstacle_avoidance) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.657928] (zrobot_obstacle_avoidance) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/lib/zrobot_obstacle_avoidance/obstacle_avoidance_node\n'}
+[0.658166] (zrobot_obstacle_avoidance) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/ament_index/resource_index/package_run_dependencies/zrobot_obstacle_avoidance\n'}
+[0.658288] (zrobot_obstacle_avoidance) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/ament_index/resource_index/parent_prefix_path/zrobot_obstacle_avoidance\n'}
+[0.658383] (zrobot_obstacle_avoidance) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/zrobot_obstacle_avoidance/environment/ament_prefix_path.sh\n'}
+[0.658472] (zrobot_obstacle_avoidance) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/zrobot_obstacle_avoidance/environment/ament_prefix_path.dsv\n'}
+[0.658558] (zrobot_obstacle_avoidance) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/zrobot_obstacle_avoidance/environment/path.sh\n'}
+[0.658645] (zrobot_obstacle_avoidance) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/zrobot_obstacle_avoidance/environment/path.dsv\n'}
+[0.658728] (zrobot_obstacle_avoidance) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/zrobot_obstacle_avoidance/local_setup.bash\n'}
+[0.658861] (zrobot_obstacle_avoidance) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/zrobot_obstacle_avoidance/local_setup.sh\n'}
+[0.658960] (zrobot_obstacle_avoidance) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/zrobot_obstacle_avoidance/local_setup.zsh\n'}
+[0.659045] (zrobot_obstacle_avoidance) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/zrobot_obstacle_avoidance/local_setup.dsv\n'}
+[0.659129] (zrobot_obstacle_avoidance) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/zrobot_obstacle_avoidance/package.dsv\n'}
+[0.659213] (zrobot_obstacle_avoidance) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/ament_index/resource_index/packages/zrobot_obstacle_avoidance\n'}
+[0.659296] (zrobot_obstacle_avoidance) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/zrobot_obstacle_avoidance/cmake/zrobot_obstacle_avoidanceConfig.cmake\n'}
+[0.659391] (zrobot_obstacle_avoidance) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/zrobot_obstacle_avoidance/cmake/zrobot_obstacle_avoidanceConfig-version.cmake\n'}
+[0.659477] (zrobot_obstacle_avoidance) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_obstacle_avoidance/share/zrobot_obstacle_avoidance/package.xml\n'}
+[0.660058] (zrobot_obstacle_avoidance) CommandEnded: {'returncode': 0}
+[0.705240] (-) TimerEvent: {}
+[0.779647] (zrobot_obstacle_avoidance) JobEnded: {'identifier': 'zrobot_obstacle_avoidance', 'rc': 0}
+[0.782761] (zrobot_perception) StdoutLine: {'line': b'Built target ament_cmake_python_copy_zrobot_perception_setup\n'}
+[0.783503] (web_interface) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.784315] (web_interface) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/web_interface/lib/web_interface/web_server\n'}
+[0.784827] (web_interface) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface\n'}
+[0.785332] (web_interface) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/web_interface/share/ament_index/resource_index/package_run_dependencies/web_interface\n'}
+[0.786747] (web_interface) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/web_interface/share/ament_index/resource_index/parent_prefix_path/web_interface\n'}
+[0.787745] (web_interface) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/environment/ament_prefix_path.sh\n'}
+[0.788919] (web_interface) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/environment/ament_prefix_path.dsv\n'}
+[0.789495] (web_interface) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/environment/path.sh\n'}
+[0.790515] (web_interface) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/environment/path.dsv\n'}
+[0.791265] (web_interface) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/local_setup.bash\n'}
+[0.793520] (web_interface) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/local_setup.sh\n'}
+[0.794256] (web_interface) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/local_setup.zsh\n'}
+[0.795077] (web_interface) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/local_setup.dsv\n'}
+[0.796083] (web_interface) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/package.dsv\n'}
+[0.796957] (web_interface) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/web_interface/share/ament_index/resource_index/packages/web_interface\n'}
+[0.797672] (web_interface) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/cmake/web_interfaceConfig.cmake\n'}
+[0.798338] (web_interface) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/cmake/web_interfaceConfig-version.cmake\n'}
+[0.799112] (web_interface) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/web_interface/share/web_interface/package.xml\n'}
+[0.799848] (zrobot_interfaces) StdoutLine: {'line': b'[  3%] Built target zrobot_interfaces__cpp\n'}
+[0.802497] (zrobot_interfaces) StdoutLine: {'line': b'[  3%] Built target ament_cmake_python_copy_zrobot_interfaces\n'}
+[0.802632] (zrobot_interfaces) StdoutLine: {'line': b'[ 25%] Built target zrobot_interfaces__rosidl_generator_c\n'}
+[0.802736] (web_interface) CommandEnded: {'returncode': 0}
+[0.805687] (-) TimerEvent: {}
+[0.815174] (web_interface) JobEnded: {'identifier': 'web_interface', 'rc': 0}
+[0.876264] (zrobot_interfaces) StdoutLine: {'line': b'[ 34%] Built target zrobot_interfaces__rosidl_typesupport_introspection_c\n'}
+[0.897669] (zrobot_control) StdoutLine: {'line': b'[ 33%] Building CXX object CMakeFiles/motor_controller_node.dir/src/motor_controller_node.cpp.o\n'}
+[0.898995] (zrobot_interfaces) StdoutLine: {'line': b'[ 43%] Built target zrobot_interfaces__rosidl_typesupport_fastrtps_cpp\n'}
+[0.905805] (-) TimerEvent: {}
+[0.912864] (zrobot_interfaces) StdoutLine: {'line': b'[ 53%] Built target zrobot_interfaces__rosidl_typesupport_c\n'}
+[0.915389] (zrobot_interfaces) StdoutLine: {'line': b'[ 62%] Built target zrobot_interfaces__rosidl_typesupport_fastrtps_c\n'}
+[0.922327] (ldlidar_stl_ros2) StdoutLine: {'line': b'[100%] Built target ldlidar_stl_ros2_node\n'}
+[0.923798] (zrobot_interfaces) StdoutLine: {'line': b'[ 71%] Built target zrobot_interfaces__rosidl_typesupport_cpp\n'}
+[0.940883] (zrobot_interfaces) StdoutLine: {'line': b'[ 81%] Built target zrobot_interfaces__rosidl_typesupport_introspection_cpp\n'}
+[0.956011] (ldlidar_stl_ros2) CommandEnded: {'returncode': 0}
+[0.957572] (ldlidar_stl_ros2) JobProgress: {'identifier': 'ldlidar_stl_ros2', 'progress': 'install'}
+[0.958131] (ldlidar_stl_ros2) Command: {'cmd': ['/usr/bin/cmake', '--install', '/root/ws_ros2/ZRobot_Next/build/ldlidar_stl_ros2'], 'cwd': '/root/ws_ros2/ZRobot_Next/build/ldlidar_stl_ros2', 'env': OrderedDict({'AGENT': '1', 'HOSTNAME': 'rock-5b', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/root/ws_ros2', 'NVM_BIN': '/root/.nvm/versions/node/v20.20.2/bin', 'NVM_INC': '/root/.nvm/versions/node/v20.20.2/include/node', 'ROS_PYTHON_VERSION': '3', 'NVM_DIR': '/root/.nvm', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'OPENCODE': '1', 'PATH': '/root/.nvm/versions/node/v20.20.2/bin:/root/.opencode/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'FASTRTPS_DEFAULT_PROFILES_FILE': '/opt/ros/jazzy/share/fastdds_profiles.xml', 'DISPLAY': '', 'OPENCODE_PID': '16894', 'LANG': 'C.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_fastrtps_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'DEBIAN_FRONTEND': 'noninteractive', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/root/ws_ros2/ZRobot_Next/build/ldlidar_stl_ros2', 'LC_ALL': 'C.UTF-8', 'NVM_CD_FLAGS': '', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy'}), 'shell': False}
+[0.970264] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.976333] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/lib/ldlidar_stl_ros2/ldlidar_stl_ros2_node\n'}
+[0.977155] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2//launch\n'}
+[0.977837] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2//launch/viewer_ld06.launch.py\n'}
+[0.978363] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2//launch/viewer_ld19.launch.py\n'}
+[0.978868] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2//launch/ld06.launch.py\n'}
+[0.979392] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2//launch/viewer_stl27l.launch.py\n'}
+[0.979920] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2//launch/ld19.launch.py\n'}
+[0.980628] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2//launch/stl27l.launch.py\n'}
+[0.981127] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2//rviz2\n'}
+[0.982673] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2//rviz2/ldlidar.rviz\n'}
+[0.983192] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ament_index/resource_index/package_run_dependencies/ldlidar_stl_ros2\n'}
+[0.983698] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ament_index/resource_index/parent_prefix_path/ldlidar_stl_ros2\n'}
+[0.984251] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/environment/ament_prefix_path.sh\n'}
+[0.984849] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/environment/ament_prefix_path.dsv\n'}
+[0.985530] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/environment/path.sh\n'}
+[0.986048] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/environment/path.dsv\n'}
+[0.986506] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/local_setup.bash\n'}
+[0.986997] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/local_setup.sh\n'}
+[0.987452] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/local_setup.zsh\n'}
+[0.987933] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/local_setup.dsv\n'}
+[0.988410] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Installing: /root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/package.dsv\n'}
+[0.988899] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ament_index/resource_index/packages/ldlidar_stl_ros2\n'}
+[0.989400] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/cmake/ldlidar_stl_ros2Config.cmake\n'}
+[0.989888] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/cmake/ldlidar_stl_ros2Config-version.cmake\n'}
+[0.990472] (ldlidar_stl_ros2) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2/share/ldlidar_stl_ros2/package.xml\n'}
+[0.991920] (ldlidar_stl_ros2) CommandEnded: {'returncode': 0}
+[1.006928] (-) TimerEvent: {}
+[1.012382] (ldlidar_stl_ros2) JobEnded: {'identifier': 'ldlidar_stl_ros2', 'rc': 0}
+[1.013717] (zrobot_interfaces) StdoutLine: {'line': b'[ 81%] Built target zrobot_interfaces\n'}
+[1.022212] (zrobot_interfaces) StdoutLine: {'line': b'running egg_info\n'}
+[1.022586] (zrobot_perception) StdoutLine: {'line': b'running egg_info\n'}
+[1.045087] (zrobot_interfaces) StdoutLine: {'line': b'writing zrobot_interfaces.egg-info/PKG-INFO\n'}
+[1.046000] (zrobot_interfaces) StdoutLine: {'line': b'writing dependency_links to zrobot_interfaces.egg-info/dependency_links.txt\n'}
+[1.046645] (zrobot_perception) StdoutLine: {'line': b'writing zrobot_perception.egg-info/PKG-INFO\n'}
+[1.047195] (zrobot_interfaces) StdoutLine: {'line': b'writing top-level names to zrobot_interfaces.egg-info/top_level.txt\n'}
+[1.047698] (zrobot_perception) StdoutLine: {'line': b'writing dependency_links to zrobot_perception.egg-info/dependency_links.txt\n'}
+[1.048180] (zrobot_perception) StdoutLine: {'line': b'writing top-level names to zrobot_perception.egg-info/top_level.txt\n'}
+[1.097735] (zrobot_interfaces) StdoutLine: {'line': b'[ 82%] Built target zrobot_interfaces__py\n'}
+[1.107025] (-) TimerEvent: {}
+[1.112518] (zrobot_perception) StdoutLine: {'line': b"reading manifest file 'zrobot_perception.egg-info/SOURCES.txt'\n"}
+[1.112758] (zrobot_interfaces) StdoutLine: {'line': b"reading manifest file 'zrobot_interfaces.egg-info/SOURCES.txt'\n"}
+[1.113342] (zrobot_perception) StdoutLine: {'line': b"writing manifest file 'zrobot_perception.egg-info/SOURCES.txt'\n"}
+[1.113456] (zrobot_interfaces) StdoutLine: {'line': b"writing manifest file 'zrobot_interfaces.egg-info/SOURCES.txt'\n"}
+[1.204974] (zrobot_interfaces) StdoutLine: {'line': b'[ 90%] Built target zrobot_interfaces__rosidl_generator_py\n'}
+[1.205271] (zrobot_perception) StdoutLine: {'line': b'Built target ament_cmake_python_build_zrobot_perception_egg\n'}
+[1.207092] (-) TimerEvent: {}
+[1.220554] (zrobot_perception) CommandEnded: {'returncode': 0}
+[1.221652] (zrobot_perception) JobProgress: {'identifier': 'zrobot_perception', 'progress': 'install'}
+[1.222150] (zrobot_perception) Command: {'cmd': ['/usr/bin/cmake', '--install', '/root/ws_ros2/ZRobot_Next/build/zrobot_perception'], 'cwd': '/root/ws_ros2/ZRobot_Next/build/zrobot_perception', 'env': OrderedDict({'AGENT': '1', 'HOSTNAME': 'rock-5b', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/root/ws_ros2', 'NVM_BIN': '/root/.nvm/versions/node/v20.20.2/bin', 'NVM_INC': '/root/.nvm/versions/node/v20.20.2/include/node', 'ROS_PYTHON_VERSION': '3', 'NVM_DIR': '/root/.nvm', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'OPENCODE': '1', 'PATH': '/root/.nvm/versions/node/v20.20.2/bin:/root/.opencode/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'FASTRTPS_DEFAULT_PROFILES_FILE': '/opt/ros/jazzy/share/fastdds_profiles.xml', 'DISPLAY': '', 'OPENCODE_PID': '16894', 'LANG': 'C.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_fastrtps_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'DEBIAN_FRONTEND': 'noninteractive', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/root/ws_ros2/ZRobot_Next/build/zrobot_perception', 'LC_ALL': 'C.UTF-8', 'NVM_CD_FLAGS': '', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy'}), 'shell': False}
+[1.224202] (zrobot_interfaces) StdoutLine: {'line': b'[ 90%] Built target ament_cmake_python_build_zrobot_interfaces_egg\n'}
+[1.233508] (zrobot_perception) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[1.234604] (zrobot_perception) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/environment/pythonpath.sh\n'}
+[1.235266] (zrobot_perception) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/environment/pythonpath.dsv\n'}
+[1.235840] (zrobot_perception) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages/zrobot_perception-1.0.0-py3.12.egg-info\n'}
+[1.236441] (zrobot_perception) StdoutLine: {'line': b'-- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages/zrobot_perception-1.0.0-py3.12.egg-info/dependency_links.txt\n'}
+[1.236974] (zrobot_perception) StdoutLine: {'line': b'-- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages/zrobot_perception-1.0.0-py3.12.egg-info/PKG-INFO\n'}
+[1.237519] (zrobot_perception) StdoutLine: {'line': b'-- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages/zrobot_perception-1.0.0-py3.12.egg-info/top_level.txt\n'}
+[1.238073] (zrobot_perception) StdoutLine: {'line': b'-- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages/zrobot_perception-1.0.0-py3.12.egg-info/SOURCES.txt\n'}
+[1.238563] (zrobot_perception) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages/zrobot_perception\n'}
+[1.239097] (zrobot_perception) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages/zrobot_perception/yolo_detector_node.py\n'}
+[1.239551] (zrobot_perception) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages/zrobot_perception/__init__.py\n'}
+[1.251866] (zrobot_interfaces) StdoutLine: {'line': b'[ 93%] Built target zrobot_interfaces_s__rosidl_typesupport_fastrtps_c\n'}
+[1.287589] (zrobot_perception) StdoutLine: {'line': b"Listing '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages/zrobot_perception'...\n"}
+[1.289703] (zrobot_interfaces) StdoutLine: {'line': b'[ 98%] Built target zrobot_interfaces_s__rosidl_typesupport_c\n'}
+[1.290768] (zrobot_interfaces) StdoutLine: {'line': b'[100%] Built target zrobot_interfaces_s__rosidl_typesupport_introspection_c\n'}
+[1.301127] (zrobot_perception) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/zrobot_perception/yolo_detector_node\n'}
+[1.301812] (zrobot_perception) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/launch\n'}
+[1.302237] (zrobot_perception) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/launch/yolo_detector.launch.py\n'}
+[1.302646] (zrobot_perception) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/config\n'}
+[1.303337] (zrobot_perception) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/config/yolo_detector.yaml\n'}
+[1.304031] (zrobot_perception) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/resource\n'}
+[1.306892] (zrobot_perception) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/resource/zrobot_perception\n'}
+[1.307864] (-) TimerEvent: {}
+[1.308004] (zrobot_perception) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/ament_index/resource_index/package_run_dependencies/zrobot_perception\n'}
+[1.308477] (zrobot_perception) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/ament_index/resource_index/parent_prefix_path/zrobot_perception\n'}
+[1.309045] (zrobot_perception) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/environment/ament_prefix_path.sh\n'}
+[1.309516] (zrobot_perception) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/environment/ament_prefix_path.dsv\n'}
+[1.310062] (zrobot_perception) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/environment/path.sh\n'}
+[1.310471] (zrobot_perception) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/environment/path.dsv\n'}
+[1.310965] (zrobot_perception) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/local_setup.bash\n'}
+[1.311386] (zrobot_perception) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/local_setup.sh\n'}
+[1.311908] (zrobot_perception) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/local_setup.zsh\n'}
+[1.312613] (zrobot_perception) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/local_setup.dsv\n'}
+[1.313321] (zrobot_perception) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/package.dsv\n'}
+[1.313788] (zrobot_perception) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/ament_index/resource_index/packages/zrobot_perception\n'}
+[1.314289] (zrobot_perception) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/cmake/zrobot_perceptionConfig.cmake\n'}
+[1.314843] (zrobot_perception) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/cmake/zrobot_perceptionConfig-version.cmake\n'}
+[1.315302] (zrobot_perception) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_perception/share/zrobot_perception/package.xml\n'}
+[1.316264] (zrobot_perception) CommandEnded: {'returncode': 0}
+[1.336523] (zrobot_perception) JobEnded: {'identifier': 'zrobot_perception', 'rc': 0}
+[1.339025] (zrobot_interfaces) CommandEnded: {'returncode': 0}
+[1.340385] (zrobot_interfaces) JobProgress: {'identifier': 'zrobot_interfaces', 'progress': 'install'}
+[1.340486] (zrobot_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--install', '/root/ws_ros2/ZRobot_Next/build/zrobot_interfaces'], 'cwd': '/root/ws_ros2/ZRobot_Next/build/zrobot_interfaces', 'env': OrderedDict({'AGENT': '1', 'HOSTNAME': 'rock-5b', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/root/ws_ros2', 'NVM_BIN': '/root/.nvm/versions/node/v20.20.2/bin', 'NVM_INC': '/root/.nvm/versions/node/v20.20.2/include/node', 'ROS_PYTHON_VERSION': '3', 'NVM_DIR': '/root/.nvm', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'OPENCODE': '1', 'PATH': '/root/.nvm/versions/node/v20.20.2/bin:/root/.opencode/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'FASTRTPS_DEFAULT_PROFILES_FILE': '/opt/ros/jazzy/share/fastdds_profiles.xml', 'DISPLAY': '', 'OPENCODE_PID': '16894', 'LANG': 'C.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_fastrtps_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'DEBIAN_FRONTEND': 'noninteractive', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/root/ws_ros2/ZRobot_Next/build/zrobot_interfaces', 'LC_ALL': 'C.UTF-8', 'NVM_CD_FLAGS': '', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy'}), 'shell': False}
+[1.350922] (zrobot_interfaces) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[1.351757] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/ament_index/resource_index/rosidl_interfaces/zrobot_interfaces\n'}
+[1.352385] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/msg/DetectionStatus.json\n'}
+[1.353006] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/msg/MotorCommand.json\n'}
+[1.353523] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/srv/SetTarget.json\n'}
+[1.354119] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/srv/SetConfig.json\n'}
+[1.354688] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces\n'}
+[1.355266] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv\n'}
+[1.355770] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail\n'}
+[1.356372] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__struct.h\n'}
+[1.357015] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__type_support.h\n'}
+[1.357574] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__functions.h\n'}
+[1.357978] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__description.c\n'}
+[1.358584] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__functions.c\n'}
+[1.360561] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__type_support.h\n'}
+[1.361342] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__functions.h\n'}
+[1.361849] (zrobot_interfaces) StdoutLine: {'line': b'-- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__type_support.c\n'}
+[1.362311] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__struct.h\n'}
+[1.362772] (zrobot_interfaces) StdoutLine: {'line': b'-- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__type_support.c\n'}
+[1.363328] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__functions.c\n'}
+[1.363885] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__description.c\n'}
+[1.364424] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/set_config.h\n'}
+[1.364880] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/set_target.h\n'}
+[1.365337] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg\n'}
+[1.365782] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail\n'}
+[1.366221] (zrobot_interfaces) StdoutLine: {'line': b'-- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__type_support.c\n'}
+[1.366675] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__type_support.h\n'}
+[1.367143] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__functions.c\n'}
+[1.367563] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__type_support.h\n'}
+[1.367970] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__functions.c\n'}
+[1.368376] (zrobot_interfaces) StdoutLine: {'line': b'-- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__type_support.c\n'}
+[1.368818] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__struct.h\n'}
+[1.369225] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__description.c\n'}
+[1.369630] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__description.c\n'}
+[1.370034] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__functions.h\n'}
+[1.370438] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__functions.h\n'}
+[1.370870] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__struct.h\n'}
+[1.371295] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/rosidl_generator_c__visibility_control.h\n'}
+[1.371701] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detection_status.h\n'}
+[1.372107] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/motor_command.h\n'}
+[1.372512] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/environment/library_path.sh\n'}
+[1.372921] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/environment/library_path.dsv\n'}
+[1.373383] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/libzrobot_interfaces__rosidl_generator_c.so\n'}
+[1.373880] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces\n'}
+[1.374288] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv\n'}
+[1.374692] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail\n'}
+[1.375137] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__rosidl_typesupport_fastrtps_c.h\n'}
+[1.375549] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__rosidl_typesupport_fastrtps_c.h\n'}
+[1.375955] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg\n'}
+[1.376359] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail\n'}
+[1.376766] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__rosidl_typesupport_fastrtps_c.h\n'}
+[1.377251] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__rosidl_typesupport_fastrtps_c.h\n'}
+[1.377658] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[1.378064] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/libzrobot_interfaces__rosidl_typesupport_fastrtps_c.so\n'}
+[1.378469] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces\n'}
+[1.378907] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv\n'}
+[1.379332] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail\n'}
+[1.379747] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__rosidl_typesupport_introspection_c.h\n'}
+[1.380161] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__rosidl_typesupport_introspection_c.h\n'}
+[1.380575] (zrobot_interfaces) StdoutLine: {'line': b'-- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__type_support.c\n'}
+[1.380985] (zrobot_interfaces) StdoutLine: {'line': b'-- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__type_support.c\n'}
+[1.381393] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg\n'}
+[1.381800] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail\n'}
+[1.382207] (zrobot_interfaces) StdoutLine: {'line': b'-- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__type_support.c\n'}
+[1.382615] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__rosidl_typesupport_introspection_c.h\n'}
+[1.383063] (zrobot_interfaces) StdoutLine: {'line': b'-- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__type_support.c\n'}
+[1.383482] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__rosidl_typesupport_introspection_c.h\n'}
+[1.383892] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[1.384299] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/libzrobot_interfaces__rosidl_typesupport_introspection_c.so\n'}
+[1.384737] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/libzrobot_interfaces__rosidl_typesupport_c.so\n'}
+[1.385144] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces\n'}
+[1.385549] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv\n'}
+[1.385981] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail\n'}
+[1.386387] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__traits.hpp\n'}
+[1.386820] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__struct.hpp\n'}
+[1.387247] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__struct.hpp\n'}
+[1.387656] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__builder.hpp\n'}
+[1.388062] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__traits.hpp\n'}
+[1.388468] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__type_support.hpp\n'}
+[1.388881] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__builder.hpp\n'}
+[1.389347] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__type_support.hpp\n'}
+[1.389759] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/set_target.hpp\n'}
+[1.390172] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/set_config.hpp\n'}
+[1.390581] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg\n'}
+[1.391032] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/motor_command.hpp\n'}
+[1.391451] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detection_status.hpp\n'}
+[1.391661] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail\n'}
+[1.391763] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__struct.hpp\n'}
+[1.391854] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__struct.hpp\n'}
+[1.391942] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__traits.hpp\n'}
+[1.392027] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__type_support.hpp\n'}
+[1.392112] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__type_support.hpp\n'}
+[1.392223] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__builder.hpp\n'}
+[1.392308] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__traits.hpp\n'}
+[1.392393] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__builder.hpp\n'}
+[1.392477] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[1.392574] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces\n'}
+[1.392662] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv\n'}
+[1.392746] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail\n'}
+[1.392830] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[1.392915] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/dds_fastrtps\n'}
+[1.392998] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[1.393081] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg\n'}
+[1.393164] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail\n'}
+[1.393247] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[1.393330] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/dds_fastrtps\n'}
+[1.393414] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[1.393497] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[1.393602] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/libzrobot_interfaces__rosidl_typesupport_fastrtps_cpp.so\n'}
+[1.393687] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces\n'}
+[1.393770] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv\n'}
+[1.393853] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail\n'}
+[1.393936] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__type_support.cpp\n'}
+[1.394030] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__rosidl_typesupport_introspection_cpp.hpp\n'}
+[1.394114] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_config__rosidl_typesupport_introspection_cpp.hpp\n'}
+[1.394196] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/srv/detail/set_target__type_support.cpp\n'}
+[1.394279] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg\n'}
+[1.394361] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail\n'}
+[1.394444] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__type_support.cpp\n'}
+[1.394528] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__rosidl_typesupport_introspection_cpp.hpp\n'}
+[1.394611] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/motor_command__type_support.cpp\n'}
+[1.394694] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/include/zrobot_interfaces/zrobot_interfaces/msg/detail/detection_status__rosidl_typesupport_introspection_cpp.hpp\n'}
+[1.394804] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/libzrobot_interfaces__rosidl_typesupport_introspection_cpp.so\n'}
+[1.394916] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/libzrobot_interfaces__rosidl_typesupport_cpp.so\n'}
+[1.395017] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/environment/pythonpath.sh\n'}
+[1.395103] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/environment/pythonpath.dsv\n'}
+[1.395186] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces-1.0.0-py3.12.egg-info\n'}
+[1.395270] (zrobot_interfaces) StdoutLine: {'line': b'-- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces-1.0.0-py3.12.egg-info/dependency_links.txt\n'}
+[1.395355] (zrobot_interfaces) StdoutLine: {'line': b'-- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces-1.0.0-py3.12.egg-info/PKG-INFO\n'}
+[1.395439] (zrobot_interfaces) StdoutLine: {'line': b'-- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces-1.0.0-py3.12.egg-info/top_level.txt\n'}
+[1.395522] (zrobot_interfaces) StdoutLine: {'line': b'-- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces-1.0.0-py3.12.egg-info/SOURCES.txt\n'}
+[1.395605] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces\n'}
+[1.395688] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/zrobot_interfaces_s__rosidl_typesupport_c.so\n'}
+[1.395788] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/srv\n'}
+[1.395871] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/srv/_set_target_s.c\n'}
+[1.395954] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/srv/_set_config_s.c\n'}
+[1.396036] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/srv/_set_config.py\n'}
+[1.396119] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/srv/_set_target.py\n'}
+[1.396222] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/srv/__init__.py\n'}
+[1.396307] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/_zrobot_interfaces_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[1.396392] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/_zrobot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[1.396477] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/zrobot_interfaces_s__rosidl_typesupport_introspection_c.so\n'}
+[1.396561] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/_zrobot_interfaces_s.ep.rosidl_typesupport_c.c\n'}
+[1.396645] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/zrobot_interfaces_s__rosidl_typesupport_fastrtps_c.so\n'}
+[1.396727] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/msg\n'}
+[1.396810] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/msg/_motor_command.py\n'}
+[1.396893] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/msg/_detection_status_s.c\n'}
+[1.396976] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/msg/_detection_status.py\n'}
+[1.397059] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/msg/__init__.py\n'}
+[1.397141] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/msg/_motor_command_s.c\n'}
+[1.397224] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/__init__.py\n'}
+[1.407976] (-) TimerEvent: {}
+[1.427303] (zrobot_interfaces) StdoutLine: {'line': b"Listing '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces'...\n"}
+[1.427712] (zrobot_interfaces) StdoutLine: {'line': b"Listing '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/msg'...\n"}
+[1.427837] (zrobot_interfaces) StdoutLine: {'line': b"Listing '/root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/srv'...\n"}
+[1.438995] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/zrobot_interfaces_s__rosidl_typesupport_fastrtps_c.so\n'}
+[1.439970] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/zrobot_interfaces_s__rosidl_typesupport_introspection_c.so\n'}
+[1.440270] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/python3.12/site-packages/zrobot_interfaces/zrobot_interfaces_s__rosidl_typesupport_c.so\n'}
+[1.440380] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/lib/libzrobot_interfaces__rosidl_generator_py.so\n'}
+[1.440858] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/msg/DetectionStatus.idl\n'}
+[1.441254] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/msg/MotorCommand.idl\n'}
+[1.441860] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/srv/SetTarget.idl\n'}
+[1.442572] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/srv/SetConfig.idl\n'}
+[1.443274] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/msg/DetectionStatus.msg\n'}
+[1.443971] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/msg/MotorCommand.msg\n'}
+[1.444411] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/srv/SetTarget.srv\n'}
+[1.444863] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/srv/SetConfig.srv\n'}
+[1.445277] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/ament_index/resource_index/package_run_dependencies/zrobot_interfaces\n'}
+[1.445685] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/ament_index/resource_index/parent_prefix_path/zrobot_interfaces\n'}
+[1.446161] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/environment/ament_prefix_path.sh\n'}
+[1.446599] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/environment/ament_prefix_path.dsv\n'}
+[1.448007] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/environment/path.sh\n'}
+[1.448641] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/environment/path.dsv\n'}
+[1.449276] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/local_setup.bash\n'}
+[1.449807] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/local_setup.sh\n'}
+[1.450304] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/local_setup.zsh\n'}
+[1.451013] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/local_setup.dsv\n'}
+[1.451469] (zrobot_interfaces) StdoutLine: {'line': b'-- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/package.dsv\n'}
+[1.451950] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/ament_index/resource_index/packages/zrobot_interfaces\n'}
+[1.452431] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/export_zrobot_interfaces__rosidl_generator_cExport.cmake\n'}
+[1.452942] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/export_zrobot_interfaces__rosidl_generator_cExport-noconfig.cmake\n'}
+[1.453493] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/export_zrobot_interfaces__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[1.453974] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/export_zrobot_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[1.454474] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/zrobot_interfaces__rosidl_typesupport_introspection_cExport.cmake\n'}
+[1.454991] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/zrobot_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[1.455470] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/zrobot_interfaces__rosidl_typesupport_cExport.cmake\n'}
+[1.455913] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/zrobot_interfaces__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[1.456355] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/export_zrobot_interfaces__rosidl_generator_cppExport.cmake\n'}
+[1.456901] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/export_zrobot_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[1.458723] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/export_zrobot_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[1.460235] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/zrobot_interfaces__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[1.461182] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/zrobot_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[1.462055] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/zrobot_interfaces__rosidl_typesupport_cppExport.cmake\n'}
+[1.462987] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/zrobot_interfaces__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[1.464417] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/export_zrobot_interfaces__rosidl_generator_pyExport.cmake\n'}
+[1.464621] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/export_zrobot_interfaces__rosidl_generator_pyExport-noconfig.cmake\n'}
+[1.464729] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/rosidl_cmake-extras.cmake\n'}
+[1.464844] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[1.465036] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[1.465134] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[1.465228] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[1.465320] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[1.465412] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[1.465503] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/zrobot_interfacesConfig.cmake\n'}
+[1.465594] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/cmake/zrobot_interfacesConfig-version.cmake\n'}
+[1.465685] (zrobot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_interfaces/share/zrobot_interfaces/package.xml\n'}
+[1.465779] (zrobot_interfaces) CommandEnded: {'returncode': 0}
+[1.507287] (zrobot_interfaces) JobEnded: {'identifier': 'zrobot_interfaces', 'rc': 0}
+[1.508056] (-) TimerEvent: {}
+[1.608358] (-) TimerEvent: {}
+[1.708755] (-) TimerEvent: {}
+[1.809071] (-) TimerEvent: {}
+[1.909388] (-) TimerEvent: {}
+[2.009699] (-) TimerEvent: {}
+[2.110017] (-) TimerEvent: {}
+[2.210334] (-) TimerEvent: {}
+[2.310691] (-) TimerEvent: {}
+[2.411088] (-) TimerEvent: {}
+[2.511455] (-) TimerEvent: {}
+[2.611804] (-) TimerEvent: {}
+[2.712145] (-) TimerEvent: {}
+[2.812510] (-) TimerEvent: {}
+[2.912849] (-) TimerEvent: {}
+[3.013338] (-) TimerEvent: {}
+[3.113880] (-) TimerEvent: {}
+[3.214230] (-) TimerEvent: {}
+[3.314586] (-) TimerEvent: {}
+[3.414915] (-) TimerEvent: {}
+[3.515228] (-) TimerEvent: {}
+[3.615537] (-) TimerEvent: {}
+[3.715839] (-) TimerEvent: {}
+[3.816128] (-) TimerEvent: {}
+[3.916407] (-) TimerEvent: {}
+[4.016713] (-) TimerEvent: {}
+[4.117057] (-) TimerEvent: {}
+[4.217405] (-) TimerEvent: {}
+[4.317751] (-) TimerEvent: {}
+[4.418130] (-) TimerEvent: {}
+[4.518515] (-) TimerEvent: {}
+[4.618896] (-) TimerEvent: {}
+[4.719310] (-) TimerEvent: {}
+[4.875910] (-) TimerEvent: {}
+[4.976266] (-) TimerEvent: {}
+[5.076615] (-) TimerEvent: {}
+[5.176980] (-) TimerEvent: {}
+[5.277330] (-) TimerEvent: {}
+[5.377691] (-) TimerEvent: {}
+[5.478068] (-) TimerEvent: {}
+[5.578416] (-) TimerEvent: {}
+[5.678770] (-) TimerEvent: {}
+[5.779159] (-) TimerEvent: {}
+[5.879539] (-) TimerEvent: {}
+[5.979906] (-) TimerEvent: {}
+[6.080252] (-) TimerEvent: {}
+[6.180597] (-) TimerEvent: {}
+[6.280952] (-) TimerEvent: {}
+[6.381324] (-) TimerEvent: {}
+[6.481690] (-) TimerEvent: {}
+[6.582037] (-) TimerEvent: {}
+[6.682391] (-) TimerEvent: {}
+[6.782737] (-) TimerEvent: {}
+[6.883146] (-) TimerEvent: {}
+[6.983591] (-) TimerEvent: {}
+[7.083995] (-) TimerEvent: {}
+[7.184346] (-) TimerEvent: {}
+[7.284711] (-) TimerEvent: {}
+[7.385069] (-) TimerEvent: {}
+[7.485417] (-) TimerEvent: {}
+[7.585761] (-) TimerEvent: {}
+[7.686112] (-) TimerEvent: {}
+[7.786482] (-) TimerEvent: {}
+[7.886901] (-) TimerEvent: {}
+[7.987258] (-) TimerEvent: {}
+[8.087600] (-) TimerEvent: {}
+[8.187942] (-) TimerEvent: {}
+[8.288290] (-) TimerEvent: {}
+[8.388703] (-) TimerEvent: {}
+[8.489066] (-) TimerEvent: {}
+[8.589409] (-) TimerEvent: {}
+[8.689753] (-) TimerEvent: {}
+[8.790099] (-) TimerEvent: {}
+[8.890451] (-) TimerEvent: {}
+[8.990816] (-) TimerEvent: {}
+[9.091220] (-) TimerEvent: {}
+[9.191677] (-) TimerEvent: {}
+[9.292136] (-) TimerEvent: {}
+[9.392621] (-) TimerEvent: {}
+[9.493041] (-) TimerEvent: {}
+[9.593407] (-) TimerEvent: {}
+[9.693747] (-) TimerEvent: {}
+[9.794090] (-) TimerEvent: {}
+[9.894445] (-) TimerEvent: {}
+[9.994848] (-) TimerEvent: {}
+[10.095200] (-) TimerEvent: {}
+[10.195561] (-) TimerEvent: {}
+[10.295915] (-) TimerEvent: {}
+[10.396270] (-) TimerEvent: {}
+[10.496612] (-) TimerEvent: {}
+[10.596963] (-) TimerEvent: {}
+[10.697310] (-) TimerEvent: {}
+[10.797655] (-) TimerEvent: {}
+[10.898002] (-) TimerEvent: {}
+[10.998363] (-) TimerEvent: {}
+[11.098707] (-) TimerEvent: {}
+[11.199066] (-) TimerEvent: {}
+[11.299424] (-) TimerEvent: {}
+[11.399786] (-) TimerEvent: {}
+[11.500177] (-) TimerEvent: {}
+[11.600654] (-) TimerEvent: {}
+[11.701110] (-) TimerEvent: {}
+[11.801549] (-) TimerEvent: {}
+[11.902003] (-) TimerEvent: {}
+[12.002461] (-) TimerEvent: {}
+[12.102954] (-) TimerEvent: {}
+[12.203404] (-) TimerEvent: {}
+[12.303872] (-) TimerEvent: {}
+[12.404314] (-) TimerEvent: {}
+[12.504795] (-) TimerEvent: {}
+[12.605322] (-) TimerEvent: {}
+[12.705825] (-) TimerEvent: {}
+[12.806287] (-) TimerEvent: {}
+[12.906748] (-) TimerEvent: {}
+[13.007278] (-) TimerEvent: {}
+[13.107886] (-) TimerEvent: {}
+[13.208520] (-) TimerEvent: {}
+[13.309179] (-) TimerEvent: {}
+[13.409827] (-) TimerEvent: {}
+[13.510377] (-) TimerEvent: {}
+[13.610921] (-) TimerEvent: {}
+[13.711444] (-) TimerEvent: {}
+[13.811982] (-) TimerEvent: {}
+[13.912471] (-) TimerEvent: {}
+[14.012892] (-) TimerEvent: {}
+[14.113276] (-) TimerEvent: {}
+[14.213637] (-) TimerEvent: {}
+[14.313986] (-) TimerEvent: {}
+[14.414309] (-) TimerEvent: {}
+[14.514615] (-) TimerEvent: {}
+[14.614958] (-) TimerEvent: {}
+[14.715264] (-) TimerEvent: {}
+[14.815598] (-) TimerEvent: {}
+[14.915936] (-) TimerEvent: {}
+[15.016283] (-) TimerEvent: {}
+[15.116597] (-) TimerEvent: {}
+[15.216958] (-) TimerEvent: {}
+[15.317290] (-) TimerEvent: {}
+[15.417621] (-) TimerEvent: {}
+[15.517931] (-) TimerEvent: {}
+[15.618234] (-) TimerEvent: {}
+[15.718541] (-) TimerEvent: {}
+[15.818871] (-) TimerEvent: {}
+[15.919195] (-) TimerEvent: {}
+[16.019512] (-) TimerEvent: {}
+[16.119820] (-) TimerEvent: {}
+[16.220163] (-) TimerEvent: {}
+[16.320541] (-) TimerEvent: {}
+[16.420951] (-) TimerEvent: {}
+[16.521379] (-) TimerEvent: {}
+[16.621790] (-) TimerEvent: {}
+[16.722258] (-) TimerEvent: {}
+[16.822656] (-) TimerEvent: {}
+[16.922996] (-) TimerEvent: {}
+[17.023310] (-) TimerEvent: {}
+[17.123632] (-) TimerEvent: {}
+[17.224011] (-) TimerEvent: {}
+[17.324338] (-) TimerEvent: {}
+[17.424648] (-) TimerEvent: {}
+[17.524970] (-) TimerEvent: {}
+[17.625286] (-) TimerEvent: {}
+[17.725600] (-) TimerEvent: {}
+[17.825907] (-) TimerEvent: {}
+[17.926247] (-) TimerEvent: {}
+[18.026572] (-) TimerEvent: {}
+[18.126902] (-) TimerEvent: {}
+[18.227244] (-) TimerEvent: {}
+[18.327634] (-) TimerEvent: {}
+[18.427991] (-) TimerEvent: {}
+[18.528350] (-) TimerEvent: {}
+[18.628694] (-) TimerEvent: {}
+[18.729090] (-) TimerEvent: {}
+[18.829556] (-) TimerEvent: {}
+[18.930071] (-) TimerEvent: {}
+[19.030544] (-) TimerEvent: {}
+[19.131013] (-) TimerEvent: {}
+[19.231603] (-) TimerEvent: {}
+[19.332329] (-) TimerEvent: {}
+[19.432981] (-) TimerEvent: {}
+[19.533664] (-) TimerEvent: {}
+[19.634312] (-) TimerEvent: {}
+[19.734937] (-) TimerEvent: {}
+[19.835503] (-) TimerEvent: {}
+[19.936083] (-) TimerEvent: {}
+[20.036649] (-) TimerEvent: {}
+[20.137082] (-) TimerEvent: {}
+[20.237413] (-) TimerEvent: {}
+[20.337724] (-) TimerEvent: {}
+[20.438036] (-) TimerEvent: {}
+[20.538335] (-) TimerEvent: {}
+[20.638643] (-) TimerEvent: {}
+[20.738948] (-) TimerEvent: {}
+[20.839288] (-) TimerEvent: {}
+[20.939622] (-) TimerEvent: {}
+[21.039931] (-) TimerEvent: {}
+[21.140238] (-) TimerEvent: {}
+[21.240571] (-) TimerEvent: {}
+[21.340934] (-) TimerEvent: {}
+[21.441379] (-) TimerEvent: {}
+[21.541705] (-) TimerEvent: {}
+[21.642049] (-) TimerEvent: {}
+[21.742421] (-) TimerEvent: {}
+[21.842755] (-) TimerEvent: {}
+[21.943112] (-) TimerEvent: {}
+[22.043492] (-) TimerEvent: {}
+[22.143879] (-) TimerEvent: {}
+[22.244245] (-) TimerEvent: {}
+[22.344606] (-) TimerEvent: {}
+[22.444944] (-) TimerEvent: {}
+[22.545291] (-) TimerEvent: {}
+[22.645638] (-) TimerEvent: {}
+[22.745994] (-) TimerEvent: {}
+[22.846361] (-) TimerEvent: {}
+[22.946755] (-) TimerEvent: {}
+[23.047194] (-) TimerEvent: {}
+[23.147590] (-) TimerEvent: {}
+[23.247982] (-) TimerEvent: {}
+[23.348379] (-) TimerEvent: {}
+[23.448778] (-) TimerEvent: {}
+[23.549142] (-) TimerEvent: {}
+[23.602205] (zrobot_control) StdoutLine: {'line': b'[ 66%] Linking CXX executable motor_controller_node\n'}
+[23.649301] (-) TimerEvent: {}
+[23.749651] (-) TimerEvent: {}
+[23.850021] (-) TimerEvent: {}
+[23.950451] (-) TimerEvent: {}
+[24.050871] (-) TimerEvent: {}
+[24.151135] (-) TimerEvent: {}
+[24.251415] (-) TimerEvent: {}
+[24.351669] (-) TimerEvent: {}
+[24.451916] (-) TimerEvent: {}
+[24.552182] (-) TimerEvent: {}
+[24.652456] (-) TimerEvent: {}
+[24.752716] (-) TimerEvent: {}
+[24.852143] (zrobot_control) StdoutLine: {'line': b'[100%] Built target motor_controller_node\n'}
+[24.852780] (-) TimerEvent: {}
+[24.870760] (zrobot_control) CommandEnded: {'returncode': 0}
+[24.871900] (zrobot_control) JobProgress: {'identifier': 'zrobot_control', 'progress': 'install'}
+[24.872301] (zrobot_control) Command: {'cmd': ['/usr/bin/cmake', '--install', '/root/ws_ros2/ZRobot_Next/build/zrobot_control'], 'cwd': '/root/ws_ros2/ZRobot_Next/build/zrobot_control', 'env': OrderedDict({'AGENT': '1', 'HOSTNAME': 'rock-5b', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/root/ws_ros2', 'NVM_BIN': '/root/.nvm/versions/node/v20.20.2/bin', 'NVM_INC': '/root/.nvm/versions/node/v20.20.2/include/node', 'ROS_PYTHON_VERSION': '3', 'NVM_DIR': '/root/.nvm', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'OPENCODE': '1', 'PATH': '/root/.nvm/versions/node/v20.20.2/bin:/root/.opencode/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'FASTRTPS_DEFAULT_PROFILES_FILE': '/opt/ros/jazzy/share/fastdds_profiles.xml', 'DISPLAY': '', 'OPENCODE_PID': '16894', 'LANG': 'C.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_fastrtps_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'DEBIAN_FRONTEND': 'noninteractive', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/root/ws_ros2/ZRobot_Next/build/zrobot_control', 'LC_ALL': 'C.UTF-8', 'NVM_CD_FLAGS': '', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy'}), 'shell': False}
+[24.900065] (zrobot_control) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[24.914603] (zrobot_control) StdoutLine: {'line': b'-- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_control/lib/zrobot_control/motor_controller_node\n'}
+[24.930119] (zrobot_control) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/root/ws_ros2/ZRobot_Next/install/zrobot_control/lib/zrobot_control/motor_controller_node" to ""\n'}
+[24.930561] (zrobot_control) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_control/share/ament_index/resource_index/package_run_dependencies/zrobot_control\n'}
+[24.930791] (zrobot_control) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_control/share/ament_index/resource_index/parent_prefix_path/zrobot_control\n'}
+[24.930900] (zrobot_control) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/environment/ament_prefix_path.sh\n'}
+[24.930989] (zrobot_control) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/environment/ament_prefix_path.dsv\n'}
+[24.931217] (zrobot_control) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/environment/path.sh\n'}
+[24.931307] (zrobot_control) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/environment/path.dsv\n'}
+[24.931392] (zrobot_control) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/local_setup.bash\n'}
+[24.931476] (zrobot_control) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/local_setup.sh\n'}
+[24.931559] (zrobot_control) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/local_setup.zsh\n'}
+[24.931641] (zrobot_control) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/local_setup.dsv\n'}
+[24.931723] (zrobot_control) StdoutLine: {'line': b'-- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/package.dsv\n'}
+[24.931805] (zrobot_control) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_control/share/ament_index/resource_index/packages/zrobot_control\n'}
+[24.931887] (zrobot_control) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/cmake/zrobot_controlConfig.cmake\n'}
+[24.931970] (zrobot_control) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/cmake/zrobot_controlConfig-version.cmake\n'}
+[24.932052] (zrobot_control) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/package.xml\n'}
+[24.933961] (zrobot_control) CommandEnded: {'returncode': 0}
+[24.952951] (-) TimerEvent: {}
+[24.983664] (zrobot_control) JobEnded: {'identifier': 'zrobot_control', 'rc': 0}
+[24.985286] (zrobot_bringup) JobStarted: {'identifier': 'zrobot_bringup'}
+[24.996398] (zrobot_bringup) JobProgress: {'identifier': 'zrobot_bringup', 'progress': 'cmake'}
+[24.997291] (zrobot_bringup) JobProgress: {'identifier': 'zrobot_bringup', 'progress': 'build'}
+[24.997874] (zrobot_bringup) Command: {'cmd': ['/usr/bin/cmake', '--build', '/root/ws_ros2/ZRobot_Next/build/zrobot_bringup', '--', '-j8', '-l8'], 'cwd': '/root/ws_ros2/ZRobot_Next/build/zrobot_bringup', 'env': OrderedDict({'AGENT': '1', 'HOSTNAME': 'rock-5b', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/root/ws_ros2', 'NVM_BIN': '/root/.nvm/versions/node/v20.20.2/bin', 'NVM_INC': '/root/.nvm/versions/node/v20.20.2/include/node', 'ROS_PYTHON_VERSION': '3', 'NVM_DIR': '/root/.nvm', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'OPENCODE': '1', 'PATH': '/root/.nvm/versions/node/v20.20.2/bin:/root/.opencode/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'FASTRTPS_DEFAULT_PROFILES_FILE': '/opt/ros/jazzy/share/fastdds_profiles.xml', 'DISPLAY': '', 'OPENCODE_PID': '16894', 'LANG': 'C.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_fastrtps_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/root/ws_ros2/ZRobot_Next/install/zrobot_perception:/root/ws_ros2/ZRobot_Next/install/zrobot_control:/opt/ros/jazzy', 'DEBIAN_FRONTEND': 'noninteractive', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/root/ws_ros2/ZRobot_Next/build/zrobot_bringup', 'LC_ALL': 'C.UTF-8', 'NVM_CD_FLAGS': '', 'PYTHONPATH': '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/root/ws_ros2/ZRobot_Next/install/zrobot_perception:/root/ws_ros2/ZRobot_Next/install/zrobot_control:/opt/ros/jazzy'}), 'shell': False}
+[25.053262] (-) TimerEvent: {}
+[25.105950] (zrobot_bringup) CommandEnded: {'returncode': 0}
+[25.109158] (zrobot_bringup) JobProgress: {'identifier': 'zrobot_bringup', 'progress': 'install'}
+[25.110542] (zrobot_bringup) Command: {'cmd': ['/usr/bin/cmake', '--install', '/root/ws_ros2/ZRobot_Next/build/zrobot_bringup'], 'cwd': '/root/ws_ros2/ZRobot_Next/build/zrobot_bringup', 'env': OrderedDict({'AGENT': '1', 'HOSTNAME': 'rock-5b', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/lib', 'HOME': '/root', 'OLDPWD': '/root/ws_ros2', 'NVM_BIN': '/root/.nvm/versions/node/v20.20.2/bin', 'NVM_INC': '/root/.nvm/versions/node/v20.20.2/include/node', 'ROS_PYTHON_VERSION': '3', 'NVM_DIR': '/root/.nvm', 'ROS_DISTRO': 'jazzy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'OPENCODE': '1', 'PATH': '/root/.nvm/versions/node/v20.20.2/bin:/root/.opencode/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'FASTRTPS_DEFAULT_PROFILES_FILE': '/opt/ros/jazzy/share/fastdds_profiles.xml', 'DISPLAY': '', 'OPENCODE_PID': '16894', 'LANG': 'C.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_fastrtps_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/root/ws_ros2/ZRobot_Next/install/zrobot_perception:/root/ws_ros2/ZRobot_Next/install/zrobot_control:/opt/ros/jazzy', 'DEBIAN_FRONTEND': 'noninteractive', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/root/ws_ros2/ZRobot_Next/build/zrobot_bringup', 'LC_ALL': 'C.UTF-8', 'NVM_CD_FLAGS': '', 'PYTHONPATH': '/root/ws_ros2/ZRobot_Next/install/zrobot_perception/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/root/ws_ros2/ZRobot_Next/install/zrobot_perception:/root/ws_ros2/ZRobot_Next/install/zrobot_control:/opt/ros/jazzy'}), 'shell': False}
+[25.141708] (zrobot_bringup) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[25.142556] (zrobot_bringup) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup//launch\n'}
+[25.142860] (zrobot_bringup) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup//launch/zrobot_launch.py\n'}
+[25.142999] (zrobot_bringup) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup//config\n'}
+[25.143097] (zrobot_bringup) StdoutLine: {'line': b'-- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup//config/zrobot_config.yaml\n'}
+[25.143187] (zrobot_bringup) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_bringup/lib/zrobot_bringup/zrobot_launch.py\n'}
+[25.143275] (zrobot_bringup) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/ament_index/resource_index/package_run_dependencies/zrobot_bringup\n'}
+[25.143363] (zrobot_bringup) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/ament_index/resource_index/parent_prefix_path/zrobot_bringup\n'}
+[25.143451] (zrobot_bringup) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup/environment/ament_prefix_path.sh\n'}
+[25.143561] (zrobot_bringup) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup/environment/ament_prefix_path.dsv\n'}
+[25.143648] (zrobot_bringup) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup/environment/path.sh\n'}
+[25.143734] (zrobot_bringup) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup/environment/path.dsv\n'}
+[25.143817] (zrobot_bringup) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup/local_setup.bash\n'}
+[25.143902] (zrobot_bringup) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup/local_setup.sh\n'}
+[25.143985] (zrobot_bringup) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup/local_setup.zsh\n'}
+[25.144068] (zrobot_bringup) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup/local_setup.dsv\n'}
+[25.144151] (zrobot_bringup) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup/package.dsv\n'}
+[25.144235] (zrobot_bringup) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/ament_index/resource_index/packages/zrobot_bringup\n'}
+[25.144318] (zrobot_bringup) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup/cmake/zrobot_bringupConfig.cmake\n'}
+[25.144402] (zrobot_bringup) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup/cmake/zrobot_bringupConfig-version.cmake\n'}
+[25.144485] (zrobot_bringup) StdoutLine: {'line': b'-- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_bringup/share/zrobot_bringup/package.xml\n'}
+[25.145788] (zrobot_bringup) CommandEnded: {'returncode': 0}
+[25.153460] (-) TimerEvent: {}
+[25.164626] (zrobot_bringup) JobEnded: {'identifier': 'zrobot_bringup', 'rc': 0}
+[25.165441] (-) EventReactorShutdown: {}

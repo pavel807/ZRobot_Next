@@ -1,0 +1,25 @@
+[0.037s] Invoking command in '/root/ws_ros2/ZRobot_Next/build/zrobot_control': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /root/ws_ros2/ZRobot_Next/build/zrobot_control -- -j8 -l8
+[0.156s] [ 33%] Building CXX object CMakeFiles/motor_controller_node.dir/src/motor_controller_node.cpp.o
+[20.902s] [ 66%] Linking CXX executable motor_controller_node
+[21.781s] [100%] Built target motor_controller_node
+[21.802s] Invoked command in '/root/ws_ros2/ZRobot_Next/build/zrobot_control' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --build /root/ws_ros2/ZRobot_Next/build/zrobot_control -- -j8 -l8
+[21.805s] Invoking command in '/root/ws_ros2/ZRobot_Next/build/zrobot_control': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /root/ws_ros2/ZRobot_Next/build/zrobot_control
+[21.836s] -- Install configuration: ""
+[21.837s] -- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_control/lib/zrobot_control/motor_controller_node
+[21.855s] -- Set non-toolchain portion of runtime path of "/root/ws_ros2/ZRobot_Next/install/zrobot_control/lib/zrobot_control/motor_controller_node" to ""
+[21.856s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_control/share/ament_index/resource_index/package_run_dependencies/zrobot_control
+[21.856s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_control/share/ament_index/resource_index/parent_prefix_path/zrobot_control
+[21.857s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/environment/ament_prefix_path.sh
+[21.857s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/environment/ament_prefix_path.dsv
+[21.858s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/environment/path.sh
+[21.859s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/environment/path.dsv
+[21.860s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/local_setup.bash
+[21.861s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/local_setup.sh
+[21.861s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/local_setup.zsh
+[21.862s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/local_setup.dsv
+[21.863s] -- Installing: /root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/package.dsv
+[21.863s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_control/share/ament_index/resource_index/packages/zrobot_control
+[21.864s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/cmake/zrobot_controlConfig.cmake
+[21.864s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/cmake/zrobot_controlConfig-version.cmake
+[21.865s] -- Up-to-date: /root/ws_ros2/ZRobot_Next/install/zrobot_control/share/zrobot_control/package.xml
+[21.866s] Invoked command in '/root/ws_ros2/ZRobot_Next/build/zrobot_control' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy /usr/bin/cmake --install /root/ws_ros2/ZRobot_Next/build/zrobot_control

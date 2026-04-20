@@ -1,0 +1,6 @@
+Invoking command in '/root/ws_ros2/ZRobot_Next/build/ldlidar_stl_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /root/ws_ros2/ZRobot_Next/ldlidar_stl_ros2 -DCMAKE_INSTALL_PREFIX=/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2
+Invoked command in '/root/ws_ros2/ZRobot_Next/build/ldlidar_stl_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /root/ws_ros2/ZRobot_Next/ldlidar_stl_ros2 -DCMAKE_INSTALL_PREFIX=/root/ws_ros2/ZRobot_Next/install/ldlidar_stl_ros2
+Invoking command in '/root/ws_ros2/ZRobot_Next/build/ldlidar_stl_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /root/ws_ros2/ZRobot_Next/build/ldlidar_stl_ros2 -- -j8 -l8
+Invoked command in '/root/ws_ros2/ZRobot_Next/build/ldlidar_stl_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /root/ws_ros2/ZRobot_Next/build/ldlidar_stl_ros2 -- -j8 -l8
+Invoking command in '/root/ws_ros2/ZRobot_Next/build/ldlidar_stl_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /root/ws_ros2/ZRobot_Next/build/ldlidar_stl_ros2
+Invoked command in '/root/ws_ros2/ZRobot_Next/build/ldlidar_stl_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /root/ws_ros2/ZRobot_Next/build/ldlidar_stl_ros2

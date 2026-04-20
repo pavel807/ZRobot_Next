@@ -5,7 +5,6 @@
 #include <geometry_msgs/msg/twist.hpp>
 #include <std_msgs/msg/string.hpp>
 #include <std_msgs/msg/float32.hpp>
-#include <std_msgs/msg/int32.hpp>
 #include <cv_bridge/cv_bridge/cv_bridge.hpp>
 #include <opencv2/opencv.hpp>
 #include <memory>
@@ -52,18 +51,16 @@ struct DetectionParams {
 // MOTOR CONTROL PARAMETERS — полностью синхронизировано с оригиналом ZRobot
 // ============================================================================
 struct MotorControlParams {
-    std::atomic<int> max_speed{40};                      // УМЕНЬШЕНО: было 245 → 40
-    std::atomic<int> min_speed_left{80};                 // Левый мотор минимум 80
-    std::atomic<int> min_speed_right{100};               // Правый мотор минимум 100
-    std::atomic<int> tracking_speed{80};                 // УМЕНЬШЕНО: было 220 → 80
-    std::atomic<int> search_speed{100};                 // УВЕЛИЧЕНО: 80 -> 100 (быстрее ищет)
-    std::atomic<float> center_threshold{0.0f};           // 0 - мгновенно реагирует на ЛЮБОЕ отклонение
-    std::atomic<float> max_turn_ratio{1.0f};            // МАКСИМАЛЬНЫЙ поворот 100%
-    std::atomic<float> turn_aggressiveness{10.0f};     // 10.0 - MAX поворот
+    std::atomic<int> max_speed{245};                     // Как в оригинале
+    std::atomic<int> min_speed{165};                     // Как в оригинале
+    std::atomic<int> tracking_speed{220};                // Как в оригинале
+    std::atomic<int> search_speed{115};                  // Как в оригинале
+    std::atomic<float> center_threshold{0.08f};          // Как в оригинале
+    std::atomic<float> max_turn_ratio{0.95f};            // Как в оригинале
     std::atomic<int> approach_width{120};                // Как в оригинале
-    std::atomic<int> search_timeout_ms{2000};             // УВЕЛИЧЕНО: 300ms -> 2 сек (чтобы не терял)
-    std::atomic<int> search_hysteresis_ms{1000};        // УВЕЛИЧЕНО: 400ms -> 1 сек
-    std::atomic<int> speed_smoothing_steps{2};           // УМЕНЬШЕНО: 4 -> 2 (быстрее реагировать)
+    std::atomic<int> search_timeout_ms{300};             // Как в оригинале
+    std::atomic<int> search_hysteresis_ms{400};          // Как в оригинале
+    std::atomic<int> speed_smoothing_steps{4};           // Как в оригинале
 };
 
 // ============================================================================
@@ -282,7 +279,7 @@ public:
         this->declare_parameter<bool>("show_category", true);
         this->declare_parameter<bool>("enable_auto_follow", true);
         this->declare_parameter<double>("max_linear_speed", 0.3);
-        this->declare_parameter<double>("turn_speed", 1.0);
+        this->declare_parameter<double>("turn_speed", 0.5);
         this->declare_parameter<double>("nms_sigma", 0.5);
         this->declare_parameter<double>("iou_threshold", 0.45);
         this->declare_parameter<double>("multi_label_threshold", 0.15);
@@ -371,12 +368,6 @@ public:
             std::bind(&YoloDetectorNode::targetCallback, this, std::placeholders::_1)
         );
 
-        // Create subscription for target track ID changes
-        target_id_sub_ = this->create_subscription<std_msgs::msg::Int32>(
-            "set_target_id", 10,
-            std::bind(&YoloDetectorNode::targetTrackIdCallback, this, std::placeholders::_1)
-        );
-
         // Create subscription for confidence threshold changes
         confidence_sub_ = this->create_subscription<std_msgs::msg::Float32>(
             "set_confidence", 10,
@@ -409,15 +400,13 @@ public:
         speed_history_r_.clear();
 
         RCLCPP_INFO(this->get_logger(), "Advanced YOLO Detector node started");
-        RCLCPP_INFO(this->get_logger(), "Target: %s | TargetID: %s | Tracking: %s | Adaptive: %s",
+        RCLCPP_INFO(this->get_logger(), "Target: %s | Tracking: %s | Adaptive: %s",
                     target_object_.c_str(),
-                    target_track_id_ == -1 ? "ANY" : std::to_string(target_track_id_).c_str(),
                     enable_tracking ? "ON" : "OFF",
                     adaptive_threshold ? "ON" : "OFF");
-        RCLCPP_INFO(this->get_logger(), "Motor params: max=%d min_L=%d min_R=%d track=%d search=%d",
-                    motor_params_.max_speed.load(), motor_params_.min_speed_left.load(),
-                    motor_params_.min_speed_right.load(), motor_params_.tracking_speed.load(),
-                    motor_params_.search_speed.load());
+        RCLCPP_INFO(this->get_logger(), "Motor params: max=%d min=%d track=%d search=%d",
+                    motor_params_.max_speed.load(), motor_params_.min_speed.load(),
+                    motor_params_.tracking_speed.load(), motor_params_.search_speed.load());
     }
 
 private:
@@ -436,30 +425,8 @@ private:
             in_search_mode_ = false;
             is_searching_ = false;
             has_been_detected_ = false;
-            target_track_id_ = -1;  // Сбрасываем ID - начнём с нового объекта
             last_known_zone_ = "NONE";
             search_direction_ = 1;
-            speed_history_l_.clear();
-            speed_history_r_.clear();
-        }
-    }
-
-    void targetTrackIdCallback(const std_msgs::msg::Int32::SharedPtr msg) {
-        int new_id = msg->data;
-        if (target_track_id_ != new_id) {
-            if (new_id == -1) {
-                target_track_id_ = -1;
-                has_been_detected_ = false;  // Сброс - начнём с первого обнаруженного
-                RCLCPP_INFO(this->get_logger(), "Target track ID: ANY (will follow first detected)");
-            } else {
-                target_track_id_ = new_id;
-                has_been_detected_ = true;  // Конкретный ID задан
-                RCLCPP_INFO(this->get_logger(), "Target track ID set to: %d", target_track_id_);
-            }
-            // Сброс состояния поиска
-            in_search_mode_ = false;
-            is_searching_ = false;
-            last_known_zone_ = "NONE";
             speed_history_l_.clear();
             speed_history_r_.clear();
         }
@@ -606,7 +573,7 @@ private:
             base_speed = (int)(base_speed * scale);
         }
 
-        return std::max(motor_params_.min_speed_left.load(), base_speed);
+        return std::max(motor_params_.min_speed.load(), base_speed);
     }
 
     // =========================================================================
@@ -647,13 +614,13 @@ private:
                 int search_speed = motor_params_.search_speed.load();
 
                 if (search_dir > 0) {
-                    // Вправо: левое вперед (мин 80), правое стоп
-                    out_left = std::max(search_speed, motor_params_.min_speed_left.load());
+                    // Вправо: левое вперед, правое стоп
+                    out_left = search_speed;
                     out_right = 0;
                 } else {
-                    // Влево: правое вперед (мин 100), левое стоп
+                    // Влево: правое вперед, левое стоп
                     out_left = 0;
-                    out_right = std::max(search_speed, motor_params_.min_speed_right.load());
+                    out_right = search_speed;
                 }
             } else {
                 out_left = 0;
@@ -668,42 +635,26 @@ private:
         int base_speed = calculateApproachSpeed(obj_width);
         float abs_deviation = fabs(deviation);
 
-        // РЕЗКИЙ ПОВОРОТ - одно колесо 0, другое MAX
-        if (abs_deviation > 0.03f) {
-            // Объект СЛЕВА (deviation < 0) - крутим влево
-            if (deviation < 0) {
-                out_left = 200;    // MAX вперёд
-                out_right = -50;   // НАЗАД - резкий разворот!
-            }
-            // Объект СПРАВА (deviation > 0) - крутим вправо
-            else {
-                out_left = -50;   // НАЗАД - резкий разворот!
-                out_right = 200;   // MAX вперёд
-            }
-        } else {
-            // Объект по центру - едем прямо
+        if (abs_deviation < motor_params_.center_threshold.load()) {
             out_left = base_speed;
             out_right = base_speed;
+        } else {
+            float turn_intensity = (abs_deviation - motor_params_.center_threshold.load()) /
+                                   (1.0f - motor_params_.center_threshold.load());
+            turn_intensity = std::min(1.0f, turn_intensity);
+            float speed_ratio = 1.0f - (turn_intensity * motor_params_.max_turn_ratio.load());
+
+            if (deviation > 0) {
+                out_left = base_speed;
+                out_right = (int)(base_speed * speed_ratio);
+            } else {
+                out_left = (int)(base_speed * speed_ratio);
+                out_right = base_speed;
+            }
         }
 
-out_left = std::max(-255, std::min(255, out_left));
-        out_right = std::max(-255, std::min(255, out_right));
-
-        // Применяем минимальные скорости ТОЛЬКО при движении вперёд
-        // При повороте (out < 0 или out == 0) - НЕ трогаем!
-        if (out_left > 20 && out_right > 20) {
-            if (out_left < motor_params_.min_speed_left.load()) {
-                out_left = motor_params_.min_speed_left.load();
-            }
-            if (out_right < motor_params_.min_speed_right.load()) {
-                out_right = motor_params_.min_speed_right.load();
-            }
-        }
-    }
-            if (out_right < motor_params_.min_speed_right.load()) {
-                out_right = motor_params_.min_speed_right.load();
-            }
-        }
+        out_left = std::max(0, std::min(255, out_left));
+        out_right = std::max(0, std::min(255, out_right));
     }
 
     // =========================================================================
@@ -719,7 +670,9 @@ out_left = std::max(-255, std::min(255, out_left));
         out_linear = (double)(linear_f / max_spd);
         out_angular = (double)(angular_f / max_spd);
 
-        // NO Clamp - allow full differential drive with negative values!
+        // Clamp
+        out_linear = std::max(-1.0, std::min(1.0, out_linear));
+        out_angular = std::max(-1.0, std::min(1.0, out_angular));
     }
 
     void publishDetections(const std::vector<Object>& objects,
@@ -768,17 +721,7 @@ out_left = std::max(-255, std::min(255, out_left));
             auto cat_it = ID_TO_CATEGORY.find(obj.label);
             std::string category = (cat_it != ID_TO_CATEGORY.end()) ? cat_it->second : "unknown";
 
-            bool is_target_object = (class_name == target_object_);
-            bool is_target_id = (target_track_id_ == -1) || (target_track_id_ == obj.id);
-
-            // Автоматически запоминаем первый обнаруженный объект если ID не задан
-            if (is_target_object && target_track_id_ == -1 && is_stable && !has_been_detected_) {
-                target_track_id_ = obj.id;
-                has_been_detected_ = true;
-                RCLCPP_INFO(this->get_logger(), "=== LOCKED ON OBJECT: ID=%d (%s) ===", target_track_id_, class_name.c_str());
-            }
-
-            if (is_target_object && is_target_id) {
+            if (class_name == target_object_) {
                 bool is_stable = stability_controller_.isStableDetection(true, avg_conf);
                 if (is_stable) {
                     target_found = true;
@@ -815,23 +758,16 @@ out_left = std::max(-255, std::min(255, out_left));
             detection_array.detections.push_back(detection);
 
             cv::Scalar color = getCategoryColorScalar(category);
-            bool is_this_target = (class_name == target_object_) && ((target_track_id_ == -1) || (target_track_id_ == obj.id));
-            if (is_this_target) {
-                color = cv::Scalar(0, 0, 255);  // Красный - целевой объект
+            if (class_name == target_object_) {
+                color = cv::Scalar(0, 0, 255);
             }
 
-            cv::rectangle(frame, rect, color, is_this_target ? 2 : 1);
+            cv::rectangle(frame, rect, color, 1);
 
             char label[128];
             if (params_.enable_tracking) {
-                // Показываем ID жирнее если это целевой объект
-                if (is_this_target && target_track_id_ != -1) {
-                    snprintf(label, sizeof(label), ">>> #%d %s %.0f%% [%s] <<<",
-                             obj.id, class_name.c_str(), avg_conf * 100, category.c_str());
-                } else {
-                    snprintf(label, sizeof(label), "#%d %s %.0f%% [%s]",
-                             obj.id, class_name.c_str(), avg_conf * 100, category.c_str());
-                }
+                snprintf(label, sizeof(label), "#%d %s %.0f%% [%s]",
+                         obj.id, class_name.c_str(), avg_conf * 100, category.c_str());
             } else if (show_category_) {
                 snprintf(label, sizeof(label), "%s %.0f%% [%s]",
                          class_name.c_str(), avg_conf * 100, category.c_str());
@@ -899,9 +835,6 @@ out_left = std::max(-255, std::min(255, out_left));
 
                 if (!in_search_mode_) {
                     last_known_zone_ = target_zone;
-                    last_known_center_x_ = target_center_x;  // Запоминаем последнюю позицию
-                    RCLCPP_INFO(this->get_logger(), "[Track] Target at X=%.1f, zone=%s",
-                        target_center_x, target_zone.c_str());
                     if (target_zone == "LEFT") {
                         search_direction_ = -1;
                     } else if (target_zone == "RIGHT") {
@@ -920,21 +853,12 @@ out_left = std::max(-255, std::min(255, out_left));
                         search_start_time_ = now;
                         is_searching_ = true;
 
-                        // Используем последнюю известную позицию для определения направления поиска
-                        if (last_known_zone_ == "LEFT" || (last_known_center_x_ > 0 && last_known_center_x_ < frame.cols / 2)) {
-                            // Объект был слева - ищем влево
-                            search_direction_ = -1;
-                            RCLCPP_INFO(this->get_logger(), "[Search] Target lost! Was at LEFT (X=%.1f), searching LEFT",
-                                        last_known_center_x_);
-                        } else if (last_known_zone_ == "RIGHT" || last_known_center_x_ >= frame.cols / 2) {
-                            // Объект был справа - ищем вправо
+                        if (last_known_zone_ == "NONE" || last_known_zone_.empty()) {
                             search_direction_ = 1;
-                            RCLCPP_INFO(this->get_logger(), "[Search] Target lost! Was at RIGHT (X=%.1f), searching RIGHT",
-                                        last_known_center_x_);
-                        } else {
-                            search_direction_ = 1;
-                            RCLCPP_INFO(this->get_logger(), "[Search] Target lost (unknown pos), searching RIGHT");
                         }
+
+                        RCLCPP_INFO(this->get_logger(), "[Search] Target lost, searching %s",
+                                    search_direction_ > 0 ? "RIGHT" : "LEFT");
 
                         // Очищаем историю для резкого перехода на поиск
                         speed_history_l_.clear();
@@ -957,20 +881,9 @@ out_left = std::max(-255, std::min(255, out_left));
             calculateMotorSpeedsProportional(target_center_x, frame.cols, target_found, best_target_width,
                                              target_left, target_right);
 
-            // МГНОВЕННАЯ РЕАКЦИЯ - НЕТ СГЛАЖИВАНИЮ ПРИ ЦЕНТРИРОВАНИИ
+            // СГЛАЖИВАНИЕ СКОРОСТЕЙ
             int left_speed, right_speed;
-            if (target_found && !in_search_mode_) {
-                // Мгновенно реагируем на каждый кадр без сглаживания
-                left_speed = target_left;
-                right_speed = target_right;
-                float dev = (target_center_x / frame.cols) - 0.5f;
-                RCLCPP_INFO_THROTTLE(this->get_logger(), *this, 333,
-                    "[TURN] Dev=%.3f L=%d R=%d%s", dev, left_speed, right_speed,
-                    (abs(dev) > 0.05f) ? (dev < 0 ? " <- LEFT" : " -> RIGHT") : " CENTER");
-            } else {
-                // Сглаживаем только при поиске
-                smoothSpeeds(target_left, target_right, left_speed, right_speed);
-            }
+            smoothSpeeds(target_left, target_right, left_speed, right_speed);
 
             // Конвертация PWM → нормализованный Twist
             double linear_norm, angular_norm;
@@ -978,11 +891,11 @@ out_left = std::max(-255, std::min(255, out_left));
 
             geometry_msgs::msg::Twist cmd;
             cmd.linear.x = linear_norm * max_linear_speed_;
-            //.MAX angular - резкий поворот
             cmd.angular.z = angular_norm * turn_speed_;
 
-            // Clamp linear только
+            // Clamp
             cmd.linear.x = std::max(-max_linear_speed_, std::min(max_linear_speed_, cmd.linear.x));
+            cmd.angular.z = std::max(-turn_speed_, std::min(turn_speed_, cmd.angular.z));
 
             // Debug логирование раз в секунду
             static auto last_debug = std::chrono::steady_clock::now();
@@ -1082,7 +995,6 @@ out_left = std::max(-255, std::min(255, out_left));
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr tracked_pub_;
     rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr cmd_vel_pub_;
     rclcpp::Subscription<std_msgs::msg::String>::SharedPtr target_sub_;
-    rclcpp::Subscription<std_msgs::msg::Int32>::SharedPtr target_id_sub_;
     rclcpp::Subscription<std_msgs::msg::Float32>::SharedPtr confidence_sub_;
     rclcpp::TimerBase::SharedPtr timer_;
 
@@ -1092,7 +1004,6 @@ out_left = std::max(-255, std::min(255, out_left));
 
     // State
     std::string target_object_;
-    int target_track_id_{-1};  // -1 = любой объект, иначе конкретный ID
     DetectionParams params_;
     MultiObjectTracker tracker_;
     PerformanceMonitor perf_monitor_;
@@ -1121,7 +1032,6 @@ out_left = std::max(-255, std::min(255, out_left));
     std::atomic<int> search_direction_;
     bool has_been_detected_;
     std::string last_known_zone_;
-    float last_known_center_x_{0.0f};  // Запоминаем последнюю позицию X цели
 
     // История скоростей для сглаживания
     std::deque<int> speed_history_l_;

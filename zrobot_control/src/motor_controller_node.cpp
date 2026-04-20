@@ -24,9 +24,8 @@ public:
         // Declare parameters
         this->declare_parameter<std::string>("uart_port", "/dev/ttyACM0");
         this->declare_parameter<int>("baud_rate", 115200);        // Твоё железо: 115200
-        this->declare_parameter<int>("max_speed", 40);             // УМЕНЬШЕНО: было 80 → 40
-        this->declare_parameter<int>("min_speed_left", 80);          // Левый мотор минимум
-        this->declare_parameter<int>("min_speed_right", 100);        // Правый мотор минимум
+        this->declare_parameter<int>("max_speed", 245);           // ИСПРАВЛЕНО: было произвольное → 245
+        this->declare_parameter<int>("min_speed", 165);           // ИСПРАВЛЕНО: было произвольное → 165
         this->declare_parameter<bool>("enabled", true);
         
         // Get parameters
@@ -36,8 +35,7 @@ public:
         this->get_parameter("uart_port", uart_port);
         this->get_parameter("baud_rate", baud_rate);
         this->get_parameter("max_speed", max_speed_);
-        this->get_parameter("min_speed_left", min_speed_left_);
-        this->get_parameter("min_speed_right", min_speed_right_);
+        this->get_parameter("min_speed", min_speed_);
         bool enabled_temp = true;
         this->get_parameter("enabled", enabled_temp);
         enabled_ = enabled_temp;
@@ -89,14 +87,8 @@ public:
         
         last_left_speed_ = 0;
         last_right_speed_ = 0;
-
-        RCLCPP_INFO(this->get_logger(), "========================================");
-        RCLCPP_INFO(this->get_logger(), "=== MOTOR CONTROLLER STARTED ===");
-        RCLCPP_INFO(this->get_logger(), "===  UART: %s @ %d baud", uart_port.c_str(), baud_rate);
-        RCLCPP_INFO(this->get_logger(), "===  MAX Speed (PWM): %d", max_speed_);
-        RCLCPP_INFO(this->get_logger(), "===  MIN Speed Left (PWM): %d", min_speed_left_);
-        RCLCPP_INFO(this->get_logger(), "===  MIN Speed Right (PWM): %d", min_speed_right_);
-        RCLCPP_INFO(this->get_logger(), "========================================");
+        
+        RCLCPP_INFO(this->get_logger(), "Motor Controller node started");
     }
     
     ~MotorControllerNode() {
@@ -354,30 +346,20 @@ private:
         float linear = msg->linear.x;
         float angular = msg->angular.z;
         
-        // Differential drive kinematics - используем РАБОЧУЮ скорость (не max!)
-        int work_speed = 150;  // Рабочая скорость - достаточна для движения
-        int left_speed = (int)((linear - angular) * work_speed);
-        int right_speed = (int)((linear + angular) * work_speed);
-
-        // Apply minimum speed threshold - РАЗНЫЕ для левого и правого мотора
-        if (left_speed > 0 && left_speed < min_speed_left_) left_speed = min_speed_left_;
-        if (right_speed > 0 && right_speed < min_speed_right_) right_speed = min_speed_right_;
-
-        // Limit max speed - cannot exceed max_speed_ (255)
-        left_speed = std::min(left_speed, max_speed_);
-        right_speed = std::min(right_speed, max_speed_);
-
-        // Limit min speed - cannot go below -min_speed_ for backward
-        left_speed = std::max(left_speed, -min_speed_left_);
-        right_speed = std::max(right_speed, -min_speed_right_);
-
+        // Differential drive kinematics
+        int left_speed = (int)((linear - angular) * max_speed_);
+        int right_speed = (int)((linear + angular) * max_speed_);
+        
+        // Apply minimum speed threshold
+        if (left_speed > 0 && left_speed < min_speed_) left_speed = min_speed_;
+        if (right_speed > 0 && right_speed < min_speed_) right_speed = min_speed_;
+        
         setMotors(left_speed, right_speed);
         
         last_left_speed_ = left_speed;
         last_right_speed_ = right_speed;
-
-        RCLCPP_INFO(this->get_logger(), ">>> MOTOR: L=%d R=%d (linear=%.2f angular=%.2f)",
-            left_speed, right_speed, msg->linear.x, msg->angular.z);
+        
+        RCLCPP_DEBUG(this->get_logger(), "CmdVel: L=%d R=%d", left_speed, right_speed);
     }
     
     void enableCallback(const std_msgs::msg::Bool::SharedPtr msg) {
@@ -467,8 +449,7 @@ private:
     
     // Parameters
     int max_speed_;
-    int min_speed_left_;
-    int min_speed_right_;
+    int min_speed_;
     std::atomic<bool> enabled_{true};
     std::atomic<int> last_left_speed_{0};
     std::atomic<int> last_right_speed_{0};

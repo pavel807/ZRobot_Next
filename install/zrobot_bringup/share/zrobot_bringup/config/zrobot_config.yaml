@@ -1,0 +1,33 @@
+# ZRobot Configuration
+# ROS2 version — синхронизировано с оригиналом ZRobot v6.3
+
+zrobot_perception:
+  ros__parameters:
+    # Модель — yolo26s (баланс точности/скорости)
+    model_path: "models/yolo26s-rk3588.rknn"
+    camera_id: 1
+    width: 640
+    height: 640
+    fps: 30
+    # Порог уверенности
+    conf_threshold: 0.30
+    target_object: "person"
+    # Дополнительные параметры
+    enable_tracking: true
+    adaptive_threshold: false
+    show_category: true
+    enable_auto_follow: true
+    search_delay_sec: 15
+    max_linear_speed: 0.07
+    turn_speed: 1.0
+
+zrobot_control:
+  ros__parameters:
+    # UART — Arduino на 115200
+    uart_port: "/dev/ttyACM0"
+    baud_rate: 115200
+    # Скорости моторов — РАЗНЫЕ для левого и правого
+    max_speed: 40
+    min_speed_left: 80
+    min_speed_right: 100
+    enabled: true

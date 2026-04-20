@@ -1,0 +1,53 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from zrobot_interfaces/msg/DetectionStatus.msg
+// generated code does not contain a copyright notice
+
+
+module zrobot_interfaces {
+  module msg {
+    @verbatim (language="comment", text=
+      "Detection status message" "\n"
+      "Published by yolo_detector_node")
+    struct DetectionStatus {
+      @verbatim (language="comment", text=
+        "Target object class name")
+      string target_object;
+
+      @verbatim (language="comment", text=
+        "True if target is detected")
+      boolean target_found;
+
+      @verbatim (language="comment", text=
+        "\"LEFT\", \"CENTER\", \"RIGHT\", \"NONE\"")
+      string zone;
+
+      @verbatim (language="comment", text=
+        "Number of detected targets")
+      int32 target_count;
+
+      @verbatim (language="comment", text=
+        "Confidence threshold")
+      float confidence;
+
+      @verbatim (language="comment", text=
+        "Inference time in milliseconds")
+      float inference_time_ms;
+
+      @verbatim (language="comment", text=
+        "Current FPS")
+      int32 fps;
+
+      @verbatim (language="comment", text=
+        "Frame width")
+      int32 frame_width;
+
+      @verbatim (language="comment", text=
+        "Frame height")
+      int32 frame_height;
+
+      @verbatim (language="comment", text=
+        "X coordinate of target center")
+      float target_center_x;
+    };
+  };
+};
