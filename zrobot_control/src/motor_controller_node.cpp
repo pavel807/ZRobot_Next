@@ -24,8 +24,9 @@ public:
         // Declare parameters
         this->declare_parameter<std::string>("uart_port", "/dev/ttyACM0");
         this->declare_parameter<int>("baud_rate", 115200);        // Твоё железо: 115200
-        this->declare_parameter<int>("max_speed", 245);           // ИСПРАВЛЕНО: было произвольное → 245
-        this->declare_parameter<int>("min_speed", 165);           // ИСПРАВЛЕНО: было произвольное → 165
+        this->declare_parameter<int>("max_speed", 165);
+        this->declare_parameter<int>("min_speed_left", 90);
+        this->declare_parameter<int>("min_speed_right", 100);
         this->declare_parameter<bool>("enabled", true);
         
         // Get parameters
@@ -35,7 +36,8 @@ public:
         this->get_parameter("uart_port", uart_port);
         this->get_parameter("baud_rate", baud_rate);
         this->get_parameter("max_speed", max_speed_);
-        this->get_parameter("min_speed", min_speed_);
+        this->get_parameter("min_speed_left", min_speed_left_);
+        this->get_parameter("min_speed_right", min_speed_right_);
         bool enabled_temp = true;
         this->get_parameter("enabled", enabled_temp);
         enabled_ = enabled_temp;
@@ -351,8 +353,8 @@ private:
         int right_speed = (int)((linear + angular) * max_speed_);
         
         // Apply minimum speed threshold
-        if (left_speed > 0 && left_speed < min_speed_) left_speed = min_speed_;
-        if (right_speed > 0 && right_speed < min_speed_) right_speed = min_speed_;
+        if (left_speed > 0 && left_speed < min_speed_left_) left_speed = min_speed_left_;
+        if (right_speed > 0 && right_speed < min_speed_right_) right_speed = min_speed_right_;
         
         setMotors(left_speed, right_speed);
         
@@ -449,7 +451,8 @@ private:
     
     // Parameters
     int max_speed_;
-    int min_speed_;
+    int min_speed_left_;
+    int min_speed_right_;
     std::atomic<bool> enabled_{true};
     std::atomic<int> last_left_speed_{0};
     std::atomic<int> last_right_speed_{0};
