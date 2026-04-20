@@ -342,9 +342,13 @@ private:
         // Convert Twist to motor speeds
         // linear.x = forward/backward speed
         // angular.z = rotation speed
+        // NOTE: backward disabled (burned pin on driver)
         
         float linear = msg->linear.x;
         float angular = msg->angular.z;
+        
+        // Block backward movement (burned pin)
+        if (linear < 0) linear = 0;
         
         // Differential drive kinematics
         int left_speed = (int)((linear - angular) * max_speed_);
