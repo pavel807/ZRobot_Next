@@ -73,7 +73,6 @@ def generate_launch_description():
                 output="screen",
                 emulate_tty=True,
                 parameters=[
-                    config_file,
                     {
                         "model_path": LaunchConfiguration("model_path"),
                         "camera_id": LaunchConfiguration("camera_id"),
@@ -103,7 +102,6 @@ def generate_launch_description():
                 name="motor_controller",
                 output="screen",
                 parameters=[
-                    config_file,
                     {
                         "uart_port": LaunchConfiguration("uart_port"),
                         "baud_rate": LaunchConfiguration("baud_rate"),
@@ -118,10 +116,10 @@ def generate_launch_description():
                 name="web_interface",
                 output="screen",
                 parameters=[
-                    config_file,
                     {
                         "host": "0.0.0.0",
                         "port": LaunchConfiguration("web_port"),
+                        "state_update_rate": 30.0,
                     },
                 ],
             ),
@@ -133,7 +131,6 @@ def generate_launch_description():
                 respawn=False,
                 respawn_delay=2.0,
                 parameters=[
-                    config_file,
                     {
                         "product_name": "LDLiDAR_LD19",
                         "topic_name": "scan",
@@ -151,7 +148,6 @@ def generate_launch_description():
                 name="obstacle_avoidance",
                 output="screen",
                 parameters=[
-                    config_file,
                     {
                         "enabled": True,
                         "min_safe_distance": LaunchConfiguration("min_safe_distance"),

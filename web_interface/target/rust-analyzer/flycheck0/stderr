@@ -1,0 +1,11 @@
+warning: unused manifest key: target.x86_64-unknown-linux-gnu.rustflags
+    Updating crates.io index
+error: failed to select a version for `tower-http`.
+    ... required by package `zrobot_web v0.1.0 (/Users/pavellabushev/ZRobot_Next/web_interface)`
+versions that meet the requirements `^0.5` are: 0.5.2, 0.5.1, 0.5.0
+
+package `zrobot_web` depends on `tower-http` with feature `ws` but `tower-http` does not have that feature.
+ package `tower-http` does have feature `fs`
+
+
+failed to select a version for `tower-http` which could resolve this conflict

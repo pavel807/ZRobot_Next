@@ -12,6 +12,7 @@ install(PROGRAMS
 )
 
 install(DIRECTORY
+  src/static
   DESTINATION share/${PROJECT_NAME}
 )
 

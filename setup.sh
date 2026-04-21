@@ -97,6 +97,20 @@ install_deps() {
         log_error "Не удалось установить Python пакеты"
     fi
     echo ""
+
+    # Rust web_interface deps via cargo add
+    echo -e "${BLUE}  Rust web_interface...${NC}"
+    if command -v cargo &> /dev/null && [ -d "web_interface" ]; then
+        cd web_interface
+        if [ -f "Cargo.toml" ]; then
+            cargo add axum --features "ws" tokio --features "full" tower tower-http --features "fs,ws" serde --features "derive" serde_json parking_lot base64 pyo3 --features "extension-module" 2>&1 | grep -v "error\|Warning" || true
+            echo -e "${GREEN}  ✓ Rust web_interface${NC}"
+        fi
+        cd ..
+    else
+        echo -e "${YELLOW}  ⚠ Rust - пропускаю${NC}"
+    fi
+    echo ""
     
     # ROS2 deps
     echo -e "${BLUE}  ROS2 пакеты...${NC}"
