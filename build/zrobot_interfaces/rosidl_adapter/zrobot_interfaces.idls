@@ -1,4 +1,0 @@
-/root/ws_ros2/ZRobot_Next/build/zrobot_interfaces/rosidl_adapter/zrobot_interfaces:msg/DetectionStatus.idl
-/root/ws_ros2/ZRobot_Next/build/zrobot_interfaces/rosidl_adapter/zrobot_interfaces:msg/MotorCommand.idl
-/root/ws_ros2/ZRobot_Next/build/zrobot_interfaces/rosidl_adapter/zrobot_interfaces:srv/SetTarget.idl
-/root/ws_ros2/ZRobot_Next/build/zrobot_interfaces/rosidl_adapter/zrobot_interfaces:srv/SetConfig.idl

@@ -1,9 +1,0 @@
-/root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance/CMakeFiles/uninstall.dir
-/root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance/CMakeFiles/zrobot_obstacle_avoidance_uninstall.dir
-/root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance/CMakeFiles/test.dir
-/root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance/CMakeFiles/edit_cache.dir
-/root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance/CMakeFiles/rebuild_cache.dir
-/root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance/CMakeFiles/list_install_components.dir
-/root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance/CMakeFiles/install.dir
-/root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance/CMakeFiles/install/local.dir
-/root/ws_ros2/ZRobot_Next/build/zrobot_obstacle_avoidance/CMakeFiles/install/strip.dir
