@@ -7,3 +7,6 @@ __pycache__/
 *~
 core
 .DS_Store
+build/
+install/
+log/

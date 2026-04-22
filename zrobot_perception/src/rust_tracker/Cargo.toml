@@ -1,0 +1,18 @@
+[package]
+name = "rust_tracker"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.95.0"
+
+[lib]
+name = "rust_tracker"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.24", features = ["extension-module"] }
+nalgebra = "0.33"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1

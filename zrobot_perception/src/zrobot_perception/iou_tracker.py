@@ -3,11 +3,6 @@
 """
 IoU-based Multi-Object Tracker
 Inspired by old ZRobot C++ implementation
-Features:
-    - IoU matching with Hungarian algorithm (greedy)
-    - Track history for smoothing
-    - Confidence decay
-    - Max consecutive misses handling
 """
 
 import numpy as np
@@ -21,7 +16,7 @@ class SingleObjectTracker:
         track_id: int,
         label: int,
         class_name: str,
-        bbox: Tuple[int, int, int, int],  # x, y, w, h
+        bbox: Tuple[int, int, int, int],
         confidence: float,
     ):
         self.id = track_id
@@ -30,16 +25,11 @@ class SingleObjectTracker:
         self.age = 0
         self.consecutive_misses = 0
         self.is_confirmed = False
-
-        # History
         self.history = deque(maxlen=30)
         self.confidence_history = deque(maxlen=30)
-
-        # Kalman state: [x, y, vx, vy, w, h]
         self.x = np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
         self.P = np.eye(6) * 1.0
 
-        # Initialize with first detection
         x, y, w, h = bbox
         cx, cy = x + w / 2, y + h / 2
         self.x[0] = cx
@@ -49,31 +39,20 @@ class SingleObjectTracker:
 
         self.history.append(bbox)
         self.confidence_history.append(confidence)
-
         self.last_bbox = bbox
         self.last_confidence = confidence
 
     def predict(self, dt: float = 0.033) -> Tuple[int, int, int, int]:
-        # Constant velocity model
-        # F = [[1, 0, dt, 0, 0, 0],
-        #      [0, 1, 0, dt, 0, 0],
-        #      [0, 0, 1, 0, 0, 0],
-        #      [0, 0, 0, 1, 0, 0],
-        #      [0, 0, 0, 0, 1, 0],
-        #      [0, 0, 0, 0, 0, 1]]
-
         F = np.eye(6)
         F[0, 2] = dt
         F[1, 3] = dt
 
-        # Process noise
         q = 0.1
         Q = np.eye(6) * q
 
         self.x = F @ self.x
         self.P = F @ self.P @ F.T + Q
 
-        # Predict bbox
         cx, cy = self.x[0], self.x[1]
         w, h = self.x[4], self.x[5]
 
@@ -85,11 +64,8 @@ class SingleObjectTracker:
     def update(self, bbox: Tuple[int, int, int, int], confidence: float):
         x, y, w, h = bbox
         cx, cy = x + w / 2, y + h / 2
-
-        # Measurement: [cx, cy, w, h]
         z = np.array([cx, cy, w, h])
 
-        # Measurement matrix H = [[1,0,0,0,0,0], [0,1,0,0,0,0], [0,0,0,0,1,0], [0,0,0,0,0,1]]
         H = np.array(
             [
                 [1, 0, 0, 0, 0, 0],
@@ -99,25 +75,19 @@ class SingleObjectTracker:
             ]
         )
 
-        # Measurement noise
         R = np.diag([0.5, 0.5, 0.5, 0.5])
 
-        # Kalman gain
         S = H @ self.P @ H.T + R
         K = self.P @ H.T @ np.linalg.inv(S)
 
-        # Innovation
         z_pred = H @ self.x
         innovation = z - z_pred
 
-        # Update
         self.x = self.x + K @ innovation
         self.P = (np.eye(6) - K @ H) @ self.P
 
-        # Update history
         self.history.append(bbox)
         self.confidence_history.append(confidence)
-
         self.last_bbox = bbox
         self.last_confidence = confidence
 
@@ -195,12 +165,11 @@ class IoUTracker:
 
     def update(
         self,
-        detections: List[Tuple[int, int, int, int]],  # List of (x, y, w, h)
+        detections: List[Tuple[int, int, int, int]],
         labels: List[int],
         class_names: List[str],
         confidences: List[float],
     ) -> List[SingleObjectTracker]:
-        # Mark existing tracks as missed
         for track in self.tracks:
             track.mark_missed(self.confidence_decay)
 
@@ -210,7 +179,6 @@ class IoUTracker:
         if n_tracks == 0 and n_detections == 0:
             return []
 
-        # Build cost matrix (IoU based)
         cost_matrix = np.zeros((n_tracks, n_detections))
 
         for i, track in enumerate(self.tracks):
@@ -221,12 +189,10 @@ class IoUTracker:
                 else:
                     cost_matrix[i, j] = compute_iou(pred_bbox, det)
 
-        # Greedy Hungarian matching
         matched_tracks = [False] * n_tracks
         matched_detections = [False] * n_detections
         matches = []
 
-        # Sort by highest IoU
         sorted_costs = []
         for i in range(n_tracks):
             for j in range(n_detections):
@@ -241,11 +207,9 @@ class IoUTracker:
                 matched_tracks[ti] = True
                 matched_detections[di] = True
 
-        # Update matched tracks
         for ti, di in matches:
             self.tracks[ti].update(detections[di], confidences[di])
 
-        # Create new tracks for unmatched detections
         for j in range(n_detections):
             if not matched_detections[j]:
                 new_track = SingleObjectTracker(
@@ -258,7 +222,6 @@ class IoUTracker:
                 self.tracks.append(new_track)
                 self.next_track_id += 1
 
-        # Remove lost tracks
         self.tracks = [
             t
             for t in self.tracks

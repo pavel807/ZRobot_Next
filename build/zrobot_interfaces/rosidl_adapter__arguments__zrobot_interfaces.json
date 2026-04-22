@@ -1,9 +1,0 @@
-{
-  "package_name": "zrobot_interfaces",
-  "non_idl_tuples": [
-    "/root/ws_ros2/ZRobot_Next/zrobot_interfaces:msg/DetectionStatus.msg",
-    "/root/ws_ros2/ZRobot_Next/zrobot_interfaces:msg/MotorCommand.msg",
-    "/root/ws_ros2/ZRobot_Next/zrobot_interfaces:srv/SetTarget.srv",
-    "/root/ws_ros2/ZRobot_Next/zrobot_interfaces:srv/SetConfig.srv"
-  ]
-}

@@ -1,8 +1,0 @@
-setup.cfg
-setup.py
-zrobot_perception/__init__.py
-zrobot_perception/yolo_detector_node.py
-zrobot_perception.egg-info/PKG-INFO
-zrobot_perception.egg-info/SOURCES.txt
-zrobot_perception.egg-info/dependency_links.txt
-zrobot_perception.egg-info/top_level.txt

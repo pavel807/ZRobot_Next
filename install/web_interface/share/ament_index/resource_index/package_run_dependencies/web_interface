@@ -1,1 +1,0 @@
-rclpy;std_msgs;sensor_msgs;vision_msgs;geometry_msgs;cv_bridge;python3-aiohttp;python3-numpy;python3-opencv;python3-psutil
